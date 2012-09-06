@@ -1,74 +1,975 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Conventions Framework Documentation</title><link rel="stylesheet" href="css/conventionsframework.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="book" lang="en-US"><div class="titlepage"><div><p id="title"><a href="http://www.seamframework.org" class="site_href"><strong>SeamFramework.org</strong></a><a href="http://www.seamframework.org/Documentation" class="doc_href"><strong>Community Documentation</strong></a></p><div><h1 class="title"><a id="d0e1"/>Conventions Framework Documentation</h1></div></div><hr/></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e4">Introduction</a></span></dt><dt><span class="chapter"><a href="#gettingstarted">1. Getting Started</a></span></dt><dt><span class="part"><a href="#part1">I. Extensions and Utilities for Developers</a></span></dt><dd><dl><dt><span class="chapter"><a href="#programmingmodel">2. Enhancements to the CDI Programming Model</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e83">2.1. Preventing a class from being processed</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e86">2.1.1. @Veto</a></span></dt><dt><span class="section"><a href="#d0e111">2.1.2. @Requires</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e142">2.2. @Exact</a></span></dt><dt><span class="section"><a href="#d0e158">2.3. @Client</a></span></dt><dt><span class="section"><a href="#d0e166">2.4. Named packages</a></span></dt><dt><span class="section"><a href="#d0e182">2.5. @FullyQualified bean names</a></span></dt></dl></dd><dt><span class="chapter"><a href="#annotationliterals">3. Annotation Literals</a></span></dt><dt><span class="chapter"><a href="#elextensions">4. Evaluating Unified EL</a></span></dt><dt><span class="chapter"><a href="#resourceloading">5. Resource Loading</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e404">5.1. Extending the resource loader</a></span></dt></dl></dd><dt><span class="chapter"><a href="#logging">6. Logging</a></span></dt></dl></dd><dt><span class="part"><a href="#part2">II. Utilities for Framework Authors</a></span></dt><dd><dl><dt><span class="chapter"><a href="#annotationutilities">7. Annotation and AnnotatedType Utilities</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e492">7.1. Annotated Type Builder</a></span></dt><dt><span class="section"><a href="#d0e529">7.2. Annotation Instance Provider</a></span></dt><dt><span class="section"><a href="#d0e549">7.3. Annotation Inspector</a></span></dt><dt><span class="section"><a href="#d0e556">7.4. Synthetic Qualifiers</a></span></dt><dt><span class="section"><a href="#d0e565">7.5. Reflection Utilities</a></span></dt></dl></dd><dt><span class="chapter"><a href="#beanmanagerprovider">8. Obtaining a handle on the BeanManager</a></span></dt><dt><span class="chapter"><a href="#beanutilities">9. Bean Utilities</a></span></dt><dt><span class="chapter"><a href="#properties">10. Properties</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e792">10.1. Working with properties</a></span></dt><dt><span class="section"><a href="#d0e951">10.2. Querying for properties</a></span></dt><dt><span class="section"><a href="#d0e968">10.3. Property Criteria</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e985">10.3.1. AnnotatedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1010">10.3.2. NamedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1024">10.3.3. TypedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1038">10.3.4. Creating a custom property criteria</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e1054">10.4. Fetching the results</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part3">III. Configuration Extensions for Framework Authors</a></span></dt><dd><dl><dt><span class="chapter"><a href="#unwraps">11. Unwrapping Producer Methods</a></span></dt><dt><span class="chapter"><a href="#defaultbeans">12. Default Beans</a></span></dt><dt><span class="chapter"><a href="#genericbeans">13. Generic Beans</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e1253">13.1. Using generic beans</a></span></dt><dt><span class="section"><a href="#d0e1290">13.2. Defining Generic Beans</a></span></dt></dl></dd><dt><span class="chapter"><a href="#servicehandler">14. Service Handler</a></span></dt></dl></dd></dl></div><div class="preface" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e4"/>Introduction</h2></div></div></div><p>
+         Weld Extensions is a library of Generally Useful Stuff (tm), particularly if you are
+         developing an application based on CDI (JSR-299 Java Contexts and Dependency Injection),
+         or a CDI based library or framework.
+      </p><p>
+         This guide is split into three parts. <a class="xref" href="#part1" title="Part I. Extensions and Utilities for Developers">Part I, “Extensions and Utilities for Developers”</a> details extensions and 
+         utilities which are likely to be of use to any developer using CDI; 
+         <a class="xref" href="#part2" title="Part II. Utilities for Framework Authors">Part II, “Utilities for Framework Authors”</a> describes utilities which are likely to be of
+         use to developers writing libraries and frameworks that work with CDI; <a class="xref" href="#part3" title="Part III. Configuration Extensions for Framework Authors">Part III, “Configuration Extensions for Framework Authors”</a> discusses
+         extensions which can be used to implement configuration for a framework
+      </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="gettingstarted"/>Chapter 1. Getting Started</h2></div></div></div><p>
+      Getting started with Weld Extensions is easy. If you are using Maven, then you can declare a dependency on Weld
+      Extensions (<code class="code">org.jboss.weld:weld-extensions:${weld.extensions.version}</code>, make sure you have the JBoss 
+      Maven repository enabled). Otherwise, add the jar to your compile time and runtime classpath. 
+   </p><p>
+      Most of Weld Extensions has very few dependencies:
+   </p><div class="itemizedlist"><ul><li><code class="code">javax.enterprise:cdi-api</code></li><li><code class="code">org.slf4j:slf4j-api</code></li><li><code class="code">org.jboss.logging:jboss-logging-api</code></li><li><code class="code">javax.el:el-api</code></li><li><code class="code">javax.inject:javax.inject</code></li><li><code class="code">javax.transaction:jta</code></li></ul></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><p>
+         The POM for Weld Extensions specifies the versions required. If you are using Maven 3, you can easily import
+         the <code class="code">dependencyManagement</code> into your POM by declaring the following in your 
+         <code class="code">depdendencyManagement</code> section:
+      </p><pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.weld</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">weld-extensions</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">${weld.extensions.version}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">pom</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">import</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre></div><p>
+      Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
+      added as transitive dependencies):
+   </p><div class="variablelist"><dl><dt><span class="term"><code class="code">org.javassist:javassist</code></span></dt><dd>Service Handlers, Unwrapping Producer Methods</dd><dt><span class="term"><code class="code">javax.servlet:servlet-api</code></span></dt><dd>Accessing resources from the Servlet Context</dd></dl></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part1"/>Part I. Extensions and Utilities for Developers</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#programmingmodel">2. Enhancements to the CDI Programming Model</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e83">2.1. Preventing a class from being processed</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e86">2.1.1. @Veto</a></span></dt><dt><span class="section"><a href="#d0e111">2.1.2. @Requires</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e142">2.2. @Exact</a></span></dt><dt><span class="section"><a href="#d0e158">2.3. @Client</a></span></dt><dt><span class="section"><a href="#d0e166">2.4. Named packages</a></span></dt><dt><span class="section"><a href="#d0e182">2.5. @FullyQualified bean names</a></span></dt></dl></dd><dt><span class="chapter"><a href="#annotationliterals">3. Annotation Literals</a></span></dt><dt><span class="chapter"><a href="#elextensions">4. Evaluating Unified EL</a></span></dt><dt><span class="chapter"><a href="#resourceloading">5. Resource Loading</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e404">5.1. Extending the resource loader</a></span></dt></dl></dd><dt><span class="chapter"><a href="#logging">6. Logging</a></span></dt></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="programmingmodel"/>Chapter 2. Enhancements to the CDI Programming Model</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e83">2.1. Preventing a class from being processed</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e86">2.1.1. @Veto</a></span></dt><dt><span class="section"><a href="#d0e111">2.1.2. @Requires</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e142">2.2. @Exact</a></span></dt><dt><span class="section"><a href="#d0e158">2.3. @Client</a></span></dt><dt><span class="section"><a href="#d0e166">2.4. Named packages</a></span></dt><dt><span class="section"><a href="#d0e182">2.5. @FullyQualified bean names</a></span></dt></dl></div><p>
+      Weld Extensions provides a number enhancements to the CDI programming model which are under trial and may be
+      included in later releases of <span class="emphasis"><em>Contexts and Dependency Injection</em></span>.
+   </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e83"/>2.1. Preventing a class from being processed</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e86"/>2.1.1. @Veto</h3></div></div></div><p>
+            Annotating a class <code class="code">@Veto</code> will cause the type to be ignored, such that any definitions on the 
+            type will not be processed, including:
+         </p><div class="itemizedlist"><ul><li>
+               the managed bean, decorator, interceptor or session bean defined by the type
+            </li><li>
+               any producer methods or producer fields defined on the type
+            </li><li>
+               any observer methods defined on the type
+            </li></ul></div><p>
+            For example:
+         </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Veto</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">Utilities</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span></pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+               The <code class="code">ProcessAnnotatedType</code> container lifecycle event will be called for vetoed types.
+            </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e111"/>2.1.2. @Requires</h3></div></div></div><p>
+            Annotating a class <code class="code">@Requires</code> will cause the type to be ignored if the class dependencies
+            can be satisfied. Any definitions on the type will not be processed:
+         </p><div class="itemizedlist"><ul><li>
+               the managed bean, decorator, interceptor or session bean defined by the type
+            </li><li>
+               any producer methods or producer fields defined on the type
+            </li><li>
+               any observer methods defined on the type
+            </li></ul></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><p>
+               Weld will use the Thread Context ClassLoader, as well as the classloader of the type annotated
+               <code class="code">@Requires</code> to attempt to satisfy the class dependency.
+            </p></div><p>
+            For example:
+         </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Requires</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">EntityManager</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">EntityManagerProducer</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">EntityManager</span><span class="java_plain">&nbsp;getEntityManager</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+               The <code class="code">ProcessAnnotatedType</code> container lifecycle event will be called for vetoed types.
+            </p></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e142"/>2.2. @Exact</h2></div></div></div><p>
+         Annotating an injection point with <code class="code">@Exact</code> allows you to select an exact implementation of the
+         injection point type to inject. For example: 
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">interface</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">PaymentService</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span><!-- <br/> --><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span></pre><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">ChequePaymentService</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">implements</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">PaymentService</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span><!-- <br/> --><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span></pre><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">CardPaymentService</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">implements</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">PaymentService</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span><!-- <br/> --><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span></pre><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">PaymentProcessor</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span><!-- <br/> --><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Exact</span><span class="java_separator">(</span><span class="java_type">CardPaymentService</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">PaymentService</span><span class="java_plain">&nbsp;paymentService</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e158"/>2.3. @Client</h2></div></div></div><p>
+         It is common to want to qualify a bean as belonging to the current client (for example we want to differentiate
+         the default system locale from the current client's locale). Weld Extensions provides a built in qualifier,
+         <code class="code">@Client</code> for this purpose.
+      </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e166"/>2.4. Named packages</h2></div></div></div><p>
+         Weld Extensions allows you to annotate the package <code class="code">@Named</code>, which causes every bean defined in the
+         package to be given its default name. Package annotations are defined in the file 
+         <code class="code">package-info.java</code>. For example, to cause any beans defined in <code class="code">com.acme</code> to be given
+         their default name:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Named</span>
+<!--  --><br/><span class="java_keyword">package</span><span class="java_plain">&nbsp;com</span><span class="java_separator">.</span><span class="java_plain">acme</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e182"/>2.5. @FullyQualified bean names</h2></div></div></div><p>
+         According to the CDI standard, the <code class="code">@Named</code> annotation assigns a name to a bean equal to the value
+         specified in the <code class="code">@Named</code> annotation or, if a value is not provided, the simple name of the bean class.
+         This behavior aligns is with the needs of most application developers. However, framework writers should avoid
+         trampling on the "root" bean namespace. Instead, frameworks should specify qualified names for built-in components.
+         The motivation is the same as qualifying Java types. The <code class="code">@FullyQualified</code> provides this facility without
+         sacrificing type-safety.
+      </p><p>
+         Weld Extensions allows you to customize the bean name using the complementary <code class="code">@FullyQualified</code>
+         annotation. When the <code class="code">@FullyQualified</code> annotation is added to a <code class="code">@Named</code> bean type, producer
+         method or producer field, the standard bean name is prefixed with the name of the Java package in which the bean
+         resides, the segments separated by a period. The resulting fully-qualified bean name (FQBN) replaces the standard
+         bean name.
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">package</span><!-- <br/> --><span class="java_plain">&nbsp;com</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">acme</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">FullyQualified</span><span class="java_plain">&nbsp;@</span><span class="java_type">Named</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">NamedBean</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;getAge</span><span class="java_separator">()</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_literal">5</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+         The bean in the previous code listing is assigned the name <code class="code">com.acme.namedBean</code>. The value of its
+         property <code class="code">age</code> would be referenced in an EL expression (perhaps in a JSF view template) as follows:
+      </p><pre class="programlisting">#{com.acme.namedBean.age}</pre><p>
+         The <code class="code">@FullyQualified</code> annotation is permitted on a bean type, producer method or producer field. It can
+         also be used on a Java package, in which case all <code class="code">@Named</code> beans in that package get a bean name which is
+         fully-qualified.
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">FullyQualified</span>
+<!--  --><br/><span class="java_keyword">package</span><span class="java_plain">&nbsp;com</span><span class="java_separator">.</span><span class="java_plain">acme</span><span class="java_separator">;</span>
+</pre><p>
+         If you want to use a different Java package as the namespace of the bean, rather than the Java package of the bean,
+         you specify any class in that alternative package in the annotation value.
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">package</span><!-- <br/> --><span class="java_plain">&nbsp;com</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">acme</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">FullyQualified</span><span class="java_separator">(</span><span class="java_type">ClassInOtherPackage</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">)</span><span class="java_plain">&nbsp;@</span><span class="java_type">Named</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">CustomNamespacedNamedBean</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="annotationliterals"/>Chapter 3. Annotation Literals</h2></div></div></div><p>
+      Weld extensions provides a complete set of <code class="code">AnnotationLiteral</code>s for every annotation type 
+      defined by the CDI (JSR-299) and Injection (JSR-330) specification. These are located in the 
+      <code class="code">org.jboss.weld.extensions.literal</code> package. Annotations without listitems provide a static 
+      <code class="code">INSTANCE</code> listitem that should be used rather than creating a new instance every time.
+   </p><p>
+      Literals are provided for the following annotations from <span class="emphasis"><em>Context and Dependency Injection</em></span>:
+   </p><div class="itemizedlist"><ul><li><code class="code">@Alternative</code></li><li><code class="code">@Any</code></li><li><code class="code">@ApplicationScoped</code></li><li><code class="code">@ConversationScoped</code></li><li><code class="code">@Decorator</code></li><li><code class="code">@Default</code></li><li><code class="code">@Delegate</code></li><li><code class="code">@Dependent</code></li><li><code class="code">@Disposes</code></li><li><code class="code">@Inject</code></li><li><code class="code">@Model</code></li><li><code class="code">@Named</code></li><li><code class="code">@New</code></li><li><code class="code">@Nonbinding</code></li><li><code class="code">@NormalScope</code></li><li><code class="code">@Observes</code></li><li><code class="code">@Produces</code></li><li><code class="code">@RequestScoped</code></li><li><code class="code">@SessionScoped</code></li><li><code class="code">@Specializes</code></li><li><code class="code">@Stereotype</code></li><li><code class="code">@Typed</code></li></ul></div><p>
+      Literals are provided for the following annotations from <span class="emphasis"><em>Weld Extensions</em></span>:
+   </p><div class="itemizedlist"><ul><li><code class="code">@Client</code></li><li><code class="code">@DefaultBean</code></li><li><code class="code">@Exact</code></li><li><code class="code">@Generic</code></li><li><code class="code">@GenericType</code></li><li><code class="code">@Mapper</code></li><li><code class="code">@MessageBundle</code></li><li><code class="code">@Requires</code></li><li><code class="code">@Resolver</code></li><li><code class="code">@Resource</code></li><li><code class="code">@Unwraps</code></li><li><code class="code">@Veto</code></li></ul></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="elextensions"/>Chapter 4. Evaluating Unified EL</h2></div></div></div><p>
+      Weld extensions provides a method to evaluate EL that is not dependent on JSF or JSP, a facility sadly missing in
+      Java EE. To use it inject <code class="code">Expressions</code> into your bean. You can evaluate value expressions, or method
+      expressions. The Weld Extensions API provides type inference for you. For example: 
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">FruitBowl</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;</span><span class="java_type">Expressions</span><span class="java_plain">&nbsp;expressions</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;run</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;fruitName&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;expressions</span><span class="java_separator">.</span><span class="java_plain">evaluateValueExpression</span><span class="java_separator">(</span><span class="java_literal">&quot;#{fruitBowl.fruitName}&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Apple</span><span class="java_plain">&nbsp;fruit&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;expressions</span><span class="java_separator">.</span><span class="java_plain">evaluateMethodExpression</span><span class="java_separator">(</span><span class="java_literal">&quot;#{fruitBown.getFruit}&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="resourceloading"/>Chapter 5. Resource Loading</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e404">5.1. Extending the resource loader</a></span></dt></dl></div><p>
+      Weld Extensions provides an extensible, injectable resource loader. The resource loader can provide URLs or 
+      managed input streams. By default the resource loader will look at the classpath, and the servlet context if
+      available.
+   </p><p>
+      If the resource name is known at development time, the resource can be injected, either as a URL or an 
+      InputStream:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><!-- <br/> --><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Resource</span><span class="java_separator">(</span><span class="java_literal">&quot;WEB-INF/beans.xml&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;URL&nbsp;beansXml</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Resource</span><span class="java_separator">(</span><span class="java_literal">&quot;WEB-INF/web.xml&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">InputStream</span><span class="java_plain">&nbsp;webXml</span><span class="java_separator">;</span></pre><p>
+      If the resource name is not known, the <code class="code">ResourceProvider</code> can be injected, and the resource looked up 
+      dynamically:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><!-- <br/> --><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;readXml</span><span class="java_separator">(</span><span class="java_type">ResourceProvider</span><span class="java_plain">&nbsp;provider</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;fileName</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">InputStream</span><span class="java_plain">&nbsp;is&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;provider</span><span class="java_separator">.</span><span class="java_plain">loadResourceStream</span><span class="java_separator">(</span><span class="java_plain">fileName</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span></pre><p>
+      If you need access to all resources under a given name known to the resource loader (as opposed to first resource
+      loaded), you can inject a collection of resources:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><!-- <br/> --><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Resource</span><span class="java_separator">(</span><span class="java_literal">&quot;WEB-INF/beans.xml&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Collection</span><span class="java_operator">&lt;</span><span class="java_plain">URL</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;beansXmls</span><span class="java_separator">;</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Resource</span><span class="java_separator">(</span><span class="java_literal">&quot;WEB-INF/web.xml&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Collection</span><span class="java_operator">&lt;</span><span class="java_type">InputStream</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;webXmls</span><span class="java_separator">;</span></pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><p>
+         Any input stream injected, or created directly by the <code class="code">ResourceProvider</code> is managed, and will be 
+         automatically closed when the bean declaring the injection point of the resource or provider is destroyed. 
+      </p></div><p>
+      If the resource is a Properties bundle, you can also inject it as a set of <code class="code">Properties</code>:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><!-- <br/> --><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Resource</span><span class="java_separator">(</span><span class="java_literal">&quot;META-INF/aws.properties&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Properties</span><span class="java_plain">&nbsp;awsProperties</span><span class="java_separator">;</span></pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e404"/>5.1. Extending the resource loader</h2></div></div></div><p>
+         If you want to load resources from another location, you can provide an additional resource loader. First,
+         create the resource loader implementation:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">MyResourceLoader</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">implements</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">ResourceLoader</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+         And then register it as a service by placing the fully qualified class name of the implementation in a file
+         called <code class="code">META-INF/services/org.jboss.weld.extensions.resourceLoader.ResourceLoader</code>.
+      </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="logging"/>Chapter 6. Logging</h2></div></div></div><p>
+      Weld Extensions integrates JBoss Logging 3 as it's logging framework of choice. JBoss Logging 3 is a modern 
+      logging framework offering:
+   </p><div class="itemizedlist"><ul><li>
+         Abstracts away from common logging backends and frameworks (such as JDK Logging, log4j and slf4j)
+      </li><li>
+         Provides a innovative, typed logger (see below for examples)
+      </li><li>
+         Full support for internationalization and localization
+         <div class="itemizedlist"><ul><li>
+               Developers can work with interfaces and annotations only
+            </li><li>
+               Translators can work with message bundles in properties files
+            </li></ul></div></li><li>
+         Build time tooling to generate typed loggers for production, and runtime generation of typed loggers for 
+         development
+      </li><li>
+         Access to MDC and NDC (if underlying logger supports it)
+      </li><li>
+         Loggers are serializable
+      </li></ul></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+         A number of the features of JBoss Logging 3 are still under development - at the moment only runtime generation
+         of typed is supported, and these loggers only support the default message placed on the typed logger, and will 
+         not look up a localized message.
+      </p></div><p>
+      To use a typed logger, first create the logger definition:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">MessageLogger</span>
+<!--  --><br/><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">TrainSpotterLog</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">&nbsp;</span><span class="java_type">Define</span><span class="java_plain">&nbsp;log&nbsp;call&nbsp;with&nbsp;message</span><span class="java_separator">,</span><span class="java_plain">&nbsp;using&nbsp;printf</span><span class="java_operator">-</span><span class="java_plain">style&nbsp;interpolation&nbsp;of&nbsp;parameters</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">LogMessage</span><span class="java_plain">&nbsp;@</span><span class="java_type">Message</span><span class="java_separator">(</span><span class="java_literal">&quot;Spotted&nbsp;%s&nbsp;diesel&nbsp;trains&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;dieselTrainsSpotted</span><span class="java_separator">(</span><span class="java_type">int</span><span class="java_plain">&nbsp;number</span><span class="java_separator">);</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      You can then inject the typed logger with no further configuration:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><!-- <br/> --><span class="java_operator">//</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">Use</span><!-- <br/> --><span class="java_plain">&nbsp;the&nbsp;train&nbsp;spotter&nbsp;log</span><!-- <br/> --><span class="java_separator">,</span><!-- <br/> --><span class="java_plain">&nbsp;with&nbsp;the&nbsp;log&nbsp;category&nbsp;</span><!-- <br/> --><span class="java_literal">&quot;trains&quot;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Category</span><span class="java_separator">(</span><span class="java_literal">&quot;trains&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_type">TrainSpotterLog</span><span class="java_plain">&nbsp;log</span><span class="java_separator">;</span></pre><p>
+      and use it:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">log</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">dieselTrainsSpotted</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_literal">7</span><!-- <br/> --><span class="java_separator">);</span></pre><p>
+      JBoss Logging will use the default locale unless overridden:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><!-- <br/> --><span class="java_operator">//</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">Use</span><!-- <br/> --><span class="java_plain">&nbsp;the&nbsp;train&nbsp;spotter&nbsp;log</span><!-- <br/> --><span class="java_separator">,</span><!-- <br/> --><span class="java_plain">&nbsp;with&nbsp;the&nbsp;log&nbsp;category&nbsp;</span><!-- <br/> --><span class="java_literal">&quot;trains&quot;</span><!-- <br/> --><span class="java_separator">,</span><!-- <br/> --><span class="java_plain">&nbsp;and&nbsp;select&nbsp;the&nbsp;UK&nbsp;locale</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Category</span><span class="java_separator">(</span><span class="java_literal">&quot;trains&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;@</span><span class="java_type">Locale</span><span class="java_separator">(</span><span class="java_literal">&quot;en_GB&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_type">TrainSpotterLog</span><span class="java_plain">&nbsp;log</span><span class="java_separator">;</span></pre><p>
+      You can also log exceptions:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">MessageLogger</span>
+<!--  --><br/><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">TrainSpotterLog</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">&nbsp;</span><span class="java_type">Define</span><span class="java_plain">&nbsp;log&nbsp;call&nbsp;with&nbsp;message</span><span class="java_separator">,</span><span class="java_plain">&nbsp;using&nbsp;printf</span><span class="java_operator">-</span><span class="java_plain">style&nbsp;interpolation&nbsp;of&nbsp;parameters</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">&nbsp;</span><span class="java_type">The</span><span class="java_plain">&nbsp;exception&nbsp;parameter&nbsp;will&nbsp;be&nbsp;logged&nbsp;as&nbsp;an&nbsp;exception</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">LogMessage</span><span class="java_plain">&nbsp;@</span><span class="java_type">Message</span><span class="java_separator">(</span><span class="java_literal">&quot;Failed&nbsp;to&nbsp;spot&nbsp;train&nbsp;%s&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;missedTrain</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;trainNumber</span><span class="java_separator">,</span><span class="java_plain">@</span><span class="java_type">Cause</span><span class="java_plain">&nbsp;</span><span class="java_type">Exception</span><span class="java_plain">&nbsp;exception</span><span class="java_separator">);</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      You can then log a message with an exception:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">log</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">missedTrain</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_literal">&quot;RH1&quot;</span><!-- <br/> --><span class="java_separator">,</span><!-- <br/> --><span class="java_plain">&nbsp;cause</span><!-- <br/> --><span class="java_separator">);</span></pre><p>
+      You can also inject a "plain old" Logger:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><!-- <br/> --><span class="java_type">Inject</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">Logger</span><!-- <br/> --><span class="java_plain">&nbsp;log</span><!-- <br/> --><span class="java_separator">;</span></pre><p>
+      Typed loggers also provide internationalization support, simply add the @MessageBundle annotation to the logger 
+      interface (not currently supported).
+   </p><p>
+      Sometimes you need to access the message directly (for example to localize an exception message). Weld Extensions 
+      let's you inject a typed message bundle. First, declare the message bundle:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">MessageBundle</span>
+<!--  --><br/><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">TrainMessages</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">&nbsp;</span><span class="java_type">Define</span><span class="java_plain">&nbsp;a&nbsp;message&nbsp;using&nbsp;printf</span><span class="java_operator">-</span><span class="java_plain">style&nbsp;interpolation&nbsp;of&nbsp;parameters</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Message</span><span class="java_separator">(</span><span class="java_literal">&quot;No&nbsp;trains&nbsp;spotted&nbsp;due&nbsp;to&nbsp;%s&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;noTrainsSpotted</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;cause</span><span class="java_separator">);</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      Inject it:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Inject</span><!-- <br/> --><span class="java_plain">&nbsp;@</span><!-- <br/> --><span class="java_type">MessageBundle</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">TrainMessages</span><!-- <br/> --><span class="java_plain">&nbsp;messages</span><!-- <br/> --><span class="java_separator">;</span></pre><p>
+      And use it:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><!-- <br/> --><span class="java_keyword">throw</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">new</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">BadDayException</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_plain">messages</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">noTrainsSpotted</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_literal">&quot;leaves&nbsp;on&nbsp;the&nbsp;line&quot;</span><!-- <br/> --><span class="java_separator">));</span></pre></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. Utilities for Framework Authors</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#annotationutilities">7. Annotation and AnnotatedType Utilities</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e492">7.1. Annotated Type Builder</a></span></dt><dt><span class="section"><a href="#d0e529">7.2. Annotation Instance Provider</a></span></dt><dt><span class="section"><a href="#d0e549">7.3. Annotation Inspector</a></span></dt><dt><span class="section"><a href="#d0e556">7.4. Synthetic Qualifiers</a></span></dt><dt><span class="section"><a href="#d0e565">7.5. Reflection Utilities</a></span></dt></dl></dd><dt><span class="chapter"><a href="#beanmanagerprovider">8. Obtaining a handle on the BeanManager</a></span></dt><dt><span class="chapter"><a href="#beanutilities">9. Bean Utilities</a></span></dt><dt><span class="chapter"><a href="#properties">10. Properties</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e792">10.1. Working with properties</a></span></dt><dt><span class="section"><a href="#d0e951">10.2. Querying for properties</a></span></dt><dt><span class="section"><a href="#d0e968">10.3. Property Criteria</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e985">10.3.1. AnnotatedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1010">10.3.2. NamedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1024">10.3.3. TypedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1038">10.3.4. Creating a custom property criteria</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e1054">10.4. Fetching the results</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="annotationutilities"/>Chapter 7. Annotation and AnnotatedType Utilities</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e492">7.1. Annotated Type Builder</a></span></dt><dt><span class="section"><a href="#d0e529">7.2. Annotation Instance Provider</a></span></dt><dt><span class="section"><a href="#d0e549">7.3. Annotation Inspector</a></span></dt><dt><span class="section"><a href="#d0e556">7.4. Synthetic Qualifiers</a></span></dt><dt><span class="section"><a href="#d0e565">7.5. Reflection Utilities</a></span></dt></dl></div><p>
+      Weld Extensions provides a number of utilility classes to make working with Annotations and AnnotatedTypes easier.
+      This chapter will walk you each utility, and give you an idea of how to use it. For more detail, take a look at
+      the javaodoc on each class.
+   </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e492"/>7.1. Annotated Type Builder</h2></div></div></div><p>
+         Weld Extensions provides an <code class="code">AnnotatedType</code> implementation that should be suitable for most 
+         portable extensions needs. The <code class="code">AnnotatedType</code> is created from 
+         <code class="code">AnnotatedTypeBuilder</code> as follows:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_type">AnnotatedTypeBuilder</span><!-- <br/> --><span class="java_plain">&nbsp;builder&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">new</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">AnnotatedTypeBuilder</span><!-- <br/> --><span class="java_separator">()</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">.</span><span class="java_plain">readFromType</span><span class="java_separator">(</span><span class="java_plain">baseType</span><span class="java_separator">,</span><span class="java_literal">true</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_comment">/*&nbsp;readFromType&nbsp;can&nbsp;read&nbsp;from&nbsp;an&nbsp;AnnotatedType&nbsp;or&nbsp;a&nbsp;class&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">.</span><span class="java_plain">addToClass</span><span class="java_separator">(</span><span class="java_type">ModelLiteral</span><span class="java_separator">.</span><span class="java_plain">INSTANCE</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_comment">/*&nbsp;add&nbsp;the&nbsp;@Model&nbsp;annotation&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">.</span><span class="java_plain">create</span><span class="java_separator">();</span></pre><p>
+         Here we create a new builder, and initialize it using an existing <code class="code">AnnotatedType</code>. We can then
+         add or remove annotations from the class, and it's members. When we have finished modifying the type, we call
+         <code class="code">create()</code> to spit out a new, immutable, <code class="code">AnnotatedType</code>.
+      </p><p>
+        <code class="code">AnnotatedTypeBuilder</code> also allows you to specify a "redefinition" which can be applied to the
+        type, a type of member, or all members. The redefiner will receive a callback for any annotations present which 
+        match the annotation type for which the redefinition is applied. For example, to remove the qualifier
+        <code class="code">@Unique</code> from any class member and the type:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_type">AnnotatedTypeBuilder</span><!-- <br/> --><span class="java_plain">&nbsp;builder&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">new</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">AnnotatedTypeBuilder</span><!-- <br/> --><span class="java_separator">()</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">.</span><span class="java_plain">readFromType</span><span class="java_separator">(</span><span class="java_plain">baseType</span><span class="java_separator">,</span><span class="java_literal">true</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">.</span><span class="java_plain">redefine</span><span class="java_separator">(</span><span class="java_type">Unique</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">AnnotationRedefiner</span><span class="java_operator">&lt;</span><span class="java_type">Unique</span><span class="java_operator">&gt;</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;redefine</span><span class="java_separator">(</span><span class="java_type">RedefinitionContext</span><span class="java_operator">&lt;</span><span class="java_plain">A</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;ctx</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx</span><span class="java_separator">.</span><span class="java_plain">getAnnotationBuilder</span><span class="java_separator">().</span><span class="java_plain">remove</span><span class="java_separator">(</span><span class="java_type">Unique</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">.</span><span class="java_plain">create</span><span class="java_separator">();</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e529"/>7.2. Annotation Instance Provider</h2></div></div></div><p>
+         Sometimes you may need an annotation instance for an annotation whose type is not known at development time.
+         Weld Extensions provides a <code class="code">AnnotationInstanceProvider</code> class that can create an 
+         <code class="code">AnnotationLiteral</code> instance for any annotation at runtime. Annotation attributes
+         are passed in via a <code class="code">Map&lt;String,Object&gt;</code>. For example given the follow annotation:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Retention</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">RetentionPolicy</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">RUNTIME</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_keyword">public</span><span class="java_plain">&nbsp;@</span><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">MultipleMembers</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">int</span><span class="java_plain">&nbsp;intMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">long</span><span class="java_plain">&nbsp;longMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">short</span><span class="java_plain">&nbsp;shortMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">float</span><span class="java_plain">&nbsp;floatMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">double</span><span class="java_plain">&nbsp;doubleMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">byte</span><span class="java_plain">&nbsp;byteMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">char</span><span class="java_plain">&nbsp;charMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">boolean</span><span class="java_plain">&nbsp;booleanMember</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">int</span><span class="java_separator">[]</span><span class="java_plain">&nbsp;intArrayMember</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+         We can create an annotation instance as follows:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_comment">/*&nbsp;Create&nbsp;a&nbsp;new&nbsp;provider&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">AnnotationInstanceProvider</span><span class="java_plain">&nbsp;provider&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">AnnotationInstanceProvider</span><span class="java_separator">();</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Set&nbsp;the&nbsp;value&nbsp;for&nbsp;each&nbsp;of&nbsp;attributes&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Map</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">Object</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;values&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HashMap</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">Object</span><span class="java_operator">&gt;</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;intMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">1</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;longMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">1</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;shortMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">1</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;floatMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">0</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;doubleMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">0</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;byteMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_separator">((</span><span class="java_type">byte</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_literal">1</span><span class="java_separator">));</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;charMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">'c'</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;booleanMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">true</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;values</span><span class="java_separator">.</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;intArrayMember&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">int</span><span class="java_separator">[]</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span><span class="java_plain">&nbsp;</span><span class="java_literal">0</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_literal">1</span><span class="java_plain">&nbsp;</span><span class="java_separator">});</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Generate&nbsp;the&nbsp;instance&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">MultipleMembers</span><span class="java_plain">&nbsp;an&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;provider</span><span class="java_separator">.</span><span class="java_plain">get</span><span class="java_separator">(</span><span class="java_type">MultipleMembers</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">,</span><span class="java_plain">&nbsp;values</span><span class="java_separator">);</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e549"/>7.3. Annotation Inspector</h2></div></div></div><p>
+         The Annotation Inspector allows you to easily discover annotations which are meta-annotated. For example:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><!-- <br/> --><span class="java_comment">/*&nbsp;Discover&nbsp;all&nbsp;annotations&nbsp;on&nbsp;type&nbsp;which&nbsp;are&nbsp;meta-annotated&nbsp;@Constraint&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Set</span><span class="java_operator">&lt;</span><span class="java_type">Annotation</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;constraints&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">AnnotationInspector</span><span class="java_separator">.</span><span class="java_plain">getAnnotations</span><span class="java_separator">(</span><span class="java_plain">type</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">Constraint</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Load&nbsp;the&nbsp;annotation&nbsp;instance&nbsp;for&nbsp;@FacesValidator&nbsp;the&nbsp;annotation&nbsp;may&nbsp;declared&nbsp;on&nbsp;the&nbsp;type,&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;or,&nbsp;if&nbsp;the&nbsp;type&nbsp;has&nbsp;any&nbsp;stereotypes,&nbsp;on&nbsp;the&nbsp;stereotypes&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">FacesValidator</span><span class="java_plain">&nbsp;validator&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">AnnotationInspector</span><span class="java_separator">.</span><span class="java_plain">getAnnotation</span><span class="java_separator">(</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">FacesValidator</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_literal">true</span><span class="java_separator">,</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beanManager</span><span class="java_separator">);</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e556"/>7.4. Synthetic Qualifiers</h2></div></div></div><p>
+         When developing an extension to CDI, it can be useful to detect certain injection points, or bean definitions
+         and based on annotations or other metadata, add qualifiers to further disambiguate the injection point or bean
+         definition for the CDI bean resolver. Weld Extension's synthetic qualifers can be used to easily generate and
+         track such qualifers.
+      </p><p>
+         In this example, we will create a synthetic qualifier provider, and use it to create a qualifier. The provider
+         will track the qualifier, and if a qualifier is requested again for the same original annotation, the same 
+         instance will be returned.
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><!-- <br/> --><span class="java_comment">/*&nbsp;Create&nbsp;a&nbsp;provider,&nbsp;giving&nbsp;it&nbsp;a&nbsp;unique&nbsp;namespace&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Synthetic</span><span class="java_separator">.</span><span class="java_type">Provider</span><span class="java_plain">&nbsp;provider&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Synthetic</span><span class="java_separator">.</span><span class="java_type">Provider</span><span class="java_separator">(</span><span class="java_literal">&quot;com.acme&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Get&nbsp;the&nbsp;a&nbsp;synthetic&nbsp;qualifier&nbsp;for&nbsp;the&nbsp;original&nbsp;annotation&nbsp;instance&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Synthetic</span><span class="java_plain">&nbsp;synthetic&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;provider</span><span class="java_separator">.</span><span class="java_plain">get</span><span class="java_separator">(</span><span class="java_plain">originalAnnotation</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Later&nbsp;calls&nbsp;with&nbsp;the&nbsp;same&nbsp;original&nbsp;annotation&nbsp;instance&nbsp;will&nbsp;return&nbsp;the&nbsp;same&nbsp;instance&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Alternatively,&nbsp;we&nbsp;can&nbsp;&quot;get&nbsp;and&nbsp;forget&quot;&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Synthetic</span><span class="java_plain">&nbsp;synthetic2&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;provider</span><span class="java_separator">.</span><span class="java_plain">get</span><span class="java_separator">();</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e565"/>7.5. Reflection Utilities</h2></div></div></div><p>
+         Weld Extensions comes with a number miscellaneous reflection utilities; these extend JDK reflection, and some 
+         also work on CDI's Annotated metadata. See the javadoc on <code class="code">Reflections</code> for more.
+      </p><p>
+         <code class="code">InjectableMethod</code> allows an <code class="code">AnnotatedMethod</code> to be injected with parameter values
+         obtained by following the CDI type safe resolution rules, as well as allowing the defautl aparameter values to
+         be overridden.
+      </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="beanmanagerprovider"/>Chapter 8. Obtaining a handle on the BeanManager</h2></div></div></div><p>
+      When developing a framework that builds on CDI, you may need to obtain the <code class="code">BeanManager</code> for the 
+      application, can't simply inject it as you are not working in an object managed by the container. The CDI
+      specification allows lookup of <code class="code">java:comp/BeanManager</code> in JNDI, however some environments don't support
+      binding to this location (e.g. servlet containers such as Tomcat and Jetty) and some environments don't support
+      JNDI (e.g. the Weld SE container). For this reason, most framework developers will prefer to avoid a direct JNDI
+      lookup.
+   </p><p>
+      Often it is possible to pass the correct <code class="code">BeanManager</code> to the object in which you require it, for
+      example via a context object. For example, you might be able to place the <code class="code">BeanManager</code> in the
+      <code class="code">ServletContext</code>, and retrieve it at a later date. 
+   </p><p>
+      On some occasions however there is no suitable context to use, and in this case, you can take advantage of the
+      abstraction over <code class="code">BeanManager</code> lookup provided by Weld Extensions. To lookup up a 
+      <code class="code">BeanManager</code>, you can extend the <code class="code">BeanManagerAware</code> class, and call 
+      <code class="code">getBeanManager</code>:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">WicketIntegration</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">extends</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">BeanManagerAware</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">WicketManager</span><span class="java_plain">&nbsp;getWicketManager</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Bean</span><span class="java_operator">&lt;?&gt;</span><span class="java_plain">&nbsp;bean&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;getBeanManager</span><span class="java_separator">.</span><span class="java_plain">getBean</span><span class="java_separator">(</span><span class="java_type">Instance</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      Occasionally you will be working in an existing class hierarchy, in which case you can use the static accessors on
+      <code class="code">BeanManagerAccessor</code>. For example:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">ResourceServlet</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">extends</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">HttpServlet</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">protected</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;doGet</span><span class="java_separator">(</span><span class="java_type">HttpServletRequest</span><span class="java_plain">&nbsp;req</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">HttpServletResponse</span><span class="java_plain">&nbsp;resp</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">throws</span><span class="java_plain">&nbsp;</span><span class="java_type">ServletException</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">IOException</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">BeanManager</span><span class="java_plain">&nbsp;beanManager&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">BeanManagerAccessor</span><span class="java_separator">.</span><span class="java_plain">getBeanManager</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="beanutilities"/>Chapter 9. Bean Utilities</h2></div></div></div><p>
+      Weld Extensions provides a number of base classes which can be extended to create custom beans. Weld Extensions
+      also provides bean builders which can be used to dynamically create beans using a fluent API. 
+   </p><div class="variablelist"><dl><dt><span class="term"><code class="code">AbstractImmutableBean</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) bean, whose constructor will substitute specification defaults if
+               <code class="code">null</code> is passed for a particular attribute. Subclasses must implement the 
+               <code class="code">create()</code> and <code class="code">destroy()</code> methods.
+            </p></dd><dt><span class="term"><code class="code">AbstractImmutableProducer</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) abstract class for creating producers. Subclasses must implement
+               <code class="code">produce()</code> and <code class="code">dispose()</code>.
+            </p></dd><dt><span class="term"><code class="code">BeanBuilder</code></span></dt><dd><p>
+               A builder for creating immutable beans which can read the type and annotations from an 
+               <code class="code">AnnotatedType</code>.
+            </p></dd><dt><span class="term"><code class="code">Beans</code></span></dt><dd><p>
+               A set of utilities for working with beans.
+            </p></dd><dt><span class="term"><code class="code">ForwardingBean</code></span></dt><dd><p>
+               A base class for implementing <code class="code">Bean</code> which forwards all calls to <code class="code">delegate()</code>.
+            </p></dd><dt><span class="term"><code class="code">ForwardingInjectionTarget</code></span></dt><dd><p>
+               A base class for implementing <code class="code">InjectionTarget</code> which forwards all calls to <code class="code">delegate()</code>.
+            </p></dd><dt><span class="term"><code class="code">ForwardingObserverMethod</code></span></dt><dd><p>
+               A base class for implementing <code class="code">ObserverMethod</code> which forwards all calls to <code class="code">delegate()</code>.
+            </p></dd><dt><span class="term"><code class="code">ImmutableBean</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) bean, whose constructor will substitute specification defaults if
+               <code class="code">null</code> is passed for a particular attribute. An implementation of 
+               <code class="code">ContextualLifecycle</code> may be registered to receive lifecycle callbacks.
+            </p></dd><dt><span class="term"><code class="code">ImmutableInjectionPoint</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) injection point.
+            </p></dd><dt><span class="term"><code class="code">ImmutableNarrowingBean</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) narrowing bean. Narrowing beans allow you to build a general purpose
+               bean (likely a producer method), and register it for a narrowed type (or qualifiers).
+            </p></dd><dt><span class="term"><code class="code">ImmutablePassivationCapableBean</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) bean, whose constructor will substitute specification defaults if
+               <code class="code">null</code> is passed for a particular attribute. An implementation of 
+               <code class="code">ContextualLifecycle</code> may be registered to receive lifecycle callbacks. The bean implements
+               <code class="code">PassivationCapable</code>, and an id must be provided.
+            </p></dd><dt><span class="term"><code class="code">ImmutablePassivationCapableNarrowingBean</code></span></dt><dd><p>
+               An immutable (and hence thread-safe) narrowing bean. Narrowing beans allow you to build a general purpose
+               bean (likely a producer method), and register it for a narrowed type (or qualifiers). The bean implements
+               <code class="code">PassivationCapable</code>, and an id must be provided.
+            </p></dd><dt><span class="term"><code class="code">NarrowingBeanBuilder</code></span></dt><dd><p>
+               A builder for creating immutable narrowing beans which can read the type and annotations from an 
+               <code class="code">AnnotatedType</code>.
+            </p></dd></dl></div><p>
+      The use of these classes is in general trivially understood with an understanding of basic programming patterns
+      and the CDI specification, so no in depth explanation is provided here. The JavaDoc for each class and method 
+      provides more detail.
+   </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="properties"/>Chapter 10. Properties</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e792">10.1. Working with properties</a></span></dt><dt><span class="section"><a href="#d0e951">10.2. Querying for properties</a></span></dt><dt><span class="section"><a href="#d0e968">10.3. Property Criteria</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e985">10.3.1. AnnotatedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1010">10.3.2. NamedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1024">10.3.3. TypedPropertyCriteria</a></span></dt><dt><span class="section"><a href="#d0e1038">10.3.4. Creating a custom property criteria</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e1054">10.4. Fetching the results</a></span></dt></dl></div><p>
+      Properties are a convenient way of locating and working with 
+      <a class="ulink" href="http://en.wikipedia.org/wiki/JavaBean">JavaBean</a> properties. They can be used with properties 
+      exposed via a getter/setter method, or directly via the field of a bean, providing a uniform interface that allows
+      you all properties in the same way. 
+   </p><p>
+      Property queries allow you to interrogate a class for properties which match certain criteria.
+   </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e792"/>10.1. Working with properties</h2></div></div></div><p>
+         The <code class="code">Property&lt;V&gt;</code> interface declares a number of methods for interacting with bean properties.  
+         You can use these methods to read or set the property value, and read the property type information. Properties
+         may be readonly. 
+      </p><div class="table"><a id="d0e800"/><p class="title"><b>Table 10.1. Property methods</b></p><div class="table-contents"><table summary="Property methods" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th align="center">
+                     <p>Method</p>
+                  </th><th align="center">
+                     <p>Description</p>
+                  </th><td class="auto-generated"> </td></tr></thead><tbody><tr><td>
+                     <p>
+                        <code class="code">String getName();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Returns the name of the property.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">Type getBaseType();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Returns the property type.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">Class&lt;V&gt; getJavaClass();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Returns the property class.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">AnnotatedElement getAnnotatedElement();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Returns the annotated element  -either the <code class="code">Field</code> or
+                        <code class="code">Method</code> that the property is based on.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">V getValue();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Returns the value of the property.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">void setValue(V value);</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Sets the value of the property.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">Class&lt;?&gt; getDeclaringClass();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Gets the class declaring the property.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr><tr><td>
+                     <p>
+                        <code class="code">boolean isReadOnly();</code>
+                     </p>
+                  </td><td>
+                     <p>
+                        Check if the property can be written as well as read.
+                     </p>
+                  </td><td class="auto-generated"> </td></tr></tbody></table></div></div><br class="table-break"/><p>
+         Given a class with two properties, <code class="code">personName</code> and <code class="code">postcode</code>:'
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">Person</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">PersonName</span><span class="java_plain">&nbsp;personName</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Address</span><span class="java_plain">&nbsp;address</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;setPostcode</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;postcode</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;address</span><span class="java_separator">.</span><span class="java_plain">setPostcode</span><span class="java_separator">(</span><span class="java_plain">postcode</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;getPostcode</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;address</span><span class="java_separator">.</span><span class="java_plain">getPostcode</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+         You can create two properties:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><!-- <br/> --><span class="java_type">Property</span><!-- <br/> --><span class="java_operator">&lt;</span><!-- <br/> --><span class="java_type">PersonName</span><!-- <br/> --><span class="java_operator">&gt;</span><!-- <br/> --><span class="java_plain">&nbsp;personNameProperty&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">Properties</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">createProperty</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">Person</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">getField</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_literal">&quot;personName&quot;</span><!-- <br/> --><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Property</span><span class="java_operator">&lt;</span><span class="java_type">String</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;postcodeProperty&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_type">Properties</span><span class="java_separator">.</span><span class="java_plain">createProperty</span><span class="java_separator">(</span><span class="java_type">Person</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">.</span><span class="java_plain">getMethod</span><span class="java_separator">(</span><span class="java_literal">&quot;getPostcode&quot;</span><span class="java_separator">));</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e951"/>10.2. Querying for properties</h2></div></div></div><p>
+         To create a property query, use the <code class="code">PropertyQueries</code> class to create a new
+         <code class="code">PropertyQuery</code> instance:
+      </p><pre class="programlisting">
+   PropertyQuery&lt;?&gt; query = PropertyQueries.createQuery(Foo.class);</pre><p>
+         If you know the type of the property that you are querying for, you can specify it via a type parameter:
+      </p><pre class="programlisting">   PropertyQuery&lt;String&gt; query = PropertyQueries.&lt;String&gt;createQuery(identityClass);</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e968"/>10.3. Property Criteria</h2></div></div></div><p>
+         Once you have created the <code class="code">PropertyQuery</code> instance, you can add search criteria.  Weld Extensions
+         provides three built-in criteria types, and it is very easy to add your own.  A criteria is added to a query via the
+         <code class="code">addCriteria()</code> method.  This method returns an instance of the <code class="code">PropertyQuery</code>,
+         so multiple <code class="code">addCriteria()</code> invocations can be stacked.
+      </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e985"/>10.3.1. AnnotatedPropertyCriteria</h3></div></div></div><p>
+            This criteria is used to locate bean properties that are annotated with a certain annotation type. For example, take
+            the following class:
+         </p><pre class="programlisting">
+   public class Foo {  
+      private String accountNumber;
+      private @Scrambled String accountPassword;    
+      private String accountName;    
+   }</pre><p>
+            To query for properties of this bean annotated with <code class="code">@Scrambled</code>, you can use an 
+            <code class="code">AnnotatedPropertyCriteria</code>, like so:
+         </p><pre class="programlisting">   PropertyQuery&lt;String&gt; query = PropertyQueries.&lt;String&gt;createQuery(Foo.class)
+      .addCriteria(new AnnotatedPropertyCriteria(Scrambled.class));</pre><p>
+            This query matches the <code class="code">accountPassword</code> property of the <code class="code">Foo</code> bean.
+         </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e1010"/>10.3.2. NamedPropertyCriteria</h3></div></div></div><p>
+            This criteria is used to locate a bean property with a particular name. Take the following class:
+         </p><pre class="programlisting">public class Foo {
+   public String getBar() {
+      return "foobar";
+   }
+}</pre><p>
+            The following query will locate properties with a name of <code class="code">"bar"</code>:
+         </p><pre class="programlisting">   PropertyQuery&lt;String&gt; query = PropertyQueries.&lt;String&gt;createQuery(Foo.class)
+      .addCriteria(new NamedPropertyCriteria("bar"));</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e1024"/>10.3.3. TypedPropertyCriteria</h3></div></div></div><p>
+            This criteria can be used to locate bean properties with a particular type.
+         </p><pre class="programlisting">public class Foo {
+   private Bar bar;
+}</pre><p>
+            The following query will locate properties with a type of <code class="code">Bar</code>:
+         </p><pre class="programlisting">PropertyQuery&lt;Bar&gt; query = PropertyQueries.&lt;Bar&gt;createQuery(Foo.class)
+      .addCriteria(new TypedPropertyCriteria(Bar.class));</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e1038"/>10.3.4. Creating a custom property criteria</h3></div></div></div><p>
+            To create your own property criteria, simply implement the 
+            <code class="code">org.jboss.weld.extensions.util.properties.query.PropertyCriteria</code> interface, which declares the 
+            two methods <code class="code">fieldMatches()</code> and <code class="code">methodMatches</code>. In the following example, our 
+            custom criteria implementation can be used to locate whole number properties:
+         </p><pre class="programlisting">public class WholeNumberPropertyCriteria implements PropertyCriteria {
+   public boolean fieldMatches(Field f) {
+      return f.getType() == Integer.class || f.getType() == Integer.TYPE.class ||
+             f.getType() == Long.class || f.getType() == Long.TYPE.class ||
+             f.getType() == BigInteger.class;
+   }   
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Docs : " />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Docs</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/conventions/docs">View on GitHub</a>
-
-          <h1 id="project_title">Docs</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/conventions/docs/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/conventions/docs/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Docs maintained by <a href="https://github.com/conventions">conventions</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+   boolean methodMatches(Method m) {
+      return m.getReturnType() == Integer.class || m.getReturnType() == Integer.TYPE.class ||
+             m.getReturnType() == Long.class || m.getReturnType() == Long.TYPE.class ||
+             m.getReturnType() == BigInteger.class;
+   }
+}</pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e1054"/>10.4. Fetching the results</h2></div></div></div><p>
+         After creating the <code class="code">PropertyQuery</code> and setting the criteria, the query can be executed by invoking
+         either the <code class="code">getResultList()</code> or <code class="code">getFirstResult()</code> methods.  The 
+         <code class="code">getResultList()</code> method returns a <code class="code">List</code> of <code class="code">Property</code> objects,
+         one for each matching property found that matches all the specified criteria:
+      </p><pre class="programlisting">   List&lt;Property&lt;String&gt;&gt; results = PropertyQueries.&lt;String&gt;createQuery(Foo.class)
+     .addCriteria(TypedPropertyCriteria(String.class))
+     .getResultList();</pre><p>
+         If no matching properties are found, <code class="code">getResultList()</code> will return an empty <code class="code">List</code>. 
+         If you know that the query will return exactly one result, you can use the <code class="code">getFirstResult()</code> method
+         instead:
+      </p><pre class="programlisting">   Property&lt;String&gt; result = PropertyQueries.&lt;String&gt;createQuery(Foo.class)
+      .addCriteria(NamedPropertyCriteria("bar"))
+      .getFirstResult();</pre><p>
+         If no properties are found, then <code class="code">getFirstResult()</code> will return null.  Alternatively, if more than one
+         result is found, then <code class="code">getFirstResult()</code> will return the first property found.
+      </p><p>
+         Alternatively, if you know that the query will return exactly one result, and you want to assert that assumption is true,
+         you can use the <code class="code">getSingleResult()</code> method instead:
+      </p><pre class="programlisting">   Property&lt;String&gt; result = PropertyQueries.&lt;String&gt;createQuery(Foo.class)
+      .addCriteria(NamedPropertyCriteria("bar"))
+      .getSingleResult();</pre><p>
+         If no properties are found, or more than one property is found, then <code class="code">getSingleResult()</code> will throw an
+         exception. Otherwise, <code class="code">getSingleResult()</code> will return the sole property found.
+      </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part3"/>Part III. Configuration Extensions for Framework Authors</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#unwraps">11. Unwrapping Producer Methods</a></span></dt><dt><span class="chapter"><a href="#defaultbeans">12. Default Beans</a></span></dt><dt><span class="chapter"><a href="#genericbeans">13. Generic Beans</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e1253">13.1. Using generic beans</a></span></dt><dt><span class="section"><a href="#d0e1290">13.2. Defining Generic Beans</a></span></dt></dl></dd><dt><span class="chapter"><a href="#servicehandler">14. Service Handler</a></span></dt></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="unwraps"/>Chapter 11. Unwrapping Producer Methods</h2></div></div></div><p>
+      Unwrapping producer methods allow you to create injectable objects that have "self-managed"" lifecycles, and are 
+      particularly useful if you have need a bean whose lifecycle does not exactly match one of the lifecycle of one of
+      the existing scopes. The lifecycle of the bean is are managed by the bean that defines the producer method, and 
+      changes to the unwrapped object are immediately visible to all clients.
+   </p><p>
+      You can declare a method to be an unwrapping producer method by annotating it <code class="code">@Unwraps</code>. The return 
+      type of the managed producer must be proxyable (see Section 5.4.1 of the CDI specification, "Unproxyable bean 
+      types"). Every time a method is called on unwrapped object the invocation is forwarded to the result of calling
+      the unwrapping producer method - the unwrapped object.
+   </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important</h2><p>
+         Weld Extensions implements this by injecting a proxy rather than the original object. Every invocation on the
+         injected proxy will cause the unwrapping producer method to be invoked to obtain the instance on which to 
+         invoke the method called. Weld Extensions will then invoke the method on unwrapped instance. 
+      </p><p>
+         Because of this, it is very important the producer method is lightweight.
+      </p></div><p>
+      For example consider a permission manager (that manages the current permission), and a security manager (that 
+      checks the current permission level). Any changes to permission in the permission manager are immediately visible
+      to the security manager. 
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">SessionScoped</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">PermissionManager</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Permission</span><span class="java_plain">&nbsp;permission</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;setPermission</span><span class="java_separator">(</span><span class="java_type">Permission</span><span class="java_plain">&nbsp;permission</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">permission</span><span class="java_operator">=</span><span class="java_plain">permission</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Unwraps</span><span class="java_plain">&nbsp;@</span><span class="java_type">Current</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Permission</span><span class="java_plain">&nbsp;getPermission</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">permission</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">SessionScoped</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">SecurityManager</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Current</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Permission</span><span class="java_plain">&nbsp;permission</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">boolean</span><span class="java_plain">&nbsp;checkAdminPermission</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;permission</span><span class="java_separator">.</span><span class="java_plain">getName</span><span class="java_separator">().</span><span class="java_plain">equals</span><span class="java_separator">(</span><span class="java_literal">&quot;admin&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      When <code class="code">permission.getName()</code> is called, the unwrapped Permission forwards the invocation of 
+      <code class="code">getName()</code> to the result of calling <code class="code">PermissionManager.getPermission()</code>.
+   </p><p>
+      For example you could raise the permission level before performing a sensitive operation, and then lower it again 
+      afterwards:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">public</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">SomeSensitiveOperation</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">PermissionManager</span><span class="java_plain">&nbsp;permissionManager</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;perform</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">try</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permissionManager</span><span class="java_separator">.</span><span class="java_plain">setPermission</span><span class="java_separator">(</span><span class="java_type">Permissions</span><span class="java_separator">.</span><span class="java_plain">ADMIN</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">&nbsp;</span><span class="java_type">Do</span><span class="java_plain">&nbsp;some&nbsp;sensitive&nbsp;operation</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span><span class="java_plain">&nbsp;</span><span class="java_keyword">finally</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permissionManager</span><span class="java_separator">.</span><span class="java_plain">setPermission</span><span class="java_separator">(</span><span class="java_type">Permissions</span><span class="java_separator">.</span><span class="java_plain">USER</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      Unwrapping producer methods can have parameters injected, including <code class="code">InjectionPoint</code> (which repreents)
+      the calling method.
+   </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="defaultbeans"/>Chapter 12. Default Beans</h2></div></div></div><p>
+      Suppose you have a situation where you want to provide a default implementation of a particular service and allow
+      the user to override it as needed. Although this may sound like a job for an alternative, they have some 
+      restrictions that may make them undesirable in this situation. If you were to use an alternative it would require
+      an entry in every <code class="code">beans.xml</code> file in an application.
+   </p><p>
+      Developers consuming the extension will have to open up the any jar file which references the default bean, and 
+      edit the <code class="code">beans.xml</code> file within, in order to override the service. This is where default beans come 
+      in.
+   </p><p>
+      Default beans allow you to create a default bean with a specified type and set of qualifiers. If no other bean is 
+      installed that has the same type and qualifiers, then the default bean will be installed. 
+   </p><p>
+      Let's take a real world example - a module that allows you to evaluate EL (something that Weld Extensions 
+      provides!). If JSF is available we want to use the <code class="code">FunctionMapper</code> provided by the JSF implementation
+      to resolve functions, otherwise we just want to use a a default <code class="code">FunctionMapper</code> implementation that 
+      does nothing. We can achieve this as follows:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">DefaultBean</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_plain">type&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">FunctionMapper</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">Mapper</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">FunctionMapperImpl</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">FunctionMapper</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Method</span><span class="java_plain">&nbsp;resolveFunction</span><span class="java_separator">(</span><span class="java_type">String</span><span class="java_plain">&nbsp;prefix</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;localName</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      And in the JSF module:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">FunctionMapperProvider</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Mapper</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">FunctionMapper</span><span class="java_plain">&nbsp;produceFunctionMapper</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_type">FacesContext</span><span class="java_separator">.</span><span class="java_plain">getCurrentInstance</span><span class="java_separator">().</span><span class="java_plain">getELContext</span><span class="java_separator">().</span><span class="java_plain">getFunctionMapper</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      If <code class="code">FunctionMapperProvider</code> is present then it will be used by default, otherwise the default 
+      <code class="code">FunctionMapperImpl</code> is used.
+   </p><p>
+      A producer method or producer field may be defined to be a default producer by placing the
+      <code class="code">@DefaultBean</code> annotation on the producer. For example:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">CacheManager</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+   
+   @DefaultBean(Cache.class)
+   Cache getCache() {
+      ...
+   }
+     
+}</pre><p>
+      Any producer methods or producer fields declared on a default managed bean are automatically registered as default
+      producers, with <code class="code">Method.getGenericReturnType()</code> or <code class="code">Field.getGenericType()</code> determining the
+      type of the default producer. The default producer type can be overridden by specifying <code class="code">@DefaultBean</code> 
+      on the producer method or field. 
+   </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="genericbeans"/>Chapter 13. Generic Beans</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e1253">13.1. Using generic beans</a></span></dt><dt><span class="section"><a href="#d0e1290">13.2. Defining Generic Beans</a></span></dt></dl></div><p>
+      Many common services and API's require the use of more than just one class. When exposing these services via CDI,
+      it would be time consuming and error prone to force the end developer to provide producers for all the different 
+      classes required. Generic beans provide a solution, allowing a framework author to provide a set of related 
+      beans, one for each single configuration point defined by the end developer. The configuration points specifies 
+      the qualifiers which are inherited by all beans in the set.
+   </p><p>
+      To illustrate the use of generic beans, we'll use the following example. Imagine we are writing an extension to 
+      integrate our custom messaging solution "ACME Messaging" with CDI. The ACME Messaging API for sending messages 
+      consists of several interfaces:
+   </p><div class="variablelist"><dl><dt><span class="term"><code class="code">MessageQueue</code></span></dt><dd>The message queue, onto which messages can be placed, and acted upon by ACME Messaging</dd><dt><span class="term"><code class="code">MessageDispatcher</code></span></dt><dd>The dispatcher, responsible for placing messages created by the user onto the queue</dd><dt><span class="term"><code class="code">DispatcherPolicy</code></span></dt><dd>The dispatcher policy, which can be used to tweak the dispatch policy by the client</dd><dt><span class="term"><code class="code">MessageSystemConfiguration</code></span></dt><dd>The messaging system configuration</dd></dl></div><p>
+      We want to be able to create as many <code class="code">MessageQueue</code> configurations's as they need, however we do not 
+      want to have to declare each producer and the associated plumbing for every queue. Generic beans are an ideal 
+      solution to this problem.
+   </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e1253"/>13.1. Using generic beans</h2></div></div></div><p>
+         Before we take a look at creating generic beans, let's see how we will use them.
+      </p><p>
+         Generic beans are configured via producer methods and fields. We want to create two queues to interact with 
+         ACME Messaging, a default queue that is installed with qualifier <code class="code">@Default</code> and a durable queue that
+         has qualifier <code class="code">@Durable</code>:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">MyMessageQueues</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">ACMEQueue</span><span class="java_separator">(</span><span class="java_literal">&quot;defaultQueue&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageSystemConfiguration</span><span class="java_plain">&nbsp;defaultQueue&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">MessageSystemConfiguration</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span><span class="java_plain">&nbsp;@</span><span class="java_type">Durable</span><span class="java_plain">&nbsp;@</span><span class="java_type">ConversationScoped</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">ACMEQueue</span><span class="java_separator">(</span><span class="java_literal">&quot;durableQueue&quot;</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageSystemConfiguration</span><span class="java_plain">&nbsp;producerDefaultQueue</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageSystemConfiguration</span><span class="java_plain">&nbsp;config&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">MessageSystemConfiguration</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config</span><span class="java_separator">.</span><span class="java_plain">setDurable</span><span class="java_separator">(</span><span class="java_literal">true</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;config</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+         Looking first at the default queue, in addition to the <code class="code">@Produces</code> annotation, the generic 
+         configuration annotation <code class="code">ACMEQueue</code>, is used, which defines this to be a generic configuration 
+         point for ACME messaging (and cause a whole set of beans to be created, exposing for example the dispatcher).
+         The generic configuration annotation specifies the queue name, and the value of the producer field defines the
+         messaging system's configuration (in this case we use all the defaults). As no qualifier is placed on the
+         definition, <code class="code">@Default</code> qualifier is inherited by all beans in the set.
+      </p><p>
+         The durable queue is defined as a producer method (as we want to alter the configuration of the queue before
+         having Weld Extensions use it). Additionally, it specifies that the generic beans created (that allow for 
+         their scope to be overridden) should be placed in the conversation scope. Finally, it specifies that the 
+         generic beans created should inherit the qualifier <code class="code">@Durable</code>.
+      </p><p>
+         We can now inject our generic beans as normal, using the qualifiers specified on the configuration point:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">MessageLogger</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageDispatcher</span><span class="java_plain">&nbsp;dispatcher</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;logMessage</span><span class="java_separator">(</span><span class="java_type">Payload</span><span class="java_plain">&nbsp;payload</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Add&nbsp;metaddata&nbsp;to&nbsp;the&nbsp;message&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Collection</span><span class="java_operator">&lt;</span><span class="java_type">Header</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;headers&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">ArrayList</span><span class="java_operator">&lt;</span><span class="java_type">Header</span><span class="java_operator">&gt;</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Message</span><span class="java_plain">&nbsp;message&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Message</span><span class="java_separator">(</span><span class="java_plain">headers</span><span class="java_separator">,</span><span class="java_plain">&nbsp;payload</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dispatcher</span><span class="java_separator">.</span><span class="java_plain">send</span><span class="java_separator">(</span><span class="java_plain">message</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">DurableMessageLogger</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Durable</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageDispatcher</span><span class="java_plain">&nbsp;dispatcher</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Durable</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">DispatcherPolicy</span><span class="java_plain">&nbsp;policy</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*&nbsp;Tweak&nbsp;the&nbsp;dispatch&nbsp;policy&nbsp;to&nbsp;enable&nbsp;duplicate&nbsp;removal&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;tweakPolicy</span><span class="java_separator">(</span><span class="java_plain">@</span><span class="java_type">Durable</span><span class="java_plain">&nbsp;</span><span class="java_type">DispatcherPolicy</span><span class="java_plain">&nbsp;policy</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;policy</span><span class="java_separator">.</span><span class="java_plain">removeDuplicates</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;logMessage</span><span class="java_separator">(</span><span class="java_type">Payload</span><span class="java_plain">&nbsp;payload</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e1290"/>13.2. Defining Generic Beans</h2></div></div></div><p>
+         Having seen how we use the generic beans, let's look at how to define them. We start by creating the generic 
+         configuration annotation:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Retention</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_plain">RUNTIME</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">GenericType</span><span class="java_separator">(</span><span class="java_type">MessageSystemConfiguration</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">ACMEQueue</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;name</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+         The generic configuration annotation a defines the generic configuration type (in this case 
+         <code class="code">MessageSystemConfiguration</code>); the type produced by the generic configuration point must be of this 
+         type. Additionally it defines the member <code class="code">name</code>, used to provide the queue name. 
+      </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important</h2><p>
+            All generic configuration annotations should have at least one member. Each configuration must specify a 
+            unique value for this member.
+         </p></div><p>
+         Next, we define the queue manager bean. The manager has one producer method, which creates the queue from the
+         configuration:
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">GenericConfiguration</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">ACMEQueue</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">)</span><!-- <br/> --><span class="java_plain">&nbsp;@</span><!-- <br/> --><span class="java_type">ApplyScope</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">QueueManager</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Generic</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageSystemConfiguration</span><span class="java_plain">&nbsp;systemConfig</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">ACMEQueue</span><span class="java_plain">&nbsp;config</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageQueueFactory</span><span class="java_plain">&nbsp;factory</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">PostConstruct</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;init</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factory&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;systemConfig</span><span class="java_separator">.</span><span class="java_plain">createMessageQueueFactory</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span><span class="java_plain">&nbsp;@</span><span class="java_type">ApplyScope</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">MessageQueue</span><span class="java_plain">&nbsp;messageQueueProducer</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;factory</span><span class="java_separator">.</span><span class="java_plain">createMessageQueue</span><span class="java_separator">(</span><span class="java_plain">config</span><span class="java_separator">.</span><span class="java_plain">name</span><span class="java_separator">());</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      The bean is declared to be a generic bean for the <code class="code">@ACMEQueue</code> generic configuration type annotation
+      by placing the <code class="code">@GenericConfiguration</code> annotation on the class. We can inject the generic configuration
+      type using the <code class="code">@Generic</code> qualifier, as well the annotation used to define the queue.
+   </p><p>
+      Placing the <code class="code">@ApplyScope</code> annotation on the bean causes it to inherit the scope from the generic 
+      configuration point. As creating the queue factory is a heavy operation we don't want to do it more than 
+      necessary.
+   </p><p>
+      Having created the <code class="code">MessageQueueFactory</code>, we can then expose the queue, obtaining it's name from the
+      generic configuration annotation. Additionally, we define the scope of the producer method to be inherited from 
+      the generic configuration point by placing the annotation <code class="code">@ApplyScope</code> on the producer method. The 
+      producer method automatically inherits the qualifiers specified by the generic configuration point.
+   </p><p>
+      Finally we define the message manager, which exposes the message dispatcher, as well as allowing the client to
+      inject an object which exposes the policy the dispatcher will use when enqueing messages. The client can then
+      tweak the policy should they wish.
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Generic</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">ACMEQueue</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">MessageManager</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Generic</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageQueue</span><span class="java_plain">&nbsp;queue</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span><span class="java_plain">&nbsp;@</span><span class="java_type">ApplyScope</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">MessageDispatcher</span><span class="java_plain">&nbsp;messageDispatcherProducer</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;queue</span><span class="java_separator">.</span><span class="java_plain">createMessageDispatcher</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Produces</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">DispatcherPolicy</span><span class="java_plain">&nbsp;getPolicy</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;queue</span><span class="java_separator">.</span><span class="java_plain">getDispatcherPolicy</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="servicehandler"/>Chapter 14. Service Handler</h2></div></div></div><p>
+      The service handler facility allow you to declare interfaces and abstract classes as automatically implemented 
+      beans. Any call to an abstract method on the interface or abstract class will be forwarded to the invocation 
+      handler for processing.
+   </p><p>
+      If you wish to convert some non-type-safe lookup to a type-safe lookup, then service handlers may be useful for
+      you, as they allow the end user to map a lookup to a method using domain specific annotations.
+   </p><p>
+      We will work through using this facility, taking the example of a service which can execute JPA queries upon
+      abstract method calls. First we define the annotation used to mark interfaces as automatically implemented beans.
+      We meta-annotate it, defining the invocation handler to use:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">ServiceHandler</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">QueryHandler</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">Retention</span><span class="java_separator">(</span><span class="java_plain">RUNTIME</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">Target</span><span class="java_separator">({</span><span class="java_plain">TYPE</span><span class="java_separator">})</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">QueryService</span><span class="java_plain">&nbsp;</span><span class="java_separator">{}</span></pre><p>
+      We now define an annotation which provides the query to execute:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">Retention</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_plain">RUNTIME</span><!-- <br/> --><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_type">Target</span><span class="java_separator">({</span><span class="java_plain">METHOD</span><span class="java_separator">})</span>
+<!--  --><br/><span class="java_plain">@</span><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">Query</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;value</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      And finally, the invocation handler, which simply takes the query, and executes it using JPA, returning the 
+      result:
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">QueryHandler</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;</span><span class="java_type">EntityManager</span><span class="java_plain">&nbsp;em</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">AroundInvoke</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">Object</span><span class="java_plain">&nbsp;handle</span><span class="java_separator">(</span><span class="java_type">InvocationContext</span><span class="java_plain">&nbsp;ctx</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;em</span><span class="java_separator">.</span><span class="java_plain">createQuery</span><span class="java_separator">(</span><span class="java_plain">ctx</span><span class="java_separator">.</span><span class="java_plain">getMethod</span><span class="java_separator">().</span><span class="java_plain">getAnnotation</span><span class="java_separator">(</span><span class="java_type">Query</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">).</span><span class="java_plain">value</span><span class="java_separator">()).</span><span class="java_plain">getResultList</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">}</span></pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><div class="itemizedlist"><ul><li>
+         The invocation handler is similar to an intercepter. It must have an <code class="code">@AroundInvoke</code> method that 
+         returns and object and takes an <code class="code">InvocationContext</code> as an argument.
+      </li><li>
+         Do not call <code class="code">InvocationContext.proceed()</code> as there is no method to proceed to.
+      </li><li>
+         Injection is available into the handler class, however the handler is not a bean definition, so observer 
+         methods, producer fields and producer methods defined on the handler will not be registered.
+      </li></ul></div></div><p>Finally, we can define (any number of) interfaces which define our queries:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">@</span><!-- <br/> --><span class="java_type">QueryService</span>
+<!--  --><br/><span class="java_keyword">interface</span><span class="java_plain">&nbsp;</span><span class="java_type">UserQuery</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Query</span><span class="java_separator">(</span><span class="java_literal">&quot;select&nbsp;u&nbsp;from&nbsp;User&nbsp;u&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">List</span><span class="java_operator">&lt;</span><span class="java_type">User</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;getAllUsers</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">}</span></pre><p>
+      Finally, we can inject the query interface, and call methods, automatically executing the JPA query.
+   </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">class</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">UserListManager</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">UserQuery</span><span class="java_plain">&nbsp;userQuery</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">List</span><span class="java_operator">&lt;</span><span class="java_type">User</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;users</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;@</span><span class="java_type">PostConstruct</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;create</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users</span><span class="java_operator">=</span><span class="java_plain">userQuery</span><span class="java_separator">.</span><span class="java_plain">getAllUsers</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_separator">}</span></pre></div></div></div></body></html>
