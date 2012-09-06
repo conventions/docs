@@ -10,12 +10,12 @@ body {
 a {text-decoration:none;}
 
 h1 {
-    color:#885324;
+    color:#FF0000;
     background-image:none;/* page logo here */
 }
 
 /* Use sfwk colour for titles */
-h2, h3, h4, h5, h6 {color:#BA5624;}
+h2, h3, h4, h5, h6 {color:#B30808;}
 
 div.note {
     background-color:#849092;
@@ -66,10 +66,8 @@ div.note a:visited, div.tip a:visited, div.important a:visited, div.caution a:vi
     padding:2px 5px;
     white-space:nowrap;
 }
-div.titlepage{
-    height: 100px!important;
-    margin-bottom:40px; 
-}
+
+ 
 
 div.titlepage hr{
  display:none;
