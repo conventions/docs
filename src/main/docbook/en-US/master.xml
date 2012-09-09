@@ -2,56 +2,63 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.35//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"  [ ]>
 <book lang="en">
-        
-   <title>Conventions Framework Documentation</title>   
     
+   <bookinfo>
+     <releaseinfo>Conventions 0.9.7 - September 2012</releaseinfo>
+     <title>Conventions Framework Documentation</title>   
+   </bookinfo>
+   <subtitle>Documentation early draft</subtitle>
    <preface>
       <title>Introduction</title>
       <para>
-         Weld Extensions is a library of Generally Useful Stuff (tm), particularly if you are
-         developing an application based on CDI (JSR-299 Java Contexts and Dependency Injection),
-         or a CDI based library or framework.
+         <emphasis>Conventions</emphasis> is an integrator framework of Java EE technologies with the objective
+         to easy the development of enterprise rich web applications. The framework leverages 
+         other frameworks such as <emphasis>Hibernate</emphasis>, <emphasis>Primefaces</emphasis> and <emphasis>CODI</emphasis> to delivery solutions to 
+         common problems like exception handling, true pagination, helper UI components, 
+         internationalization, annotated queries etc... 
       </para>
-      
       <para>
-         This guide is split into three parts. <xref linkend="part1"/> details extensions and 
-         utilities which are likely to be of use to any developer using CDI; 
-         <xref linkend="part2"/> describes utilities which are likely to be of
-         use to developers writing libraries and frameworks that work with CDI; <xref linkend="part3" /> discusses
-         extensions which can be used to implement configuration for a framework
+         This guide is divided into four parts organized by <emphasis>Conventions</emphasis> archctectural
+         layers plus one part for general utilities components provided by the framework and one more part for <emphasis>Conventions Scaffolding</emphasis> a code generation tool based on JBoss Forge. 
+        <xref linkend="part1"/> is represented by conventions managed beans which are wrappers to CDI beans; 
+        <xref linkend="part2"/> shows how the framework is integrated with <emphasis>CDI</emphasis>, <emphasis>Hibernate</emphasis> and <emphasis>EJB</emphasis> to provide database operations; <xref linkend="part3" /> discusses the view layer and its UI helper components;
+        <xref linkend="part4"/> talks about the model layer and its helper classes; <xref linkend="part5" /> walks throught utilities components such as properties provider, security helper, anotated queries, i18n, paginator and so on;
+                                                                                    <xref linkend="part6"/> Demostrates Conventions Scaffold, a tool based on 
+                                                                                    <link linkend="http://forge.jboss.org/">JBoss Forge</link> to enable boilerplate code generation for 
+                                                                                    <emphasis>Conventions Framework</emphasis>.
       </para>
    </preface>
    
    <xi:include href="gettingstarted.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 
    <part id="part1">
-      
-      <title>Extensions and Utilities for Developers</title>
-      <xi:include href="programmingmodel.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="annotationliterals.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="elextensions.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="resourceloading.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="logging.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+      <title>The controller layer</title>
+      <xi:include href="controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
    </part>
    
    <part id="part2">
-      <title>Utilities for Framework Authors</title>
-      <xi:include href="typeutilities.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="beanmanagerprovider.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="beanutilities.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="properties.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+      <title>The service layer</title>
+      <xi:include href="service.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
    </part>
    
    <part id="part3">
-      <title>Configuration Extensions for Framework Authors</title>
-      <xi:include href="unwraps.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="defaultbeans.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="genericbeans.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-      <xi:include href="servicehandler.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+      <title>The view layer</title>
+      <xi:include href="view.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
    </part>
 
+   <part id="part4">
+      <title>The model layer</title>
+   </part>
+
+    <part id="part5">
+      <title>General utilities</title>
+      
+   </part>
    
-   
+    <part id="part6">
+      <title>Scaffolding</title>
+      
+   </part>
 
    <toc/>
    

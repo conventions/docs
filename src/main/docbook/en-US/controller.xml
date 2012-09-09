@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+  <chapter id="controller-chp">
+      
+      <title>Conventions Controllers </title>
+      <para>Controllers are represented by CDI beans and the framework count
+            with four flavors of them, we will see each one in detail.
+      </para>
+        <section>
+            <title>
+               BaseMBean
+           </title>
+            <para>
+                TODO Describe BaseMBean
+            </para>
+        </section>
+         <section>
+            <title>
+               StateMBean
+           </title>
+            <para>
+                TODO Describe StateMBean
+            </para>
+        </section>
+         <section>
+            <title>
+               ModalMBean
+           </title>
+            <para>
+                TODO Describe ModalMBean
+            </para>
+        </section>
+         <section>
+            <title>
+               ConversationalMBean
+           </title>
+            <para>
+                TODO Describe ConversationalMBean
+            </para>
+        </section>
+        <toc/>
+  </chapter>
+
+    
+ 
