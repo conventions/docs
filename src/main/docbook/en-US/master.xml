@@ -14,49 +14,30 @@
          <emphasis>Conventions</emphasis> is an integrator framework of Java EE technologies with the objective
          to easy the development of enterprise rich web applications. The framework leverages 
          other frameworks such as <emphasis>Hibernate</emphasis>, <emphasis>Primefaces</emphasis> and <emphasis>CODI</emphasis> to delivery solutions to 
-         common problems like exception handling, true pagination, helper UI components, 
+         common problems like cruding, exception handling, true pagination, helper UI components, 
          internationalization, annotated queries etc... 
       </para>
       <para>
-         This guide is divided into four parts organized by <emphasis>Conventions</emphasis> archctectural
-         layers plus one part for general utilities components provided by the framework and one more part for <emphasis>Conventions Scaffolding</emphasis> a code generation tool based on JBoss Forge. 
-        <xref linkend="part1"/> is represented by conventions managed beans which are wrappers to CDI beans; 
-        <xref linkend="part2"/> shows how the framework is integrated with <emphasis>CDI</emphasis>, <emphasis>Hibernate</emphasis> and <emphasis>EJB</emphasis> to provide database operations; <xref linkend="part3" /> discusses the view layer and its UI helper components;
-        <xref linkend="part4"/> talks about the model layer and its helper classes; <xref linkend="part5" /> walks throught utilities components such as properties provider, security helper, anotated queries, i18n, paginator and so on;
-                                                                                    <xref linkend="part6"/> Demostrates Conventions Scaffold, a tool based on 
-                                                                                    <link linkend="http://forge.jboss.org/">JBoss Forge</link> to enable boilerplate code generation for 
-                                                                                    <emphasis>Conventions Framework</emphasis>.
+         This guide is divided into a getting started to setup the framework plus three parts, the first one walks through the framework archecture, the second part shows general utility components such as annotated queries, i18n, exception handling etc... finaly the  
+         last part is reserved to <emphasis>Conventions Scaffolding</emphasis> a code generation tool for <emphasis>Conventions</emphasis> based on JBoss Forge. 
       </para>
    </preface>
    
    <xi:include href="gettingstarted.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 
    <part id="part1">
-      <title>The controller layer</title>
-      <xi:include href="controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+      <title>Conventions Archetecture</title>
+      <xi:include href="archetecture.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
    </part>
    
-   <part id="part2">
-      <title>The service layer</title>
-      <xi:include href="service.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-   </part>
    
-   <part id="part3">
-      <title>The view layer</title>
-      <xi:include href="view.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-   </part>
-
-   <part id="part4">
-      <title>The model layer</title>
-   </part>
-
-    <part id="part5">
+    <part id="part2">
       <title>General utilities</title>
       
    </part>
    
-    <part id="part6">
-      <title>Scaffolding</title>
+    <part id="part3">
+      <title>Conventions Scaffolding</title>
       
    </part>
 

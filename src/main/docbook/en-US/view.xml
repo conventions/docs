@@ -1,184 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-<chapter id="components">
-    <title>Components</title>
-    <para>
-        In this chapter we will cover UI components provided by the framework to easy the development driven by 
-      <emphasis>Conventions</emphasis> standards
-    </para>
-    <para>
-        Conventions framework UI components are available thought the following namespaces:
-        <itemizedlist>
-            <listitem>
-                Composite Components namespace
-                <code> 
-                    xmlns:cc="http://java.sun.com/jsf/composite/components/conventions"  
-                </code>    
-            </listitem>
-            <listitem>
-                Renderer based components namespace
-                <code> 
-                    xmlns:c="http://conventions.org/ui"
-                </code>    
-            </listitem>
-        </itemizedlist>    
+ <section>
+        <title>The View Layer</title>
+        <para>
+            In this section we will cover UI components provided by the framework to easy the development driven by 
+            <emphasis>Conventions</emphasis> standards.
+        </para>
+        <para>
+            Conventions framework UI components are available thought the following namespaces:
+            <itemizedlist>
+                <listitem>
+                    Composite Components namespace
+                    <code> 
+                        xmlns:cc="http://java.sun.com/jsf/composite/components/conventions"  
+                    </code>    
+                </listitem>
+                <listitem>
+                    Renderer based components namespace
+                    <code> 
+                        xmlns:c="http://conventions.org/ui"
+                    </code>    
+                </listitem>
+            </itemizedlist>    
        
-    </para>
-    <section>
-        <title>
-            Add Button
-        </title>
-        <para>
-            TODO describe The addButton is a primefaces commandButton wrapper... 
         </para>
+        <section>
+            <title>
+                Add Button
+            </title>
+            <para>
+                TODO describe The addButton is a primefaces commandButton wrapper... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Edit buttom
+            </title>
+            <para>
+                TODO describe  editButton...
+            </para>
+        </section>
+        <section>
+            <title>
+                Save buttom
+            </title>
+            <para>
+                TODO describe saveButton... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Remove link
+            </title>
+            <para>
+                TODO describe removeLink... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Remove Button
+            </title>
+            <para>
+                TODO describe removeButton... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Reset Button
+            </title>
+            <para>
+                TODO describe  resetButton... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Back Button
+            </title>
+            <para>
+                TODO describe  backButton... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Fiter Button
+            </title>
+            <para>
+                TODO describe filterButton... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Combo
+            </title>
+            <para>
+                TODO describe  combo... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Property key
+            </title>
+            <para>
+                TODO describe propertyKey... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Modal
+            </title>
+            <para>
+                TODO describe  modal... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Modal Button
+            </title>
+            <para>
+                TODO describe modalButton... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Modal Removal
+            </title>
+            <para>
+                TODO describe modalRemoval... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Security Page
+            </title>
+            <para>
+                TODO describe securityPage... 
+            </para>
+        </section>
+        <section>
+            <title>
+                StateItens
+            </title>
+            <para>
+                TODO describe stateItens...  
+            </para>
+        </section>
+        <section>
+            <title>
+                State Pusher
+            </title>
+            <para>
+                TODO describe statePusher...  
+            </para>
+        </section>
+        <section>
+            <title>
+                Datatable
+            </title>
+            <para>
+                TODO describe datatable... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Table Footer
+            </title>
+            <para>
+                TODO describe tableFooter... 
+            </para>
+        </section>
+        <section>
+            <title>
+                Layout Templete
+            </title>
+            <para>
+                TODO describe layout component... 
+            </para>
+        </section>
     </section>
-    <section>
-        <title>
-            Edit buttom
-        </title>
-        <para>
-            TODO describe  editButton...
-        </para>
-    </section>
-    <section>
-        <title>
-            Save buttom
-        </title>
-        <para>
-            TODO describe saveButton... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Remove link
-        </title>
-        <para>
-            TODO describe removeLink... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Remove Button
-        </title>
-        <para>
-            TODO describe removeButton... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Reset Button
-        </title>
-        <para>
-            TODO describe  resetButton... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Back Button
-        </title>
-        <para>
-            TODO describe  backButton... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Fiter Button
-        </title>
-        <para>
-            TODO describe filterButton... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Combo
-        </title>
-        <para>
-            TODO describe  combo... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Property key
-        </title>
-        <para>
-            TODO describe propertyKey... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Modal
-        </title>
-        <para>
-            TODO describe  modal... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Modal Button
-        </title>
-        <para>
-            TODO describe modalButton... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Modal Removal
-        </title>
-        <para>
-            TODO describe modalRemoval... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Security Page
-        </title>
-        <para>
-            TODO describe securityPage... 
-        </para>
-    </section>
-    <section>
-        <title>
-            StateItens
-        </title>
-        <para>
-            TODO describe stateItens...  
-        </para>
-    </section>
-    <section>
-        <title>
-            State Pusher
-        </title>
-        <para>
-            TODO describe statePusher...  
-        </para>
-    </section>
-    <section>
-        <title>
-            Datatable
-        </title>
-        <para>
-            TODO describe datatable... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Table Footer
-        </title>
-        <para>
-            TODO describe tableFooter... 
-        </para>
-    </section>
-    <section>
-        <title>
-            Layout Templete
-        </title>
-        <para>
-            TODO describe layout component... 
-        </para>
-    </section>
-</chapter>
- 
-
-    
- 

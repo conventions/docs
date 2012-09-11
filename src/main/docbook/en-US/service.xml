@@ -1,53 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-  <chapter id="service-chp">
-        <title>Conventions services</title>
-         <para>
-            The services layer links the framework to the backend infrastructure(datatabase for now) via 
-            EJB, PersistenceContext, Hibernate session, transactions(EJB or CODI ones) and CDI contexts and dependency injection.
+  <section>
+        <title>The Service Layer</title>
+        <para>
+            This section shows how the framework is integrated with 
+            <emphasis>CDI</emphasis>, 
+            <emphasis>Hibernate</emphasis> and 
+            <emphasis>EJB</emphasis> to provide database operations through 
+            <emphasis>Conventions Services</emphasis> which are components that link the framework to the backend infrastructure.
         </para>
         <section>
             <title>
-               Stateless Service
-           </title>
+                The Base Service
+            </title>
+            <para>
+                TODO Describe baseService
+            </para>
+        </section>
+        <section>
+            <title>
+                Where is the Dao?
+            </title>
+            <para>
+                TODO Describe BaseDao
+            </para>
+        </section>
+        <section>
+            <title>
+                Stateless Service
+            </title>
             <para>
                 TODO Describe statelessService
             </para>
         </section>
-         <section>
+        <section>
             <title>
-               Stateful Service
-           </title>
+                Stateful Service
+            </title>
             <para>
                 TODO Describe statefulService
             </para>
         </section>
-         <section>
+        <section>
             <title>
-               Custom Service
-           </title>
+                Custom Service
+            </title>
             <para>
                 TODO Describe customService
             </para>
         </section>
-         <section>
+        <section>
             <title>
-               Entity Manager Provider
-           </title>
+                Entity Manager Provider
+            </title>
             <para>
                 TODO Describe EntityManagerProvider
             </para>
         </section>
-         <section>
+        <section>
             <title>
                 Pagination 
-           </title>
+            </title>
             <para>
                 TODO Describe how true pagination works(not the paginator utility component) but focus on ConfigFindPagination overrding
             </para>
         </section>
-  </chapter>
+    </section>
 
     
  
