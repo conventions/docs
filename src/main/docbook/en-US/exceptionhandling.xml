@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+ <chapter>
+        <title>Exception Handling</title>
+        <para>
+            Exception handling is a very important mechanism in enterprise applications that is used for eg. to show 
+            friendly messages to end user when something went wrong.
+            
+            To enable exception handling in <emphasis>Conventions </emphasis> you must add the following lines to your faces-config.xml file:
+            
+             <programlisting role="java">
+      <faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+            <application>
+                 <action-listener>org.conventionsframework.exception.ConventionsActionListenerImpl</action-listener>
+             </application>
+      </faces-config>
+             </programlisting>
+        </para>
+        <section>
+            <title>
+                Business Exception
+            </title>
+            <para>
+                TODO 
+            </para>
+        </section>
+        <section>
+            <title>
+               Creating an error page
+            </title>
+            <para>
+                TODO
+            </para>
+        </section>
+         
+         
+    </chapter>

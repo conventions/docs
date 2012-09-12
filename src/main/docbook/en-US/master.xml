@@ -26,14 +26,25 @@
    <xi:include href="gettingstarted.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 
    <part id="part1">
-      <title>Conventions Archetecture</title>
-      <xi:include href="archetecture.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+      <title>Archetectural Overview</title>
+      
+      <xi:include href="controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    
+      <xi:include href="service.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    
+      <xi:include href="view.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    
+      <xi:include href="model.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
    </part>
    
    
     <part id="part2">
       <title>General utilities</title>
-      
+       <xi:include href="i18n.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+       <xi:include href="exceptionhandling.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+       <xi:include href="security.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+       <xi:include href="properties.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+       <xi:include href="query.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
    </part>
    
     <part id="part3">

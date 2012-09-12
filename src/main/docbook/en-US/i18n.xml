@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+ <chapter>
+        <title>Internationalization</title>
+        <para>
+            In this chapter we will see how <emphasis>Conventions framework</emphasis> provides internationalization. 
+        </para>
+        <section>
+            <title>
+                Configuring the resource bundle
+            </title>
+            <para>
+                TODO 
+            </para>
+        </section>
+        <section>
+            <title>
+               The ResourceBundleProvider component
+            </title>
+            <para>
+                TODO
+            </para>
+        </section>
+        <section>
+            <title>
+                changing the locale
+            </title>
+            <para>
+                TODO  
+            </para>
+        </section>
+        <section>
+            <title>
+                examples
+            </title>
+            <para>
+                TODO examples accessing resourceBundle in page and bean and passing parameters
+            </para>
+        </section>
+         
+    </chapter>

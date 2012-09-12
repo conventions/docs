@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
   
       
- <section>
+ <chapter>
         <title>The Controller Layer</title>
         <para>
             <emphasis>Conventions Controllers</emphasis> are represented by CDI beans and the framework count
@@ -14,7 +14,11 @@
                 BaseMBean
             </title>
             <para>
-                TODO Describe BaseMBean
+                As its name says is the bean for other conventions controllers and it provides the following features:
+                
+                  <itemizedlist>
+                      <listitem>access to the resourceBundle</listitem>
+                  </itemizedlist>    
             </para>
         </section>
         <section>
@@ -41,7 +45,7 @@
                 TODO Describe ConversationalMBean
             </para>
         </section>
-    </section>
+    </chapter>
 
     
  

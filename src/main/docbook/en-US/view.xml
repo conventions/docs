@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
- <section>
+ <chapter>
         <title>The View Layer</title>
         <para>
             In this section we will cover UI components provided by the framework to easy the development driven by 
@@ -177,4 +177,4 @@
                 TODO describe layout component... 
             </para>
         </section>
-    </section>
+    </chapter>
