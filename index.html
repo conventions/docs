@@ -1,77 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Conventions Framework Documentation</title><link rel="stylesheet" href="css/conventionsframework.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="book" lang="en-US"><div class="titlepage"><div><p id="title"><a href="http://www.seamframework.org" class="site_href"><strong>SeamFramework.org</strong></a><a href="http://www.seamframework.org/Documentation" class="doc_href"><strong>Community Documentation</strong></a></p><div><h1 class="title"><a id="d0e1"/>Conventions Framework Documentation</h1></div><div><h2 class="subtitle">Documentation early draft</h2></div><div><p class="releaseinfo">Conventions 0.9.7 - September 2012</p></div></div><hr/></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e9">Introduction</a></span></dt><dt><span class="chapter"><a href="#gettingstarted">1. Getting Started</a></span></dt><dt><span class="part"><a href="#part1">I. The controller layer</a></span></dt><dd><dl><dt><span class="chapter"><a href="#controller-chp">2. Conventions Controllers </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e124">2.1. 
-               BaseMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e129">2.2. 
-               StateMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e134">2.3. 
-               ModalMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e139">2.4. 
-               ConversationalMBean
-           </a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part2">II. The service layer</a></span></dt><dd><dl><dt><span class="chapter"><a href="#service-chp">3. Conventions services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e153">3.1. 
-               Stateless Service
-           </a></span></dt><dt><span class="section"><a href="#d0e158">3.2. 
-               Stateful Service
-           </a></span></dt><dt><span class="section"><a href="#d0e163">3.3. 
-               Custom Service
-           </a></span></dt><dt><span class="section"><a href="#d0e168">3.4. 
-               Entity Manager Provider
-           </a></span></dt><dt><span class="section"><a href="#d0e173">3.5. 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Conventions Framework Documentation</title><link rel="stylesheet" href="css/conventionsframework.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="book" lang="en-US"><div class="titlepage"><div><p id="title"><a href="http://www.seamframework.org" class="site_href"><strong>SeamFramework.org</strong></a><a href="http://www.seamframework.org/Documentation" class="doc_href"><strong>Community Documentation</strong></a></p><div><h1 class="title"><a id="d0e1"/>Conventions Framework Documentation</h1></div><div><h2 class="subtitle">Documentation early draft</h2></div><div><p class="releaseinfo">Conventions 0.9.7 - September 2012</p></div></div><hr/></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e9">Introduction</a></span></dt><dt><span class="chapter"><a href="#gettingstarted">1. Getting Started</a></span></dt><dt><span class="part"><a href="#part1">I. Archetectural Overview</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e92">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e100">2.1. 
+                BaseMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e109">2.2. 
+                StateMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e114">2.3. 
+                ModalMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e119">2.4. 
+                ConversationalMBean
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e124">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e141">3.1. 
+                The Base Service
+            </a></span></dt><dt><span class="section"><a href="#d0e146">3.2. 
+                Where is the Dao?
+            </a></span></dt><dt><span class="section"><a href="#d0e151">3.3. 
+                Stateless Service
+            </a></span></dt><dt><span class="section"><a href="#d0e156">3.4. 
+                Stateful Service
+            </a></span></dt><dt><span class="section"><a href="#d0e161">3.5. 
+                Custom Service
+            </a></span></dt><dt><span class="section"><a href="#d0e166">3.6. 
+                Entity Manager Provider
+            </a></span></dt><dt><span class="section"><a href="#d0e171">3.7. 
                 Pagination 
-           </a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part3">III. The view layer</a></span></dt><dd><dl><dt><span class="chapter"><a href="#components">4. Components</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e201">4.1. 
-            Add Button
-        </a></span></dt><dt><span class="section"><a href="#d0e206">4.2. 
-            Edit buttom
-        </a></span></dt><dt><span class="section"><a href="#d0e211">4.3. 
-            Save buttom
-        </a></span></dt><dt><span class="section"><a href="#d0e216">4.4. 
-            Remove link
-        </a></span></dt><dt><span class="section"><a href="#d0e221">4.5. 
-            Remove Button
-        </a></span></dt><dt><span class="section"><a href="#d0e226">4.6. 
-            Reset Button
-        </a></span></dt><dt><span class="section"><a href="#d0e231">4.7. 
-            Back Button
-        </a></span></dt><dt><span class="section"><a href="#d0e236">4.8. 
-            Fiter Button
-        </a></span></dt><dt><span class="section"><a href="#d0e241">4.9. 
-            Combo
-        </a></span></dt><dt><span class="section"><a href="#d0e246">4.10. 
-            Property key
-        </a></span></dt><dt><span class="section"><a href="#d0e251">4.11. 
-            Modal
-        </a></span></dt><dt><span class="section"><a href="#d0e256">4.12. 
-            Modal Button
-        </a></span></dt><dt><span class="section"><a href="#d0e261">4.13. 
-            Modal Removal
-        </a></span></dt><dt><span class="section"><a href="#d0e266">4.14. 
-            Security Page
-        </a></span></dt><dt><span class="section"><a href="#d0e271">4.15. 
-            StateItens
-        </a></span></dt><dt><span class="section"><a href="#d0e276">4.16. 
-            State Pusher
-        </a></span></dt><dt><span class="section"><a href="#d0e281">4.17. 
-            Datatable
-        </a></span></dt><dt><span class="section"><a href="#d0e286">4.18. 
-            Table Footer
-        </a></span></dt><dt><span class="section"><a href="#d0e291">4.19. 
-            Layout Templete
-        </a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part4">IV. The model layer</a></span></dt><dt><span class="part"><a href="#part5">V. General utilities</a></span></dt><dt><span class="part"><a href="#part6">VI. Scaffolding</a></span></dt></dl></div><div class="preface" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e9"/>Introduction</h2></div></div></div><p>
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e176">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e196">4.1. 
+                Add Button
+            </a></span></dt><dt><span class="section"><a href="#d0e201">4.2. 
+                Edit buttom
+            </a></span></dt><dt><span class="section"><a href="#d0e206">4.3. 
+                Save buttom
+            </a></span></dt><dt><span class="section"><a href="#d0e211">4.4. 
+                Remove link
+            </a></span></dt><dt><span class="section"><a href="#d0e216">4.5. 
+                Remove Button
+            </a></span></dt><dt><span class="section"><a href="#d0e221">4.6. 
+                Reset Button
+            </a></span></dt><dt><span class="section"><a href="#d0e226">4.7. 
+                Back Button
+            </a></span></dt><dt><span class="section"><a href="#d0e231">4.8. 
+                Fiter Button
+            </a></span></dt><dt><span class="section"><a href="#d0e236">4.9. 
+                Combo
+            </a></span></dt><dt><span class="section"><a href="#d0e241">4.10. 
+                Property key
+            </a></span></dt><dt><span class="section"><a href="#d0e246">4.11. 
+                Modal
+            </a></span></dt><dt><span class="section"><a href="#d0e251">4.12. 
+                Modal Button
+            </a></span></dt><dt><span class="section"><a href="#d0e256">4.13. 
+                Modal Removal
+            </a></span></dt><dt><span class="section"><a href="#d0e261">4.14. 
+                Security Page
+            </a></span></dt><dt><span class="section"><a href="#d0e266">4.15. 
+                StateItens
+            </a></span></dt><dt><span class="section"><a href="#d0e271">4.16. 
+                State Pusher
+            </a></span></dt><dt><span class="section"><a href="#d0e276">4.17. 
+                Datatable
+            </a></span></dt><dt><span class="section"><a href="#d0e281">4.18. 
+                Table Footer
+            </a></span></dt><dt><span class="section"><a href="#d0e286">4.19. 
+                Layout Templete
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e291">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e296">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e301">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e306">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e311">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e316">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e321">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e326">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part2">II. General utilities</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e334">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e342">6.1. 
+                Configuring the resource bundle
+            </a></span></dt><dt><span class="section"><a href="#d0e347">6.2. 
+               The ResourceBundleProvider component
+            </a></span></dt><dt><span class="section"><a href="#d0e352">6.3. 
+                changing the locale
+            </a></span></dt><dt><span class="section"><a href="#d0e357">6.4. 
+                examples
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e362">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e382">7.1. 
+                Business Exception
+            </a></span></dt><dt><span class="section"><a href="#d0e387">7.2. 
+               Creating an error page
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e392">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e406">8.1. 
+                SecurityMethod
+            </a></span></dt><dt><span class="section"><a href="#d0e411">8.2. 
+               SecuritedPage
+            </a></span></dt><dt><span class="section"><a href="#d0e416">8.3. 
+               SecuritedArea
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e421">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e429">9.1. 
+                Injecting properties
+            </a></span></dt><dt><span class="section"><a href="#d0e434">9.2. 
+               the propertyKey component
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e439">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e456">10.1. 
+                Examples
+            </a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part3">III. Conventions Scaffolding</a></span></dt></dl></div><div class="preface" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e9"/>Introduction</h2></div></div></div><p>
          <span class="emphasis"><em>Conventions</em></span> is an integrator framework of Java EE technologies with the objective
          to easy the development of enterprise rich web applications. The framework leverages 
          other frameworks such as <span class="emphasis"><em>Hibernate</em></span>, <span class="emphasis"><em>Primefaces</em></span> and <span class="emphasis"><em>CODI</em></span> to delivery solutions to 
-         common problems like exception handling, true pagination, helper UI components, 
+         common problems like cruding, exception handling, true pagination, helper UI components, 
          internationalization, annotated queries etc... 
       </p><p>
-         This guide is divided into four parts organized by <span class="emphasis"><em>Conventions</em></span> archctectural
-         layers plus one part for general utilities components provided by the framework and one more part for <span class="emphasis"><em>Conventions Scaffolding</em></span> a code generation tool based on JBoss Forge. 
-        <a class="xref" href="#part1" title="Part I. The controller layer">Part I, “The controller layer”</a> is represented by conventions managed beans which are wrappers to CDI beans; 
-        <a class="xref" href="#part2" title="Part II. The service layer">Part II, “The service layer”</a> shows how the framework is integrated with <span class="emphasis"><em>CDI</em></span>, <span class="emphasis"><em>Hibernate</em></span> and <span class="emphasis"><em>EJB</em></span> to provide database operations; <a class="xref" href="#part3" title="Part III. The view layer">Part III, “The view layer”</a> discusses the view layer and its UI helper components;
-        <a class="xref" href="#part4" title="Part IV. The model layer">Part IV, “The model layer”</a> talks about the model layer and its helper classes; <a class="xref" href="#part5" title="Part V. General utilities">Part V, “General utilities”</a> walks throught utilities components such as properties provider, security helper, anotated queries, i18n, paginator and so on;
-                                                                                    <a class="xref" href="#part6" title="Part VI. Scaffolding">Part VI, “Scaffolding”</a> Demostrates Conventions Scaffold, a tool based on 
-                                                                                    <a class="link" href="#">JBoss Forge</a> to enable boilerplate code generation for 
-                                                                                    <span class="emphasis"><em>Conventions Framework</em></span>.
+         This guide is divided into a getting started to setup the framework plus three parts, the first one walks through the framework archecture, the second part shows general utility components such as annotated queries, i18n, exception handling etc... finaly the  
+         last part is reserved to <span class="emphasis"><em>Conventions Scaffolding</em></span> a code generation tool for <span class="emphasis"><em>Conventions</em></span> based on JBoss Forge. 
       </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="gettingstarted"/>Chapter 1. Getting Started</h2></div></div></div><p>
       Getting started with Weld Extensions is easy. If you are using Maven, then you can declare a dependency on Weld
       Extensions (<code class="code">org.jboss.weld:weld-extensions:${weld.extensions.version}</code>, make sure you have the JBoss 
@@ -93,248 +115,414 @@
 </pre></div><p>
       Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
       added as transitive dependencies):
-   </p><div class="variablelist"><dl><dt><span class="term"><code class="code">org.javassist:javassist</code></span></dt><dd>Service Handlers, Unwrapping Producer Methods</dd><dt><span class="term"><code class="code">javax.servlet:servlet-api</code></span></dt><dd>Accessing resources from the Servlet Context</dd></dl></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part1"/>Part I. The controller layer</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#controller-chp">2. Conventions Controllers </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e124">2.1. 
-               BaseMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e129">2.2. 
-               StateMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e134">2.3. 
-               ModalMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e139">2.4. 
-               ConversationalMBean
-           </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="controller-chp"/>Chapter 2. Conventions Controllers </h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e124">2.1. 
-               BaseMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e129">2.2. 
-               StateMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e134">2.3. 
-               ModalMBean
-           </a></span></dt><dt><span class="section"><a href="#d0e139">2.4. 
-               ConversationalMBean
-           </a></span></dt></dl></div><p>Controllers are represented by CDI beans and the framework count
+   </p><div class="variablelist"><dl><dt><span class="term"><code class="code">org.javassist:javassist</code></span></dt><dd>Service Handlers, Unwrapping Producer Methods</dd><dt><span class="term"><code class="code">javax.servlet:servlet-api</code></span></dt><dd>Accessing resources from the Servlet Context</dd></dl></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part1"/>Part I. Archetectural Overview</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e92">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e100">2.1. 
+                BaseMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e109">2.2. 
+                StateMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e114">2.3. 
+                ModalMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e119">2.4. 
+                ConversationalMBean
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e124">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e141">3.1. 
+                The Base Service
+            </a></span></dt><dt><span class="section"><a href="#d0e146">3.2. 
+                Where is the Dao?
+            </a></span></dt><dt><span class="section"><a href="#d0e151">3.3. 
+                Stateless Service
+            </a></span></dt><dt><span class="section"><a href="#d0e156">3.4. 
+                Stateful Service
+            </a></span></dt><dt><span class="section"><a href="#d0e161">3.5. 
+                Custom Service
+            </a></span></dt><dt><span class="section"><a href="#d0e166">3.6. 
+                Entity Manager Provider
+            </a></span></dt><dt><span class="section"><a href="#d0e171">3.7. 
+                Pagination 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e176">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e196">4.1. 
+                Add Button
+            </a></span></dt><dt><span class="section"><a href="#d0e201">4.2. 
+                Edit buttom
+            </a></span></dt><dt><span class="section"><a href="#d0e206">4.3. 
+                Save buttom
+            </a></span></dt><dt><span class="section"><a href="#d0e211">4.4. 
+                Remove link
+            </a></span></dt><dt><span class="section"><a href="#d0e216">4.5. 
+                Remove Button
+            </a></span></dt><dt><span class="section"><a href="#d0e221">4.6. 
+                Reset Button
+            </a></span></dt><dt><span class="section"><a href="#d0e226">4.7. 
+                Back Button
+            </a></span></dt><dt><span class="section"><a href="#d0e231">4.8. 
+                Fiter Button
+            </a></span></dt><dt><span class="section"><a href="#d0e236">4.9. 
+                Combo
+            </a></span></dt><dt><span class="section"><a href="#d0e241">4.10. 
+                Property key
+            </a></span></dt><dt><span class="section"><a href="#d0e246">4.11. 
+                Modal
+            </a></span></dt><dt><span class="section"><a href="#d0e251">4.12. 
+                Modal Button
+            </a></span></dt><dt><span class="section"><a href="#d0e256">4.13. 
+                Modal Removal
+            </a></span></dt><dt><span class="section"><a href="#d0e261">4.14. 
+                Security Page
+            </a></span></dt><dt><span class="section"><a href="#d0e266">4.15. 
+                StateItens
+            </a></span></dt><dt><span class="section"><a href="#d0e271">4.16. 
+                State Pusher
+            </a></span></dt><dt><span class="section"><a href="#d0e276">4.17. 
+                Datatable
+            </a></span></dt><dt><span class="section"><a href="#d0e281">4.18. 
+                Table Footer
+            </a></span></dt><dt><span class="section"><a href="#d0e286">4.19. 
+                Layout Templete
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e291">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e296">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e301">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e306">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e311">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e316">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e321">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e326">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e92"/>Chapter 2. The Controller Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e100">2.1. 
+                BaseMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e109">2.2. 
+                StateMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e114">2.3. 
+                ModalMBean
+            </a></span></dt><dt><span class="section"><a href="#d0e119">2.4. 
+                ConversationalMBean
+            </a></span></dt></dl></div><p>
+            <span class="emphasis"><em>Conventions Controllers</em></span> are represented by CDI beans and the framework count
             with four flavors of them, we will see each one in detail.
-      </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e124"/>2.1. 
-               BaseMBean
-           </h2></div></div></div><p>
-                TODO Describe BaseMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e129"/>2.2. 
-               StateMBean
-           </h2></div></div></div><p>
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e100"/>2.1. 
+                BaseMBean
+            </h2></div></div></div><p>
+                As its name says is the bean for other conventions controllers and it provides the following features:
+                
+                  </p><div class="itemizedlist"><ul><li>access to the resourceBundle</li></ul></div><p>    
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e109"/>2.2. 
+                StateMBean
+            </h2></div></div></div><p>
                 TODO Describe StateMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e134"/>2.3. 
-               ModalMBean
-           </h2></div></div></div><p>
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e114"/>2.3. 
+                ModalMBean
+            </h2></div></div></div><p>
                 TODO Describe ModalMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e139"/>2.4. 
-               ConversationalMBean
-           </h2></div></div></div><p>
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e119"/>2.4. 
+                ConversationalMBean
+            </h2></div></div></div><p>
                 TODO Describe ConversationalMBean
-            </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. The service layer</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#service-chp">3. Conventions services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e153">3.1. 
-               Stateless Service
-           </a></span></dt><dt><span class="section"><a href="#d0e158">3.2. 
-               Stateful Service
-           </a></span></dt><dt><span class="section"><a href="#d0e163">3.3. 
-               Custom Service
-           </a></span></dt><dt><span class="section"><a href="#d0e168">3.4. 
-               Entity Manager Provider
-           </a></span></dt><dt><span class="section"><a href="#d0e173">3.5. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e124"/>Chapter 3. The Service Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e141">3.1. 
+                The Base Service
+            </a></span></dt><dt><span class="section"><a href="#d0e146">3.2. 
+                Where is the Dao?
+            </a></span></dt><dt><span class="section"><a href="#d0e151">3.3. 
+                Stateless Service
+            </a></span></dt><dt><span class="section"><a href="#d0e156">3.4. 
+                Stateful Service
+            </a></span></dt><dt><span class="section"><a href="#d0e161">3.5. 
+                Custom Service
+            </a></span></dt><dt><span class="section"><a href="#d0e166">3.6. 
+                Entity Manager Provider
+            </a></span></dt><dt><span class="section"><a href="#d0e171">3.7. 
                 Pagination 
-           </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="service-chp"/>Chapter 3. Conventions services</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e153">3.1. 
-               Stateless Service
-           </a></span></dt><dt><span class="section"><a href="#d0e158">3.2. 
-               Stateful Service
-           </a></span></dt><dt><span class="section"><a href="#d0e163">3.3. 
-               Custom Service
-           </a></span></dt><dt><span class="section"><a href="#d0e168">3.4. 
-               Entity Manager Provider
-           </a></span></dt><dt><span class="section"><a href="#d0e173">3.5. 
-                Pagination 
-           </a></span></dt></dl></div><p>
-            The services layer links the framework to the backend infrastructure(datatabase for now) via 
-            EJB, PersistenceContext, Hibernate session, transactions(EJB or CODI ones) and CDI contexts and dependency injection.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e153"/>3.1. 
-               Stateless Service
-           </h2></div></div></div><p>
+            </a></span></dt></dl></div><p>
+            This section shows how the framework is integrated with 
+            <span class="emphasis"><em>CDI</em></span>, 
+            <span class="emphasis"><em>Hibernate</em></span> and 
+            <span class="emphasis"><em>EJB</em></span> to provide database operations through 
+            <span class="emphasis"><em>Conventions Services</em></span> which are components that link the framework to the backend infrastructure.
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e141"/>3.1. 
+                The Base Service
+            </h2></div></div></div><p>
+                TODO Describe baseService
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e146"/>3.2. 
+                Where is the Dao?
+            </h2></div></div></div><p>
+                TODO Describe BaseDao
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e151"/>3.3. 
+                Stateless Service
+            </h2></div></div></div><p>
                 TODO Describe statelessService
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e158"/>3.2. 
-               Stateful Service
-           </h2></div></div></div><p>
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e156"/>3.4. 
+                Stateful Service
+            </h2></div></div></div><p>
                 TODO Describe statefulService
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e163"/>3.3. 
-               Custom Service
-           </h2></div></div></div><p>
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e161"/>3.5. 
+                Custom Service
+            </h2></div></div></div><p>
                 TODO Describe customService
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e168"/>3.4. 
-               Entity Manager Provider
-           </h2></div></div></div><p>
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e166"/>3.6. 
+                Entity Manager Provider
+            </h2></div></div></div><p>
                 TODO Describe EntityManagerProvider
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e173"/>3.5. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e171"/>3.7. 
                 Pagination 
-           </h2></div></div></div><p>
+            </h2></div></div></div><p>
                 TODO Describe how true pagination works(not the paginator utility component) but focus on ConfigFindPagination overrding
-            </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part3"/>Part III. The view layer</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#components">4. Components</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e201">4.1. 
-            Add Button
-        </a></span></dt><dt><span class="section"><a href="#d0e206">4.2. 
-            Edit buttom
-        </a></span></dt><dt><span class="section"><a href="#d0e211">4.3. 
-            Save buttom
-        </a></span></dt><dt><span class="section"><a href="#d0e216">4.4. 
-            Remove link
-        </a></span></dt><dt><span class="section"><a href="#d0e221">4.5. 
-            Remove Button
-        </a></span></dt><dt><span class="section"><a href="#d0e226">4.6. 
-            Reset Button
-        </a></span></dt><dt><span class="section"><a href="#d0e231">4.7. 
-            Back Button
-        </a></span></dt><dt><span class="section"><a href="#d0e236">4.8. 
-            Fiter Button
-        </a></span></dt><dt><span class="section"><a href="#d0e241">4.9. 
-            Combo
-        </a></span></dt><dt><span class="section"><a href="#d0e246">4.10. 
-            Property key
-        </a></span></dt><dt><span class="section"><a href="#d0e251">4.11. 
-            Modal
-        </a></span></dt><dt><span class="section"><a href="#d0e256">4.12. 
-            Modal Button
-        </a></span></dt><dt><span class="section"><a href="#d0e261">4.13. 
-            Modal Removal
-        </a></span></dt><dt><span class="section"><a href="#d0e266">4.14. 
-            Security Page
-        </a></span></dt><dt><span class="section"><a href="#d0e271">4.15. 
-            StateItens
-        </a></span></dt><dt><span class="section"><a href="#d0e276">4.16. 
-            State Pusher
-        </a></span></dt><dt><span class="section"><a href="#d0e281">4.17. 
-            Datatable
-        </a></span></dt><dt><span class="section"><a href="#d0e286">4.18. 
-            Table Footer
-        </a></span></dt><dt><span class="section"><a href="#d0e291">4.19. 
-            Layout Templete
-        </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="components"/>Chapter 4. Components</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e201">4.1. 
-            Add Button
-        </a></span></dt><dt><span class="section"><a href="#d0e206">4.2. 
-            Edit buttom
-        </a></span></dt><dt><span class="section"><a href="#d0e211">4.3. 
-            Save buttom
-        </a></span></dt><dt><span class="section"><a href="#d0e216">4.4. 
-            Remove link
-        </a></span></dt><dt><span class="section"><a href="#d0e221">4.5. 
-            Remove Button
-        </a></span></dt><dt><span class="section"><a href="#d0e226">4.6. 
-            Reset Button
-        </a></span></dt><dt><span class="section"><a href="#d0e231">4.7. 
-            Back Button
-        </a></span></dt><dt><span class="section"><a href="#d0e236">4.8. 
-            Fiter Button
-        </a></span></dt><dt><span class="section"><a href="#d0e241">4.9. 
-            Combo
-        </a></span></dt><dt><span class="section"><a href="#d0e246">4.10. 
-            Property key
-        </a></span></dt><dt><span class="section"><a href="#d0e251">4.11. 
-            Modal
-        </a></span></dt><dt><span class="section"><a href="#d0e256">4.12. 
-            Modal Button
-        </a></span></dt><dt><span class="section"><a href="#d0e261">4.13. 
-            Modal Removal
-        </a></span></dt><dt><span class="section"><a href="#d0e266">4.14. 
-            Security Page
-        </a></span></dt><dt><span class="section"><a href="#d0e271">4.15. 
-            StateItens
-        </a></span></dt><dt><span class="section"><a href="#d0e276">4.16. 
-            State Pusher
-        </a></span></dt><dt><span class="section"><a href="#d0e281">4.17. 
-            Datatable
-        </a></span></dt><dt><span class="section"><a href="#d0e286">4.18. 
-            Table Footer
-        </a></span></dt><dt><span class="section"><a href="#d0e291">4.19. 
-            Layout Templete
-        </a></span></dt></dl></div><p>
-        In this chapter we will cover UI components provided by the framework to easy the development driven by 
-      <span class="emphasis"><em>Conventions</em></span> standards
-    </p><p>
-        Conventions framework UI components are available thought the following namespaces:
-        </p><div class="itemizedlist"><ul><li>
-                Composite Components namespace
-                <code class="code"> 
-                    xmlns:cc="http://java.sun.com/jsf/composite/components/conventions"  
-                </code></li><li>
-                Renderer based components namespace
-                <code class="code"> 
-                    xmlns:c="http://conventions.org/ui"
-                </code></li></ul></div><p>    
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e176"/>Chapter 4. The View Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e196">4.1. 
+                Add Button
+            </a></span></dt><dt><span class="section"><a href="#d0e201">4.2. 
+                Edit buttom
+            </a></span></dt><dt><span class="section"><a href="#d0e206">4.3. 
+                Save buttom
+            </a></span></dt><dt><span class="section"><a href="#d0e211">4.4. 
+                Remove link
+            </a></span></dt><dt><span class="section"><a href="#d0e216">4.5. 
+                Remove Button
+            </a></span></dt><dt><span class="section"><a href="#d0e221">4.6. 
+                Reset Button
+            </a></span></dt><dt><span class="section"><a href="#d0e226">4.7. 
+                Back Button
+            </a></span></dt><dt><span class="section"><a href="#d0e231">4.8. 
+                Fiter Button
+            </a></span></dt><dt><span class="section"><a href="#d0e236">4.9. 
+                Combo
+            </a></span></dt><dt><span class="section"><a href="#d0e241">4.10. 
+                Property key
+            </a></span></dt><dt><span class="section"><a href="#d0e246">4.11. 
+                Modal
+            </a></span></dt><dt><span class="section"><a href="#d0e251">4.12. 
+                Modal Button
+            </a></span></dt><dt><span class="section"><a href="#d0e256">4.13. 
+                Modal Removal
+            </a></span></dt><dt><span class="section"><a href="#d0e261">4.14. 
+                Security Page
+            </a></span></dt><dt><span class="section"><a href="#d0e266">4.15. 
+                StateItens
+            </a></span></dt><dt><span class="section"><a href="#d0e271">4.16. 
+                State Pusher
+            </a></span></dt><dt><span class="section"><a href="#d0e276">4.17. 
+                Datatable
+            </a></span></dt><dt><span class="section"><a href="#d0e281">4.18. 
+                Table Footer
+            </a></span></dt><dt><span class="section"><a href="#d0e286">4.19. 
+                Layout Templete
+            </a></span></dt></dl></div><p>
+            In this section we will cover UI components provided by the framework to easy the development driven by 
+            <span class="emphasis"><em>Conventions</em></span> standards.
+        </p><p>
+            Conventions framework UI components are available thought the following namespaces:
+            </p><div class="itemizedlist"><ul><li>
+                    Composite Components namespace
+                    <code class="code"> 
+                        xmlns:cc="http://java.sun.com/jsf/composite/components/conventions"  
+                    </code></li><li>
+                    Renderer based components namespace
+                    <code class="code"> 
+                        xmlns:c="http://conventions.org/ui"
+                    </code></li></ul></div><p>    
        
-    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e201"/>4.1. 
-            Add Button
-        </h2></div></div></div><p>
-            TODO describe The addButton is a primefaces commandButton wrapper... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e206"/>4.2. 
-            Edit buttom
-        </h2></div></div></div><p>
-            TODO describe  editButton...
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e211"/>4.3. 
-            Save buttom
-        </h2></div></div></div><p>
-            TODO describe saveButton... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e216"/>4.4. 
-            Remove link
-        </h2></div></div></div><p>
-            TODO describe removeLink... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e221"/>4.5. 
-            Remove Button
-        </h2></div></div></div><p>
-            TODO describe removeButton... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e226"/>4.6. 
-            Reset Button
-        </h2></div></div></div><p>
-            TODO describe  resetButton... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e231"/>4.7. 
-            Back Button
-        </h2></div></div></div><p>
-            TODO describe  backButton... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e236"/>4.8. 
-            Fiter Button
-        </h2></div></div></div><p>
-            TODO describe filterButton... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e241"/>4.9. 
-            Combo
-        </h2></div></div></div><p>
-            TODO describe  combo... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e246"/>4.10. 
-            Property key
-        </h2></div></div></div><p>
-            TODO describe propertyKey... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e251"/>4.11. 
-            Modal
-        </h2></div></div></div><p>
-            TODO describe  modal... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e256"/>4.12. 
-            Modal Button
-        </h2></div></div></div><p>
-            TODO describe modalButton... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e261"/>4.13. 
-            Modal Removal
-        </h2></div></div></div><p>
-            TODO describe modalRemoval... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e266"/>4.14. 
-            Security Page
-        </h2></div></div></div><p>
-            TODO describe securityPage... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e271"/>4.15. 
-            StateItens
-        </h2></div></div></div><p>
-            TODO describe stateItens...  
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e276"/>4.16. 
-            State Pusher
-        </h2></div></div></div><p>
-            TODO describe statePusher...  
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e281"/>4.17. 
-            Datatable
-        </h2></div></div></div><p>
-            TODO describe datatable... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e286"/>4.18. 
-            Table Footer
-        </h2></div></div></div><p>
-            TODO describe tableFooter... 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e291"/>4.19. 
-            Layout Templete
-        </h2></div></div></div><p>
-            TODO describe layout component... 
-        </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part4"/>Part IV. The model layer</h1></div></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part5"/>Part V. General utilities</h1></div></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part6"/>Part VI. Scaffolding</h1></div></div></div></div></div></body></html>
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e196"/>4.1. 
+                Add Button
+            </h2></div></div></div><p>
+                TODO describe The addButton is a primefaces commandButton wrapper... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e201"/>4.2. 
+                Edit buttom
+            </h2></div></div></div><p>
+                TODO describe  editButton...
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e206"/>4.3. 
+                Save buttom
+            </h2></div></div></div><p>
+                TODO describe saveButton... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e211"/>4.4. 
+                Remove link
+            </h2></div></div></div><p>
+                TODO describe removeLink... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e216"/>4.5. 
+                Remove Button
+            </h2></div></div></div><p>
+                TODO describe removeButton... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e221"/>4.6. 
+                Reset Button
+            </h2></div></div></div><p>
+                TODO describe  resetButton... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e226"/>4.7. 
+                Back Button
+            </h2></div></div></div><p>
+                TODO describe  backButton... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e231"/>4.8. 
+                Fiter Button
+            </h2></div></div></div><p>
+                TODO describe filterButton... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e236"/>4.9. 
+                Combo
+            </h2></div></div></div><p>
+                TODO describe  combo... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e241"/>4.10. 
+                Property key
+            </h2></div></div></div><p>
+                TODO describe propertyKey... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e246"/>4.11. 
+                Modal
+            </h2></div></div></div><p>
+                TODO describe  modal... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e251"/>4.12. 
+                Modal Button
+            </h2></div></div></div><p>
+                TODO describe modalButton... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e256"/>4.13. 
+                Modal Removal
+            </h2></div></div></div><p>
+                TODO describe modalRemoval... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e261"/>4.14. 
+                Security Page
+            </h2></div></div></div><p>
+                TODO describe securityPage... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e266"/>4.15. 
+                StateItens
+            </h2></div></div></div><p>
+                TODO describe stateItens...  
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e271"/>4.16. 
+                State Pusher
+            </h2></div></div></div><p>
+                TODO describe statePusher...  
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e276"/>4.17. 
+                Datatable
+            </h2></div></div></div><p>
+                TODO describe datatable... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e281"/>4.18. 
+                Table Footer
+            </h2></div></div></div><p>
+                TODO describe tableFooter... 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e286"/>4.19. 
+                Layout Templete
+            </h2></div></div></div><p>
+                TODO describe layout component... 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e291"/>Chapter 5. The Model Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e296">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e301">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e306">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e311">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e316">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e321">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e326">5.7. VersionatedEntityString</a></span></dt></dl></div><p>
+        describe model utility classes
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e296"/>5.1. AbstractBaseEntity</h2></div></div></div><p>
+             TODO
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e301"/>5.2. BaseEntityLong</h2></div></div></div><p>
+             TODO
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e306"/>5.3. BaseEntityString</h2></div></div></div><p>
+             TODO
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e311"/>5.4. CustomBaseEntity</h2></div></div></div><p>
+             TODO
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e316"/>5.5. AbstractVersionatedEntity</h2></div></div></div><p>
+             TODO
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e321"/>5.6. VersionatedEntityLong</h2></div></div></div><p>
+             TODO
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e326"/>5.7. VersionatedEntityString</h2></div></div></div><p>
+             TODO
+        </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. General utilities</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e334">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e342">6.1. 
+                Configuring the resource bundle
+            </a></span></dt><dt><span class="section"><a href="#d0e347">6.2. 
+               The ResourceBundleProvider component
+            </a></span></dt><dt><span class="section"><a href="#d0e352">6.3. 
+                changing the locale
+            </a></span></dt><dt><span class="section"><a href="#d0e357">6.4. 
+                examples
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e362">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e382">7.1. 
+                Business Exception
+            </a></span></dt><dt><span class="section"><a href="#d0e387">7.2. 
+               Creating an error page
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e392">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e406">8.1. 
+                SecurityMethod
+            </a></span></dt><dt><span class="section"><a href="#d0e411">8.2. 
+               SecuritedPage
+            </a></span></dt><dt><span class="section"><a href="#d0e416">8.3. 
+               SecuritedArea
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e421">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e429">9.1. 
+                Injecting properties
+            </a></span></dt><dt><span class="section"><a href="#d0e434">9.2. 
+               the propertyKey component
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e439">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e456">10.1. 
+                Examples
+            </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e334"/>Chapter 6. Internationalization</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e342">6.1. 
+                Configuring the resource bundle
+            </a></span></dt><dt><span class="section"><a href="#d0e347">6.2. 
+               The ResourceBundleProvider component
+            </a></span></dt><dt><span class="section"><a href="#d0e352">6.3. 
+                changing the locale
+            </a></span></dt><dt><span class="section"><a href="#d0e357">6.4. 
+                examples
+            </a></span></dt></dl></div><p>
+            In this chapter we will see how <span class="emphasis"><em>Conventions framework</em></span> provides internationalization. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e342"/>6.1. 
+                Configuring the resource bundle
+            </h2></div></div></div><p>
+                TODO 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e347"/>6.2. 
+               The ResourceBundleProvider component
+            </h2></div></div></div><p>
+                TODO
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e352"/>6.3. 
+                changing the locale
+            </h2></div></div></div><p>
+                TODO  
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e357"/>6.4. 
+                examples
+            </h2></div></div></div><p>
+                TODO examples accessing resourceBundle in page and bean and passing parameters
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e362"/>Chapter 7. Exception Handling</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e382">7.1. 
+                Business Exception
+            </a></span></dt><dt><span class="section"><a href="#d0e387">7.2. 
+               Creating an error page
+            </a></span></dt></dl></div><p>
+            Exception handling is a very important mechanism in enterprise applications that is used for eg. to show 
+            friendly messages to end user when something went wrong.
+            
+            To enable exception handling in <span class="emphasis"><em>Conventions </em></span> you must add the following lines to your faces-config.xml file:
+            
+             </p><pre class="programlisting">
+      <span style="color: red">&lt;faces-config&gt;
+            <span style="color: red">&lt;application&gt;
+                 <span style="color: red">&lt;action-listener&gt;org.conventionsframework.exception.ConventionsActionListenerImpl&lt;/action-listener&gt;</span>
+             &lt;/application&gt;</span>
+      &lt;/faces-config&gt;</span>
+             </pre><p>
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e382"/>7.1. 
+                Business Exception
+            </h2></div></div></div><p>
+                TODO 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e387"/>7.2. 
+               Creating an error page
+            </h2></div></div></div><p>
+                TODO
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e392"/>Chapter 8. Security</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e406">8.1. 
+                SecurityMethod
+            </a></span></dt><dt><span class="section"><a href="#d0e411">8.2. 
+               SecuritedPage
+            </a></span></dt><dt><span class="section"><a href="#d0e416">8.3. 
+               SecuritedArea
+            </a></span></dt></dl></div><p>
+             The framework provides some security helpers such as <span class="emphasis"><em>SecurityMethod</em></span>for method execution autorizaion, <span class="emphasis"><em>SecuritedPage</em></span>
+              for blocking access to unallowed users and <span class="emphasis"><em>SecuritedArea</em></span> to hide blocks of page from unallowed users.
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e406"/>8.1. 
+                SecurityMethod
+            </h2></div></div></div><p>
+                TODO 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e411"/>8.2. 
+               SecuritedPage
+            </h2></div></div></div><p>
+                TODO
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e416"/>8.3. 
+               SecuritedArea
+            </h2></div></div></div><p>
+                TODO
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e421"/>Chapter 9. Properties injection</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e429">9.1. 
+                Injecting properties
+            </a></span></dt><dt><span class="section"><a href="#d0e434">9.2. 
+               the propertyKey component
+            </a></span></dt></dl></div><p>
+             Another useful feature the framework provides is the ability to inject <code class="code">.properties</code> files
+             or prperties keys via CDI.
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e429"/>9.1. 
+                Injecting properties
+            </h2></div></div></div><p>
+                TODO 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e434"/>9.2. 
+               the propertyKey component
+            </h2></div></div></div><p>
+                TODO
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e439"/>Chapter 10. Annotated Queries</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e456">10.1. 
+                Examples
+            </a></span></dt></dl></div><p>
+             An utility to allow query execution via annotations.
+            
+             To enable this feature you must add the following lines to your beans.xml file:
+            </p><pre class="programlisting">
+      <span style="color: red">&lt;beans&gt;
+                <span style="color: red">&lt;interceptors&gt;
+                    <span style="color: red">&lt;class&gt;org.conventionsframework.query.QueryProvider&lt;/class&gt;</span>
+                &lt;/interceptors&gt;</span>
+      &lt;/beans&gt;</span>
+            </pre><p>
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e456"/>10.1. 
+                Examples
+            </h2></div></div></div><p>
+                TODO 
+            </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part3"/>Part III. Conventions Scaffolding</h1></div></div></div></div></div></body></html>
