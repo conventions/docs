@@ -7,16 +7,16 @@
              An utility to allow query execution via annotations.
             
              To enable this feature you must add the following lines to your beans.xml file:
-            <programlisting role="java">
-      <beans xmlns="http://java.sun.com/xml/ns/javaee"
+        </para>   
+        <programlisting role="XML"><![CDATA[ 
+     <beans xmlns="http://java.sun.com/xml/ns/javaee"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
                 <interceptors>
                     <class>org.conventionsframework.query.QueryProvider</class>
                 </interceptors>
-      </beans>
+      </beans>]]>
             </programlisting>
-        </para>
         <section>
             <title>
                 Examples

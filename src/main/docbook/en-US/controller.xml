@@ -14,13 +14,24 @@
                 BaseMBean
             </title>
             <para>
-                As its name says is the bean for other conventions controllers and it provides the following features:
+                As its name says is the bean for other conventions controllers and it has the following characteristics:
                 
                   <itemizedlist>
+                      <listitem>access to a service (link to service layer)</listitem>
+                      <listitem>manages an entity(link to model layer)</listitem>
+                      <listitem>provides methods to conventions UI components(link to view layer) such as addButton, editButton, removeButtom, filterButton, clearButton etc...</listitem>
+                      <listitem>access to the paginator component(helper for true pagination)</listitem>
                       <listitem>access to the resourceBundle</listitem>
+                      <listitem>BeanStates for cruding (link to beanState section)</listitem>
                   </itemizedlist>    
             </para>
+            
+            <para>
+                For examples of base conventions beans look at <ulink url="http://conventions-rpestano.rhcloud.com/conventions/pages/person/personHome.faces"> online showcase examples</ulink>
+            </para>
+           
         </section>
+        
         <section>
             <title>
                 StateMBean
@@ -45,6 +56,71 @@
                 TODO Describe ConversationalMBean
             </para>
         </section>
+         <section>
+                <title>
+                    The Bean State
+                </title>
+                <para>
+                    A beanState is represented by the <code>State</code> interface which has only a method <code>String getStateName()</code>
+                    that describes the current state of the managedBean, the baseMBean has a built in CrudState which represents
+                    states for cruding so when you are editing an entity the bean is in updateState, this state information 
+                    can be useful in various situations such as hiding some parts of the page 
+                    or executing some business logig only in determinated state and so on.
+                </para>
+                <tip>
+                    BaseMBean changes the state automaticly depending on the UI component is used,
+                    for example when you click editButton the beanState in set to CrudState.UPDATE
+                </tip>
+                <para>
+                    Below is a example of CrudState to hide blocks of page depending on bean state: 
+                </para>
+                 <programlisting role="XML"><![CDATA[
+                     <p:outputPanel rendered="#{empty personMBean.beanState or personMBean.findState}">
+                        <ui:include src="listUser.xhtml"/>
+                    </p:outputPanel>  
+                    <p:outputPanel rendered="#{personMBean.insertState or personMBean.updateState}">
+                        <ui:include src="addUser.xhtml"/>
+                    </p:outputPanel> 
+                    <p:outputPanel rendered="#{personMBean.friendState}">
+                        <ui:include src="addFriend.xhtml"/>
+                    </p:outputPanel> 
+                     
+                     ]]></programlisting>
+                 <para>
+                    Below is the use of bean state in the controller: 
+                </para>     
+                <programlisting role="JAVA"><![CDATA[
+                      public class MyBean extends BaseMBean<Entity,Long>{
+                    
+                        public void anAction(){
+                            if(isFindState()){
+                                //if bean is in findState do some stuff
+                            }
+                    
+                            setBeanState(CrudState.UPDATE);//change the bean state
+                        }
+                     }
+                     ]]></programlisting>
+                     
+                <para>the code below shows how to create your own States </para> 
+                
+                   <programlisting role="JAVA"><![CDATA[
+                        public enum SecurityState implements State{
+                        ADMIN("admin"),GUEST("guest");
+
+                        private final String stateName;
+
+                        SecurityState (String stateName){
+                            this.stateName = stateName;
+                        }
+
+                        @Override
+                        public String getStateName() {
+                            return this.stateName;
+                        }
+                     ]]></programlisting>
+                      
+             </section>
     </chapter>
 
     

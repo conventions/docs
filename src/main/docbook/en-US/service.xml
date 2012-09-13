@@ -12,52 +12,68 @@
         </para>
         <section>
             <title>
-                The Base Service
+                What's a Service?
             </title>
             <para>
-                TODO Describe baseService
+                In Conventions Framework services are components that have access to 
+                the backend infrastructure, below are some characterists of a service:
             </para>
+             <itemizedlist>
+                 <listitem>has access to an entitymanager via EntityManagerProvider component</listitem>
+                 <listitem>has access to a Hibernate session</listitem>
+                 <listitem>built in and configurable pagination method</listitem>
+                 <listitem>built in cruding operations</listitem>
+             </itemizedlist>
         </section>
         <section>
             <title>
                 Where is the Dao?
             </title>
             <para>
-                TODO Describe BaseDao
+                Conventions framework does not have an explicit Dao layer(althought you can create one), the dao has
+                a composition relashionship with the service layer so each service has a dao.
             </para>
         </section>
         <section>
-            <title>
-                Stateless Service
-            </title>
-            <para>
-                TODO Describe statelessService
-            </para>
-        </section>
+            <title>The built in Services</title>
+            <para>Conventions counts with three extensible built in services templates</para>
+            <section>
+                <title>
+                    Stateless Service
+                </title>
+                <para>
+                    TODO Describe statelessService
+                </para>
+            </section>
+            <section>
+                <title>
+                    Stateful Service
+                </title>
+                <para>
+                    TODO Describe statefulService
+                </para>
+            </section>
+            <section>
+                <title>
+                    Custom Service
+                </title>
+                <para>
+                    TODO Describe customService
+                </para>
+            </section>
+        </section>    
         <section>
             <title>
-                Stateful Service
+                Creating your own Service
             </title>
             <para>
-                TODO Describe statefulService
+                TODO Describe creating a Service
             </para>
         </section>
-        <section>
-            <title>
-                Custom Service
-            </title>
-            <para>
-                TODO Describe customService
-            </para>
-        </section>
-        <section>
-            <title>
-                Entity Manager Provider
-            </title>
-            <para>
-                TODO Describe EntityManagerProvider
-            </para>
-        </section>
+          
+        <xi:include href="entitymanagerprovider.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+            
+       
         <section>
             <title>
                 Pagination 
