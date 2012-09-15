@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-  <chapter>
+  <chapter id="service-layer">
         <title>The Service Layer</title>
         <para>
             This section shows how the framework is integrated with 
@@ -30,8 +30,11 @@
                 Where is the Dao?
             </title>
             <para>
-                Conventions framework does not have an explicit Dao layer(althought you can create one), the dao has
+                Conventions framework does not have an explicit Dao layer(although you can create one), the dao has
                 a composition relashionship with the service layer so each service has a dao.
+            </para>
+            <para>
+                The dao template used in conventions can be found <ulink url="https://github.com/conventions/core/blob/master/src/main/java/org/conventionsframework/dao/impl/BaseHibernateDaoImpl.java">here</ulink> 
             </para>
         </section>
         <section>

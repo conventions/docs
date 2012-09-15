@@ -41,11 +41,11 @@
                                  <finalName>index.html</finalName>
 			        <stylesheetResource>file:${basedir}/src/main/docbook/xls/conventions.xsl</stylesheetResource>
 			  </format>
-                           <format>
+                           <!--<format>
 				 <formatName>pdf</formatName>
                                  <finalName>${pdf.name}</finalName>
 			        <stylesheetResource>file:${basedir}/src/main/docbook/xls/conventions-pdf.xsl</stylesheetResource>
-			  </format>
+			  </format>-->
                 </formats>      
                 <options>
 		     <injectionDateFormat>dd/MM/yyyy</injectionDateFormat>

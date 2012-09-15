@@ -18,7 +18,7 @@
          internationalization, annotated queries etc... 
       </para>
       <para>
-         This guide is divided into a getting started to setup the framework plus three parts, the first one walks through the framework archecture, the second part shows general utility components such as annotated queries, i18n, exception handling etc... finaly the  
+         This guide is divided into a getting started to setup the framework plus three parts, the first one walks through the framework architecture, the second part shows general utility components such as annotated queries, i18n, exception handling etc... finaly the  
          last part is reserved to <emphasis>Conventions Scaffolding</emphasis> a code generation tool for <emphasis>Conventions</emphasis> based on JBoss Forge. 
       </para>
    </preface>
@@ -26,7 +26,7 @@
    <xi:include href="gettingstarted.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 
    <part id="part1">
-      <title>Archetectural Overview</title>
+      <title>Architectural Overview</title>
       
       <xi:include href="controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     
