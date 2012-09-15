@@ -2,98 +2,102 @@
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Conventions Framework Documentation</title><link rel="stylesheet" href="css/conventionsframework.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="book" lang="en-US"><div class="titlepage"><div><p id="title"><a href="http://www.seamframework.org" class="site_href"><strong>SeamFramework.org</strong></a><a href="http://www.seamframework.org/Documentation" class="doc_href"><strong>Community Documentation</strong></a></p><div><h1 class="title"><a id="d0e1"/>Conventions Framework Documentation</h1></div><div><h2 class="subtitle">Documentation early draft</h2></div><div><p class="releaseinfo">Conventions 0.9.7 - September 2012</p></div></div><hr/></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e9">Introduction</a></span></dt><dt><span class="chapter"><a href="#gettingstarted">1. Getting Started</a></span></dt><dt><span class="part"><a href="#part1">I. Architectural Overview</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e92">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e100">2.1. 
+            Bean Types
+        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e103">2.1.1. 
                 BaseMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e124">2.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e144">2.1.2. 
                 StateMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e129">2.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e149">2.1.3. 
                 ModalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e134">2.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e154">2.1.4. 
                 ConversationalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e139">2.5. 
-                    The Bean State
-                </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e164">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e181">3.1. 
+            </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e159">2.2. 
+            The Bean Entity
+        </a></span></dt><dt><span class="section"><a href="#d0e189">2.3. 
+            The Bean State
+        </a></span></dt></dl></dd><dt><span class="chapter"><a href="#service-layer">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e231">3.1. 
                 What's a Service?
-            </a></span></dt><dt><span class="section"><a href="#d0e195">3.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e245">3.2. 
                 Where is the Dao?
-            </a></span></dt><dt><span class="section"><a href="#d0e200">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e205">3.3.1. 
+            </a></span></dt><dt><span class="section"><a href="#d0e255">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e260">3.3.1. 
                     Stateless Service
-                </a></span></dt><dt><span class="section"><a href="#d0e210">3.3.2. 
+                </a></span></dt><dt><span class="section"><a href="#d0e265">3.3.2. 
                     Stateful Service
-                </a></span></dt><dt><span class="section"><a href="#d0e215">3.3.3. 
+                </a></span></dt><dt><span class="section"><a href="#d0e270">3.3.3. 
                     Custom Service
-                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e220">3.4. 
+                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e275">3.4. 
                 Creating your own Service
-            </a></span></dt><dt><span class="section"><a href="#d0e225">3.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e280">3.5. 
         Entity Manager Provider
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e235">3.5.1. 
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e290">3.5.1. 
           The built in providers
         </a></span></dt><dt><span class="section"><a href="#ext-provider">3.5.2. 
             Extending an EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e312">3.5.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e368">3.5.3. 
             Creating your own EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e340">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e347">3.6. 
+        </a></span></dt><dt><span class="section"><a href="#d0e396">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e403">3.6. 
                 Pagination 
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e352">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e372">4.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e408">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e428">4.1. 
                 Add Button
-            </a></span></dt><dt><span class="section"><a href="#d0e377">4.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e433">4.2. 
                 Edit buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e382">4.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e438">4.3. 
                 Save buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e387">4.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e443">4.4. 
                 Remove link
-            </a></span></dt><dt><span class="section"><a href="#d0e392">4.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e448">4.5. 
                 Remove Button
-            </a></span></dt><dt><span class="section"><a href="#d0e397">4.6. 
+            </a></span></dt><dt><span class="section"><a href="#d0e453">4.6. 
                 Reset Button
-            </a></span></dt><dt><span class="section"><a href="#d0e402">4.7. 
+            </a></span></dt><dt><span class="section"><a href="#d0e458">4.7. 
                 Back Button
-            </a></span></dt><dt><span class="section"><a href="#d0e407">4.8. 
+            </a></span></dt><dt><span class="section"><a href="#d0e463">4.8. 
                 Fiter Button
-            </a></span></dt><dt><span class="section"><a href="#d0e412">4.9. 
+            </a></span></dt><dt><span class="section"><a href="#d0e468">4.9. 
                 Combo
-            </a></span></dt><dt><span class="section"><a href="#d0e417">4.10. 
+            </a></span></dt><dt><span class="section"><a href="#d0e473">4.10. 
                 Property key
-            </a></span></dt><dt><span class="section"><a href="#d0e422">4.11. 
+            </a></span></dt><dt><span class="section"><a href="#d0e478">4.11. 
                 Modal
-            </a></span></dt><dt><span class="section"><a href="#d0e427">4.12. 
+            </a></span></dt><dt><span class="section"><a href="#d0e483">4.12. 
                 Modal Button
-            </a></span></dt><dt><span class="section"><a href="#d0e432">4.13. 
+            </a></span></dt><dt><span class="section"><a href="#d0e488">4.13. 
                 Modal Removal
-            </a></span></dt><dt><span class="section"><a href="#d0e437">4.14. 
+            </a></span></dt><dt><span class="section"><a href="#d0e493">4.14. 
                 Security Page
-            </a></span></dt><dt><span class="section"><a href="#d0e442">4.15. 
+            </a></span></dt><dt><span class="section"><a href="#d0e498">4.15. 
                 StateItens
-            </a></span></dt><dt><span class="section"><a href="#d0e447">4.16. 
+            </a></span></dt><dt><span class="section"><a href="#d0e503">4.16. 
                 State Pusher
-            </a></span></dt><dt><span class="section"><a href="#d0e452">4.17. 
+            </a></span></dt><dt><span class="section"><a href="#d0e508">4.17. 
                 Datatable
-            </a></span></dt><dt><span class="section"><a href="#d0e457">4.18. 
+            </a></span></dt><dt><span class="section"><a href="#d0e513">4.18. 
                 Table Footer
-            </a></span></dt><dt><span class="section"><a href="#d0e462">4.19. 
+            </a></span></dt><dt><span class="section"><a href="#d0e518">4.19. 
                 Layout Templete
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e467">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e472">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e477">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e482">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e487">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e492">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e497">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e502">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part2">II. General utilities</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e510">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e518">6.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e523">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e528">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e533">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e538">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e543">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e548">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e553">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e558">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part2">II. General utilities</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e566">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e574">6.1. 
                 Configuring the resource bundle
-            </a></span></dt><dt><span class="section"><a href="#d0e523">6.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e579">6.2. 
                The ResourceBundleProvider component
-            </a></span></dt><dt><span class="section"><a href="#d0e528">6.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e584">6.3. 
                 changing the locale
-            </a></span></dt><dt><span class="section"><a href="#d0e533">6.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e589">6.4. 
                 examples
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e538">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e548">7.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e594">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e604">7.1. 
                 Business Exception
-            </a></span></dt><dt><span class="section"><a href="#d0e553">7.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e609">7.2. 
                Creating an error page
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e558">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e572">8.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e614">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e628">8.1. 
                 SecurityMethod
-            </a></span></dt><dt><span class="section"><a href="#d0e577">8.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e633">8.2. 
                SecuritedPage
-            </a></span></dt><dt><span class="section"><a href="#d0e582">8.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e638">8.3. 
                SecuritedArea
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e587">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e595">9.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e643">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e651">9.1. 
                 Injecting properties
-            </a></span></dt><dt><span class="section"><a href="#d0e600">9.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e656">9.2. 
                the propertyKey component
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e605">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e612">10.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e661">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e668">10.1. 
                 Examples
             </a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part3">III. Conventions Scaffolding</a></span></dt></dl></div><div class="preface" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e9"/>Introduction</h2></div></div></div><p>
          <span class="emphasis"><em>Conventions</em></span> is an integrator framework of Java EE technologies with the objective
@@ -126,122 +130,258 @@
       Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
       added as transitive dependencies):
    </p><div class="variablelist"><dl><dt><span class="term"><code class="code">org.javassist:javassist</code></span></dt><dd>Service Handlers, Unwrapping Producer Methods</dd><dt><span class="term"><code class="code">javax.servlet:servlet-api</code></span></dt><dd>Accessing resources from the Servlet Context</dd></dl></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part1"/>Part I. Architectural Overview</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e92">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e100">2.1. 
+            Bean Types
+        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e103">2.1.1. 
                 BaseMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e124">2.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e144">2.1.2. 
                 StateMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e129">2.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e149">2.1.3. 
                 ModalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e134">2.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e154">2.1.4. 
                 ConversationalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e139">2.5. 
-                    The Bean State
-                </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e164">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e181">3.1. 
+            </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e159">2.2. 
+            The Bean Entity
+        </a></span></dt><dt><span class="section"><a href="#d0e189">2.3. 
+            The Bean State
+        </a></span></dt></dl></dd><dt><span class="chapter"><a href="#service-layer">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e231">3.1. 
                 What's a Service?
-            </a></span></dt><dt><span class="section"><a href="#d0e195">3.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e245">3.2. 
                 Where is the Dao?
-            </a></span></dt><dt><span class="section"><a href="#d0e200">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e205">3.3.1. 
+            </a></span></dt><dt><span class="section"><a href="#d0e255">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e260">3.3.1. 
                     Stateless Service
-                </a></span></dt><dt><span class="section"><a href="#d0e210">3.3.2. 
+                </a></span></dt><dt><span class="section"><a href="#d0e265">3.3.2. 
                     Stateful Service
-                </a></span></dt><dt><span class="section"><a href="#d0e215">3.3.3. 
+                </a></span></dt><dt><span class="section"><a href="#d0e270">3.3.3. 
                     Custom Service
-                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e220">3.4. 
+                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e275">3.4. 
                 Creating your own Service
-            </a></span></dt><dt><span class="section"><a href="#d0e225">3.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e280">3.5. 
         Entity Manager Provider
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e235">3.5.1. 
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e290">3.5.1. 
           The built in providers
         </a></span></dt><dt><span class="section"><a href="#ext-provider">3.5.2. 
             Extending an EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e312">3.5.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e368">3.5.3. 
             Creating your own EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e340">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e347">3.6. 
+        </a></span></dt><dt><span class="section"><a href="#d0e396">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e403">3.6. 
                 Pagination 
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e352">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e372">4.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e408">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e428">4.1. 
                 Add Button
-            </a></span></dt><dt><span class="section"><a href="#d0e377">4.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e433">4.2. 
                 Edit buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e382">4.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e438">4.3. 
                 Save buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e387">4.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e443">4.4. 
                 Remove link
-            </a></span></dt><dt><span class="section"><a href="#d0e392">4.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e448">4.5. 
                 Remove Button
-            </a></span></dt><dt><span class="section"><a href="#d0e397">4.6. 
+            </a></span></dt><dt><span class="section"><a href="#d0e453">4.6. 
                 Reset Button
-            </a></span></dt><dt><span class="section"><a href="#d0e402">4.7. 
+            </a></span></dt><dt><span class="section"><a href="#d0e458">4.7. 
                 Back Button
-            </a></span></dt><dt><span class="section"><a href="#d0e407">4.8. 
+            </a></span></dt><dt><span class="section"><a href="#d0e463">4.8. 
                 Fiter Button
-            </a></span></dt><dt><span class="section"><a href="#d0e412">4.9. 
+            </a></span></dt><dt><span class="section"><a href="#d0e468">4.9. 
                 Combo
-            </a></span></dt><dt><span class="section"><a href="#d0e417">4.10. 
+            </a></span></dt><dt><span class="section"><a href="#d0e473">4.10. 
                 Property key
-            </a></span></dt><dt><span class="section"><a href="#d0e422">4.11. 
+            </a></span></dt><dt><span class="section"><a href="#d0e478">4.11. 
                 Modal
-            </a></span></dt><dt><span class="section"><a href="#d0e427">4.12. 
+            </a></span></dt><dt><span class="section"><a href="#d0e483">4.12. 
                 Modal Button
-            </a></span></dt><dt><span class="section"><a href="#d0e432">4.13. 
+            </a></span></dt><dt><span class="section"><a href="#d0e488">4.13. 
                 Modal Removal
-            </a></span></dt><dt><span class="section"><a href="#d0e437">4.14. 
+            </a></span></dt><dt><span class="section"><a href="#d0e493">4.14. 
                 Security Page
-            </a></span></dt><dt><span class="section"><a href="#d0e442">4.15. 
+            </a></span></dt><dt><span class="section"><a href="#d0e498">4.15. 
                 StateItens
-            </a></span></dt><dt><span class="section"><a href="#d0e447">4.16. 
+            </a></span></dt><dt><span class="section"><a href="#d0e503">4.16. 
                 State Pusher
-            </a></span></dt><dt><span class="section"><a href="#d0e452">4.17. 
+            </a></span></dt><dt><span class="section"><a href="#d0e508">4.17. 
                 Datatable
-            </a></span></dt><dt><span class="section"><a href="#d0e457">4.18. 
+            </a></span></dt><dt><span class="section"><a href="#d0e513">4.18. 
                 Table Footer
-            </a></span></dt><dt><span class="section"><a href="#d0e462">4.19. 
+            </a></span></dt><dt><span class="section"><a href="#d0e518">4.19. 
                 Layout Templete
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e467">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e472">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e477">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e482">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e487">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e492">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e497">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e502">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e92"/>Chapter 2. The Controller Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e100">2.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e523">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e528">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e533">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e538">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e543">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e548">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e553">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e558">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e92"/>Chapter 2. The Controller Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e100">2.1. 
+            Bean Types
+        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e103">2.1.1. 
                 BaseMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e124">2.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e144">2.1.2. 
                 StateMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e129">2.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e149">2.1.3. 
                 ModalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e134">2.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e154">2.1.4. 
                 ConversationalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e139">2.5. 
-                    The Bean State
-                </a></span></dt></dl></div><p>
-            <span class="emphasis"><em>Conventions Controllers</em></span> are represented by CDI beans and the framework count
-            with four flavors of them, we will see each one in detail.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e100"/>2.1. 
+            </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e159">2.2. 
+            The Bean Entity
+        </a></span></dt><dt><span class="section"><a href="#d0e189">2.3. 
+            The Bean State
+        </a></span></dt></dl></div><p>
+        <span class="emphasis"><em>Conventions Controllers</em></span> are represented by CDI beans and the framework count
+        with four flavors of them, we will see each one in detail.
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e100"/>2.1. 
+            Bean Types
+        </h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e103"/>2.1.1. 
                 BaseMBean
-            </h2></div></div></div><p>
-                As its name says is the bean for other conventions controllers and it has the following characteristics:
+            </h3></div></div></div><p>
+                As its name says is the base bean for other conventions controllers and it has the following characteristics:
                 
-                  </p><div class="itemizedlist"><ul><li>access to a service (link to service layer)</li><li>manages an entity(link to model layer)</li><li>provides methods to conventions UI components(link to view layer) such as addButton, editButton, removeButtom, filterButton, clearButton etc...</li><li>access to the paginator component(helper for true pagination)</li><li>access to the resourceBundle</li><li>BeanStates for cruding (link to beanState section)</li></ul></div><p>    
+                </p><div class="itemizedlist"><ul><li>access to a service (link to service layer)</li><li>manages an entity(link to model layer)</li><li>provides methods to conventions UI components(link to view layer) such as addButton, editButton, removeButtom, filterButton, clearButton etc...</li><li>access to the paginator component(helper for true pagination)</li><li>access to the resourceBundle</li><li>BeanStates for cruding (link to beanState section)</li></ul></div><p>    
             </p><p>
-                For examples of base conventions beans look at <a class="ulink" href="http://conventions-rpestano.rhcloud.com/conventions/pages/person/personHome.faces"> online showcase examples</a>
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e124"/>2.2. 
+                Here is a simple BaseMBean:
+                
+            </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">import</span><span class="java_plain">&nbsp;org</span><span class="java_separator">.</span><span class="java_plain">conventionsframework</span><span class="java_separator">.</span><span class="java_plain">bean</span><span class="java_separator">.</span><span class="java_type">BaseMBean</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">ViewAccessScoped</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Named</span><span class="java_separator">(</span><span class="java_literal">&quot;simpleMBean&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">SimpleMBean</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">BaseMBean</span><span class="java_operator">&lt;</span><span class="java_type">Person</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;setService</span><span class="java_separator">(</span><span class="java_type">PersonService</span><span class="java_plain">&nbsp;personService</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">setBaseService</span><span class="java_separator">(</span><span class="java_plain">personService</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_javadoc_comment">/**</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;called&nbsp;by&nbsp;saveButton</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;store</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">store</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_javadoc_comment">/**</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;called&nbsp;after&nbsp;'addButton'&nbsp;is&nbsp;clicked&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;to&nbsp;decide&nbsp;the&nbsp;navigation</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;afterPrepareInsert</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_javadoc_comment">/**</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;called&nbsp;after&nbsp;'editButton'&nbsp;is&nbsp;clicked&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;to&nbsp;decide&nbsp;the&nbsp;navigation</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;afterPrepareUpdate</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_literal">null</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_javadoc_comment">/**</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;called&nbsp;when&nbsp;'filterButton'&nbsp;is&nbsp;clicked</span>
+<!--  --><br/><span class="java_javadoc_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;find</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important</h2>
+                To perform datatabase operations you need to set the bean service
+                so the code below is required:
+                <pre xmlns="" class="JAVA"></span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;setService</span><span class="java_separator">(</span><span class="java_type">PersonService</span><span class="java_plain">&nbsp;personService</span><span class="java_separator">)</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">setBaseService</span><span class="java_separator">(</span><span class="java_plain">personService</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><p>Or you can use @Service annotation:</p><pre xmlns="" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">import</span><span class="java_plain">&nbsp;org</span><span class="java_separator">.</span><span class="java_plain">conventionsframework</span><span class="java_separator">.</span><span class="java_plain">bean</span><span class="java_separator">.</span><span class="java_type">BaseMBean</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">import</span><span class="java_plain">&nbsp;org</span><span class="java_separator">.</span><span class="java_plain">conventionsframework</span><span class="java_separator">.</span><span class="java_plain">qualifier</span><span class="java_separator">.</span><span class="java_type">Service</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">ViewAccessScoped</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Named</span><span class="java_separator">(</span><span class="java_literal">&quot;simpleMBean&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Service</span><span class="java_separator">(</span><span class="java_plain">name</span><span class="java_operator">=</span><span class="java_literal">&quot;name&nbsp;a&nbsp;named&nbsp;service&quot;</span><span class="java_separator">)</span><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">SimpleMBean</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">BaseMBean</span><span class="java_operator">&lt;</span><span class="java_type">Person</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span></pre></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><pre xmlns="" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;store</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">store</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span></pre><p>calls the service store method which will perform a hibernate saveOrUpdate
+                on top of bean entity you can override it in your service store method and put some businessLogic before
+                saving the entity to the datatabase.
+                </p></div><p>
+                For more examples of base conventions beans look at 
+                <a class="ulink" href="http://conventions-rpestano.rhcloud.com/conventions/pages/person/personHome.faces"> online showcase examples</a>
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e144"/>2.1.2. 
                 StateMBean
-            </h2></div></div></div><p>
+            </h3></div></div></div><p>
                 TODO Describe StateMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e129"/>2.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e149"/>2.1.3. 
                 ModalMBean
-            </h2></div></div></div><p>
+            </h3></div></div></div><p>
                 TODO Describe ModalMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e134"/>2.4. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e154"/>2.1.4. 
                 ConversationalMBean
-            </h2></div></div></div><p>
+            </h3></div></div></div><p>
                 TODO Describe ConversationalMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e139"/>2.5. 
-                    The Bean State
-                </h2></div></div></div><p>
-                    A beanState is represented by the <code class="code">State</code> interface which has only a method <code class="code">String getStateName()</code>
-                    that describes the current state of the managedBean, the baseMBean has a built in CrudState which represents
-                    states for cruding so when you are editing an entity the bean is in updateState, this state information 
-                    can be useful in various situations such as hiding some parts of the page 
-                    or executing some business logig only in determinated state and so on.
-                </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2>
-                    BaseMBean changes the state automaticly depending on the UI component is used,
-                    for example when you click editButton the beanState in set to CrudState.UPDATE
-                </div><p>
-                    Below is a example of CrudState to hide blocks of page depending on bean state: 
-                </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+            </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e159"/>2.2. 
+            The Bean Entity
+        </h2></div></div></div><p>
+            A managed bean usually performs operations on top of a JPA entity,
+            this entity is represented by the entity attribute in BaseMBean
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">import</span><span class="java_plain">&nbsp;org</span><span class="java_separator">.</span><span class="java_plain">conventionsframework</span><span class="java_separator">.</span><span class="java_plain">bean</span><span class="java_separator">.</span><span class="java_type">BaseMBean</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">import</span><span class="java_plain">&nbsp;javax</span><span class="java_separator">.</span><span class="java_plain">inject</span><span class="java_separator">.</span><span class="java_type">Named</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">import</span><span class="java_plain">&nbsp;org</span><span class="java_separator">.</span><span class="java_plain">apache</span><span class="java_separator">.</span><span class="java_plain">myfaces</span><span class="java_separator">.</span><span class="java_plain">extensions</span><span class="java_separator">.</span><span class="java_plain">cdi</span><span class="java_separator">.</span><span class="java_plain">core</span><span class="java_separator">.</span><span class="java_plain">api</span><span class="java_separator">.</span><span class="java_plain">scope</span><span class="java_separator">.</span><span class="java_plain">conversation</span><span class="java_separator">.</span><span class="java_type">ViewAccessScoped</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">ViewAccessScoped</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">SimpleMBean</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">BaseMBean</span><span class="java_operator">&lt;</span><span class="java_type">EntityClass</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;someMethod</span><span class="java_separator">(){</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">EntityClass</span><span class="java_plain">&nbsp;someVar&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;getEntity</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setEntity</span><span class="java_separator">(</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">EntityClass</span><span class="java_separator">());</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2>
+            some Conventions composite components will act on top of the entity atribute, 
+            like editButton, removeButton and so on...
+        </div><p>
+            the Entity type can be provided by the following ways:
+            </p><div class="itemizedlist"><ul><li>@PersistentClass annotation</li></ul></div><p>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">RequestScoped</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">PersistentClass</span><span class="java_separator">(</span><span class="java_type">Person</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">)</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">SimpleMBean</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">BaseMBean</span><span class="java_operator">&lt;</span><span class="java_type">EntityClass</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;someMethod</span><span class="java_separator">(){</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Person</span><span class="java_plain">&nbsp;someVar&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;getEntity</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setEntity</span><span class="java_separator">(</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Person</span><span class="java_separator">());</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><p>
+            </p><div class="itemizedlist"><ul><li>override the create method</li></ul></div><p>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">RequestScoped</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">SimpleMBean</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">BaseMBean</span><span class="java_operator">&lt;</span><span class="java_type">Person</span><span class="java_operator">&gt;</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">Person</span><span class="java_plain">&nbsp;create</span><span class="java_separator">(){</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Person</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;someMethod</span><span class="java_separator">(){</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">Person</span><span class="java_plain">&nbsp;someVar&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;getEntity</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setEntity</span><span class="java_separator">(</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Person</span><span class="java_separator">());</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><p>
+                </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2>
+                    if you dont provide a way to resolve the entity the framework will try to resolve 
+                    it via reflections but avoid that because in some situations your managed bean will be a CDI proxy
+                    (eg. when @SecurityMethod annotation is present) and the reflection will not work.
+                </div><p> 
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e189"/>2.3. 
+            The Bean State
+        </h2></div></div></div><p>
+            A beanState is represented by the 
+            <code class="code">State</code> interface which has only a method 
+            <code class="code">String getStateName()</code>
+            that describes the current state of the managedBean, the baseMBean has a built in CrudState which represents
+            states for cruding so when you are editing an entity the bean is in updateState, this state information 
+            can be useful in various situations such as hiding some parts of the page 
+            or executing some business logig only in determinated state and so on.
+        </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2>
+            BaseMBean changes the state automaticly depending on the UI component is used,
+            for example when you click editButton the beanState in set to CrudState.UPDATE
+        </div><p>
+            Below is a example of CrudState to hide blocks of page depending on bean state: 
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
 <span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">p:outputPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">rendered</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{empty&nbsp;personMBean.beanState&nbsp;or&nbsp;personMBean.findState}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">ui:include</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">src</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;listUser.xhtml&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
@@ -254,9 +394,10 @@
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">p:outputPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
 </pre><p>
-                    Below is the use of bean state in the controller: 
-                </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
+            Below is the use of bean state in the controller: 
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">MyBean</span><span class="java_plain">&nbsp;</span><span class="java_keyword">extends</span><span class="java_plain">&nbsp;</span><span class="java_type">BaseMBean</span><span class="java_operator">&lt;</span><span class="java_type">Entity</span><span class="java_separator">,</span><span class="java_type">Long</span><span class="java_operator">&gt;</span><span class="java_separator">{</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;anAction</span><span class="java_separator">(){</span>
@@ -267,7 +408,8 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setBeanState</span><span class="java_separator">(</span><span class="java_type">CrudState</span><span class="java_separator">.</span><span class="java_plain">UPDATE</span><span class="java_separator">);</span><span class="java_operator">//</span><span class="java_plain">change&nbsp;the&nbsp;bean&nbsp;state</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><p>the code below shows how to create your own States </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre><p>the code below shows how to create your own States </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;enum&nbsp;</span><span class="java_type">SecurityState</span><span class="java_plain">&nbsp;</span><span class="java_keyword">implements</span><span class="java_plain">&nbsp;</span><span class="java_type">State</span><span class="java_separator">{</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADMIN</span><span class="java_separator">(</span><span class="java_literal">&quot;admin&quot;</span><span class="java_separator">),</span><span class="java_plain">GUEST</span><span class="java_separator">(</span><span class="java_literal">&quot;guest&quot;</span><span class="java_separator">);</span>
 </span>
@@ -281,27 +423,28 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">public</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;getStateName</span><span class="java_separator">()</span><span class="java_plain">&nbsp;</span><span class="java_separator">{</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">stateName</span><span class="java_separator">;</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e164"/>Chapter 3. The Service Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e181">3.1. 
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="service-layer"/>Chapter 3. The Service Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e231">3.1. 
                 What's a Service?
-            </a></span></dt><dt><span class="section"><a href="#d0e195">3.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e245">3.2. 
                 Where is the Dao?
-            </a></span></dt><dt><span class="section"><a href="#d0e200">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e205">3.3.1. 
+            </a></span></dt><dt><span class="section"><a href="#d0e255">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e260">3.3.1. 
                     Stateless Service
-                </a></span></dt><dt><span class="section"><a href="#d0e210">3.3.2. 
+                </a></span></dt><dt><span class="section"><a href="#d0e265">3.3.2. 
                     Stateful Service
-                </a></span></dt><dt><span class="section"><a href="#d0e215">3.3.3. 
+                </a></span></dt><dt><span class="section"><a href="#d0e270">3.3.3. 
                     Custom Service
-                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e220">3.4. 
+                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e275">3.4. 
                 Creating your own Service
-            </a></span></dt><dt><span class="section"><a href="#d0e225">3.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e280">3.5. 
         Entity Manager Provider
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e235">3.5.1. 
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e290">3.5.1. 
           The built in providers
         </a></span></dt><dt><span class="section"><a href="#ext-provider">3.5.2. 
             Extending an EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e312">3.5.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e368">3.5.3. 
             Creating your own EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e340">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e347">3.6. 
+        </a></span></dt><dt><span class="section"><a href="#d0e396">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e403">3.6. 
                 Pagination 
             </a></span></dt></dl></div><p>
             This section shows how the framework is integrated with 
@@ -309,33 +452,35 @@
             <span class="emphasis"><em>Hibernate</em></span> and 
             <span class="emphasis"><em>EJB</em></span> to provide database operations through 
             <span class="emphasis"><em>Conventions Services</em></span> which are components that link the framework to the backend infrastructure.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e181"/>3.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e231"/>3.1. 
                 What's a Service?
             </h2></div></div></div><p>
                 In Conventions Framework services are components that have access to 
                 the backend infrastructure, below are some characterists of a service:
-            </p><div class="itemizedlist"><ul><li>has access to an entitymanager via EntityManagerProvider component</li><li>has access to a Hibernate session</li><li>built in and configurable pagination method</li><li>built in cruding operations</li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e195"/>3.2. 
+            </p><div class="itemizedlist"><ul><li>has access to an entitymanager via EntityManagerProvider component</li><li>has access to a Hibernate session</li><li>built in and configurable pagination method</li><li>built in cruding operations</li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e245"/>3.2. 
                 Where is the Dao?
             </h2></div></div></div><p>
-                Conventions framework does not have an explicit Dao layer(althought you can create one), the dao has
+                Conventions framework does not have an explicit Dao layer(although you can create one), the dao has
                 a composition relashionship with the service layer so each service has a dao.
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e200"/>3.3. The built in Services</h2></div></div></div><p>Conventions counts with three extensible built in services templates</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e205"/>3.3.1. 
+            </p><p>
+                The dao template used in conventions can be found <a class="ulink" href="https://github.com/conventions/core/blob/master/src/main/java/org/conventionsframework/dao/impl/BaseHibernateDaoImpl.java">here</a> 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e255"/>3.3. The built in Services</h2></div></div></div><p>Conventions counts with three extensible built in services templates</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e260"/>3.3.1. 
                     Stateless Service
                 </h3></div></div></div><p>
                     TODO Describe statelessService
-                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e210"/>3.3.2. 
+                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e265"/>3.3.2. 
                     Stateful Service
                 </h3></div></div></div><p>
                     TODO Describe statefulService
-                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e215"/>3.3.3. 
+                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e270"/>3.3.3. 
                     Custom Service
                 </h3></div></div></div><p>
                     TODO Describe customService
-                </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e220"/>3.4. 
+                </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e275"/>3.4. 
                 Creating your own Service
             </h2></div></div></div><p>
                 TODO Describe creating a Service
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e225"/>3.5. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e280"/>3.5. 
         Entity Manager Provider
     </h2></div></div></div><p>
         The EntityManagerProvider is an important component in the framework architecture, it is the 'guy'
@@ -344,7 +489,7 @@
         Conventions comes with three built in entityManagerProviders that are used by the 
         built in <span class="emphasis"><em>Services</em></span> but creating your own provider is very easy 
         and will be demostrated in the next sections.
-    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e235"/>3.5.1. 
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e290"/>3.5.1. 
           The built in providers
         </h3></div></div></div><p>
             <span class="emphasis"><em>StatelessEntityManagerProvider:</em></span> is a 
@@ -364,7 +509,10 @@
             Extending an EntityManagerProvider
         ”</a>.
             It is used by CustomHibernateService.
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="ext-provider"/>3.5.2. 
+        </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2>
+            CustomEntityManagerProvider and CustomHibernateService were designed to work without EJB 
+            and are used in Tomcat sample applications.
+        </div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="ext-provider"/>3.5.2. 
             Extending an EntityManagerProvider
         </h3></div></div></div><p>
             The built in providers will work as long you have only one
@@ -412,14 +560,12 @@
                 you can extend a built in provider and use it in your own service if do that 
                 you wont need the <code class="code">@ConventionsEntityManager</code> but an easy way to do that
                 is creating your own EntityManagerProvider.
-               
             </p></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important</h2><p>
                 When you have multiples services that extend the built in Services 
-                keep in mind that your services are sharing the same PersistenceContext
+                keep in mind that your services are sharing the same PersistenceContext(when type=EXTENDED)
                 so if you want a PersistenceContext per Service you must create
                 an EntityManager provider for each service.
-            </p></div></div>EntityManagerProvider
-    <div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e312"/>3.5.3. 
+            </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e368"/>3.5.3. 
             Creating your own EntityManagerProvider
         </h3></div></div></div><p>
             To create your provider you'll need:
@@ -467,12 +613,19 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">note&nbsp;that&nbsp;</span><span class="java_type">StatefulHibernateService</span><span class="java_plain">&nbsp;uses&nbsp;</span><span class="java_type">StatefulEntityManagerProvider</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">Inject</span><span class="java_plain">&nbsp;@</span><span class="java_type">Named</span><span class="java_separator">(</span><span class="java_literal">&quot;myProvider&quot;</span><span class="java_separator">)</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">EntityManagerProvider</span><span class="java_plain">&nbsp;entityManagerProvider</span><span class="java_separator">;</span><span class="java_operator">//</span><span class="java_plain">example&nbsp;of&nbsp;created&nbsp;</span><span class="java_type">EntityManagerProvider</span><span class="java_plain">&nbsp;instead&nbsp;of&nbsp;using&nbsp;built&nbsp;in</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@</span><span class="java_type">PostContruct</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">void</span><span class="java_plain">&nbsp;changeProvider</span><span class="java_separator">(){</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">setEntityManagerProvider</span><span class="java_separator">(</span><span class="java_plain">entityManagerProvider</span><span class="java_separator">);</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">OR&nbsp;override&nbsp;getter</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_comment">/*</span><span class="java_plain">&nbsp;@Override</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;EntityManagerProvider&nbsp;getEntityManagerProvider()&nbsp;{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this.entityManagerProvider;</span>
+<!--  --><br/><span class="java_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;*/</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e340"/>3.5.4. setting entity manager "by hand"</h3></div></div></div><p> If you dont want to create or extend an entityManagerProvider but still want
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e396"/>3.5.4. setting entity manager "by hand"</h3></div></div></div><p> If you dont want to create or extend an entityManagerProvider but still want
            one PersistenceContext per service you can set the entityManager by hand in each 
            service, see the code  below:
        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
@@ -488,47 +641,47 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">getEntityManagerProvider</span><span class="java_separator">().</span><span class="java_plain">setEntityManager</span><span class="java_separator">(</span><span class="java_plain">entityManager</span><span class="java_separator">);</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e347"/>3.6. 
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e403"/>3.6. 
                 Pagination 
             </h2></div></div></div><p>
                 TODO Describe how true pagination works(not the paginator utility component) but focus on ConfigFindPagination overrding
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e352"/>Chapter 4. The View Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e372">4.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e408"/>Chapter 4. The View Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e428">4.1. 
                 Add Button
-            </a></span></dt><dt><span class="section"><a href="#d0e377">4.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e433">4.2. 
                 Edit buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e382">4.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e438">4.3. 
                 Save buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e387">4.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e443">4.4. 
                 Remove link
-            </a></span></dt><dt><span class="section"><a href="#d0e392">4.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e448">4.5. 
                 Remove Button
-            </a></span></dt><dt><span class="section"><a href="#d0e397">4.6. 
+            </a></span></dt><dt><span class="section"><a href="#d0e453">4.6. 
                 Reset Button
-            </a></span></dt><dt><span class="section"><a href="#d0e402">4.7. 
+            </a></span></dt><dt><span class="section"><a href="#d0e458">4.7. 
                 Back Button
-            </a></span></dt><dt><span class="section"><a href="#d0e407">4.8. 
+            </a></span></dt><dt><span class="section"><a href="#d0e463">4.8. 
                 Fiter Button
-            </a></span></dt><dt><span class="section"><a href="#d0e412">4.9. 
+            </a></span></dt><dt><span class="section"><a href="#d0e468">4.9. 
                 Combo
-            </a></span></dt><dt><span class="section"><a href="#d0e417">4.10. 
+            </a></span></dt><dt><span class="section"><a href="#d0e473">4.10. 
                 Property key
-            </a></span></dt><dt><span class="section"><a href="#d0e422">4.11. 
+            </a></span></dt><dt><span class="section"><a href="#d0e478">4.11. 
                 Modal
-            </a></span></dt><dt><span class="section"><a href="#d0e427">4.12. 
+            </a></span></dt><dt><span class="section"><a href="#d0e483">4.12. 
                 Modal Button
-            </a></span></dt><dt><span class="section"><a href="#d0e432">4.13. 
+            </a></span></dt><dt><span class="section"><a href="#d0e488">4.13. 
                 Modal Removal
-            </a></span></dt><dt><span class="section"><a href="#d0e437">4.14. 
+            </a></span></dt><dt><span class="section"><a href="#d0e493">4.14. 
                 Security Page
-            </a></span></dt><dt><span class="section"><a href="#d0e442">4.15. 
+            </a></span></dt><dt><span class="section"><a href="#d0e498">4.15. 
                 StateItens
-            </a></span></dt><dt><span class="section"><a href="#d0e447">4.16. 
+            </a></span></dt><dt><span class="section"><a href="#d0e503">4.16. 
                 State Pusher
-            </a></span></dt><dt><span class="section"><a href="#d0e452">4.17. 
+            </a></span></dt><dt><span class="section"><a href="#d0e508">4.17. 
                 Datatable
-            </a></span></dt><dt><span class="section"><a href="#d0e457">4.18. 
+            </a></span></dt><dt><span class="section"><a href="#d0e513">4.18. 
                 Table Footer
-            </a></span></dt><dt><span class="section"><a href="#d0e462">4.19. 
+            </a></span></dt><dt><span class="section"><a href="#d0e518">4.19. 
                 Layout Templete
             </a></span></dt></dl></div><p>
             In this section we will cover UI components provided by the framework to easy the development driven by 
@@ -545,151 +698,151 @@
                         xmlns:c="http://conventions.org/ui"
                     </code></li></ul></div><p>    
        
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e372"/>4.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e428"/>4.1. 
                 Add Button
             </h2></div></div></div><p>
                 TODO describe The addButton is a primefaces commandButton wrapper... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e377"/>4.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e433"/>4.2. 
                 Edit buttom
             </h2></div></div></div><p>
                 TODO describe  editButton...
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e382"/>4.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e438"/>4.3. 
                 Save buttom
             </h2></div></div></div><p>
                 TODO describe saveButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e387"/>4.4. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e443"/>4.4. 
                 Remove link
             </h2></div></div></div><p>
                 TODO describe removeLink... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e392"/>4.5. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e448"/>4.5. 
                 Remove Button
             </h2></div></div></div><p>
                 TODO describe removeButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e397"/>4.6. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e453"/>4.6. 
                 Reset Button
             </h2></div></div></div><p>
                 TODO describe  resetButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e402"/>4.7. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e458"/>4.7. 
                 Back Button
             </h2></div></div></div><p>
                 TODO describe  backButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e407"/>4.8. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e463"/>4.8. 
                 Fiter Button
             </h2></div></div></div><p>
                 TODO describe filterButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e412"/>4.9. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e468"/>4.9. 
                 Combo
             </h2></div></div></div><p>
                 TODO describe  combo... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e417"/>4.10. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e473"/>4.10. 
                 Property key
             </h2></div></div></div><p>
                 TODO describe propertyKey... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e422"/>4.11. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e478"/>4.11. 
                 Modal
             </h2></div></div></div><p>
                 TODO describe  modal... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e427"/>4.12. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e483"/>4.12. 
                 Modal Button
             </h2></div></div></div><p>
                 TODO describe modalButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e432"/>4.13. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e488"/>4.13. 
                 Modal Removal
             </h2></div></div></div><p>
                 TODO describe modalRemoval... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e437"/>4.14. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e493"/>4.14. 
                 Security Page
             </h2></div></div></div><p>
                 TODO describe securityPage... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e442"/>4.15. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e498"/>4.15. 
                 StateItens
             </h2></div></div></div><p>
                 TODO describe stateItens...  
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e447"/>4.16. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e503"/>4.16. 
                 State Pusher
             </h2></div></div></div><p>
                 TODO describe statePusher...  
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e452"/>4.17. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e508"/>4.17. 
                 Datatable
             </h2></div></div></div><p>
                 TODO describe datatable... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e457"/>4.18. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e513"/>4.18. 
                 Table Footer
             </h2></div></div></div><p>
                 TODO describe tableFooter... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e462"/>4.19. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e518"/>4.19. 
                 Layout Templete
             </h2></div></div></div><p>
                 TODO describe layout component... 
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e467"/>Chapter 5. The Model Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e472">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e477">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e482">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e487">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e492">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e497">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e502">5.7. VersionatedEntityString</a></span></dt></dl></div><p>
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e523"/>Chapter 5. The Model Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e528">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e533">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e538">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e543">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e548">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e553">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e558">5.7. VersionatedEntityString</a></span></dt></dl></div><p>
         describe model utility classes
-    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e472"/>5.1. AbstractBaseEntity</h2></div></div></div><p>
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e528"/>5.1. AbstractBaseEntity</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e477"/>5.2. BaseEntityLong</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e533"/>5.2. BaseEntityLong</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e482"/>5.3. BaseEntityString</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e538"/>5.3. BaseEntityString</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e487"/>5.4. CustomBaseEntity</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e543"/>5.4. CustomBaseEntity</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e492"/>5.5. AbstractVersionatedEntity</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e548"/>5.5. AbstractVersionatedEntity</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e497"/>5.6. VersionatedEntityLong</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e553"/>5.6. VersionatedEntityLong</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e502"/>5.7. VersionatedEntityString</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e558"/>5.7. VersionatedEntityString</h2></div></div></div><p>
              TODO
-        </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. General utilities</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e510">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e518">6.1. 
+        </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. General utilities</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e566">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e574">6.1. 
                 Configuring the resource bundle
-            </a></span></dt><dt><span class="section"><a href="#d0e523">6.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e579">6.2. 
                The ResourceBundleProvider component
-            </a></span></dt><dt><span class="section"><a href="#d0e528">6.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e584">6.3. 
                 changing the locale
-            </a></span></dt><dt><span class="section"><a href="#d0e533">6.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e589">6.4. 
                 examples
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e538">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e548">7.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e594">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e604">7.1. 
                 Business Exception
-            </a></span></dt><dt><span class="section"><a href="#d0e553">7.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e609">7.2. 
                Creating an error page
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e558">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e572">8.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e614">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e628">8.1. 
                 SecurityMethod
-            </a></span></dt><dt><span class="section"><a href="#d0e577">8.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e633">8.2. 
                SecuritedPage
-            </a></span></dt><dt><span class="section"><a href="#d0e582">8.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e638">8.3. 
                SecuritedArea
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e587">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e595">9.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e643">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e651">9.1. 
                 Injecting properties
-            </a></span></dt><dt><span class="section"><a href="#d0e600">9.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e656">9.2. 
                the propertyKey component
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e605">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e612">10.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e661">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e668">10.1. 
                 Examples
-            </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e510"/>Chapter 6. Internationalization</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e518">6.1. 
+            </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e566"/>Chapter 6. Internationalization</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e574">6.1. 
                 Configuring the resource bundle
-            </a></span></dt><dt><span class="section"><a href="#d0e523">6.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e579">6.2. 
                The ResourceBundleProvider component
-            </a></span></dt><dt><span class="section"><a href="#d0e528">6.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e584">6.3. 
                 changing the locale
-            </a></span></dt><dt><span class="section"><a href="#d0e533">6.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e589">6.4. 
                 examples
             </a></span></dt></dl></div><p>
             In this chapter we will see how <span class="emphasis"><em>Conventions framework</em></span> provides internationalization. 
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e518"/>6.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e574"/>6.1. 
                 Configuring the resource bundle
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e523"/>6.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e579"/>6.2. 
                The ResourceBundleProvider component
             </h2></div></div></div><p>
                 TODO
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e528"/>6.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e584"/>6.3. 
                 changing the locale
             </h2></div></div></div><p>
                 TODO  
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e533"/>6.4. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e589"/>6.4. 
                 examples
             </h2></div></div></div><p>
                 TODO examples accessing resourceBundle in page and bean and passing parameters
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e538"/>Chapter 7. Exception Handling</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e548">7.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e594"/>Chapter 7. Exception Handling</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e604">7.1. 
                 Business Exception
-            </a></span></dt><dt><span class="section"><a href="#d0e553">7.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e609">7.2. 
                Creating an error page
             </a></span></dt></dl></div><p>
             Exception handling is a very important mechanism in enterprise applications that is used for eg. to show 
@@ -706,51 +859,51 @@
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">application</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">faces-config</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
-</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e548"/>7.1. 
+</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e604"/>7.1. 
                 Business Exception
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e553"/>7.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e609"/>7.2. 
                Creating an error page
             </h2></div></div></div><p>
                 TODO
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e558"/>Chapter 8. Security</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e572">8.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e614"/>Chapter 8. Security</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e628">8.1. 
                 SecurityMethod
-            </a></span></dt><dt><span class="section"><a href="#d0e577">8.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e633">8.2. 
                SecuritedPage
-            </a></span></dt><dt><span class="section"><a href="#d0e582">8.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e638">8.3. 
                SecuritedArea
             </a></span></dt></dl></div><p>
              The framework provides some security helpers such as <span class="emphasis"><em>SecurityMethod</em></span>for method execution autorizaion, <span class="emphasis"><em>SecuritedPage</em></span>
               for blocking access to unallowed users and <span class="emphasis"><em>SecuritedArea</em></span> to hide blocks of page from unallowed users.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e572"/>8.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e628"/>8.1. 
                 SecurityMethod
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e577"/>8.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e633"/>8.2. 
                SecuritedPage
             </h2></div></div></div><p>
                 TODO
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e582"/>8.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e638"/>8.3. 
                SecuritedArea
             </h2></div></div></div><p>
                 TODO
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e587"/>Chapter 9. Properties injection</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e595">9.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e643"/>Chapter 9. Properties injection</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e651">9.1. 
                 Injecting properties
-            </a></span></dt><dt><span class="section"><a href="#d0e600">9.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e656">9.2. 
                the propertyKey component
             </a></span></dt></dl></div><p>
              Another useful feature the framework provides is the ability to inject <code class="code">.properties</code> files
              or prperties keys via CDI.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e595"/>9.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e651"/>9.1. 
                 Injecting properties
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e600"/>9.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e656"/>9.2. 
                the propertyKey component
             </h2></div></div></div><p>
                 TODO
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e605"/>Chapter 10. Annotated Queries</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e612">10.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e661"/>Chapter 10. Annotated Queries</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e668">10.1. 
                 Examples
             </a></span></dt></dl></div><p>
              An utility to allow query execution via annotations.
@@ -766,7 +919,7 @@
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">interceptors</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">beans</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
-</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e612"/>10.1. 
+</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e668"/>10.1. 
                 Examples
             </h2></div></div></div><p>
                 TODO 
