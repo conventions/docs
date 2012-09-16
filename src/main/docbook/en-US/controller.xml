@@ -106,8 +106,8 @@
                    super.store();
                }]]></programlisting>
                 <para>calls the service store method which will perform a hibernate saveOrUpdate
-                on top of bean entity you can override it in your service store method and put some businessLogic before
-                saving the entity to the datatabase.
+                on top of the bean entity(<xref linkend="beanEntity"/>). You may override it in your service store method and put some business logic before
+                saving the entity to the datatabase, we will see how to do that on service chapter(<xref linkend="serviceLayer"/>).
                 </para>
             </tip>       
              
@@ -143,7 +143,7 @@
             </para>
         </section>
     </section>
-    <section>
+    <section id="beanEntity">
         <title>
             The Bean Entity
         </title>
@@ -223,7 +223,7 @@
             that describes the current state of the managedBean, the baseMBean has a built in CrudState which represents
             states for cruding so when you are editing an entity the bean is in updateState, this state information 
             can be useful in various situations such as hiding some parts of the page 
-            or executing some business logig only in determinated state and so on.
+            or executing some business logig only in determinated state for example.
         </para>
         <tip>
             BaseMBean changes the state automaticly depending on the UI component is used,
