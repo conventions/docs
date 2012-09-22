@@ -253,7 +253,7 @@
                     <code>Conventions JavaEE 6(+) Server dependencies</code>
                 </term>
                 <listitem> 
-                    Download here(link) the zip file with all dependencies for Conventions framework
+                    <ulink url="https://github.com/downloads/conventions/core/conventions-dependencies-0.9.7.zip"> Download here</ulink> the zip file with all dependencies for Conventions framework
                     based on a JavaEE 6(+) Application Server such as Glassfish or JBossAs7.x
                 </listitem>
             </varlistentry>
@@ -262,7 +262,7 @@
                     <code>Conventions Tomcat dependencies with OpenWebBeans</code>
                 </term>
                 <listitem> 
-                    Download here(link) the zip file with all dependencies for Conventions framework
+                    <ulink url="https://github.com/downloads/conventions/core/conventions-dependencies-tomcat-owb-0.9.7.zip"> Download here</ulink> the zip file with all dependencies for Conventions framework
                     based on tomcat with <emphasis>OpenWebBeans</emphasis> as context and depency injection provider.
                 </listitem>
             </varlistentry>
@@ -271,7 +271,7 @@
                     <code>Conventions Tomcat dependencies with Weld</code>
                 </term>
                 <listitem> 
-                    Download here(link) the zip file with all dependencies for Conventions framework
+                    <ulink url="https://github.com/downloads/conventions/core/conventions-dependencies-0.9.7-tomcat-weld.zip"> Download here</ulink> the zip file with all dependencies for Conventions framework
                     based on tomcat with <emphasis>Weld</emphasis> as context and depency injection provider.
                 </listitem>
             </varlistentry>
