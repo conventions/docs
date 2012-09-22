@@ -2,69 +2,316 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
 <chapter id="gettingstarted">
-   <title>Getting Started</title>
+    <title>Getting Started</title>
    
-   <para>
-      Getting started with Weld Extensions is easy. If you are using Maven, then you can declare a dependency on Weld
-      Extensions (<code>org.jboss.weld:weld-extensions:${weld.extensions.version}</code>, make sure you have the JBoss 
-      Maven repository enabled). Otherwise, add the jar to your compile time and runtime classpath. 
-   </para>
+    <para>
+        In this chapter you will learn how to add 
+        <emphasis>Conventions </emphasis> and its related dependencies to your project in three ways: 
+    </para>
+    <itemizedlist>
+        <listitem>
+            Using maven 
+        </listitem>
+        <listitem>
+            Without maven
+        </listitem>
+        <listitem>
+            Scaffolding
+        </listitem>
+    </itemizedlist>
+    <section>
+        <title>Using maven</title>
+        <section id="mvn-dependencies">
+            <title>Declaring maven dependencies</title>
+            <para>Here is the full list of Conventions framework maven dependencies</para>
+            <programlisting role="XML"><![CDATA[         
+
+            <dependencies>        
+               <!-- Java EE -->
+            <dependency>
+                <groupId>javax</groupId>
+                    <artifactId>javaee-web-api</artifactId>
+                    <version>6.0</version>
+                    <scope>provided</scope>
+                </dependency>
+            <dependency>
+                <groupId>com.sun.faces</groupId>
+                <artifactId>jsf-api</artifactId>
+                <version>${mojarra.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.faces</groupId>
+                <artifactId>jsf-impl</artifactId>
+                <version>${mojarra.version}</version>
+                <scope>provided</scope>
+            </dependency> 
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>el-api</artifactId>
+                <version>2.2.1-b04</version>
+                <scope>provided</scope>
+            </dependency>
+        
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.myfaces.extensions.cdi.bundles</groupId>
+                <artifactId>myfaces-extcdi-bundle-jsf20</artifactId>
+                <version>1.0.5</version>
+            </dependency>
+            <!-- end JavaEE -->
+            <!-- conventions -->
+            <dependency>
+                <groupId>org.conventionsframework</groupId>
+                <artifactId>conventions-core</artifactId>
+                <version>0.9.7</version>
+            </dependency>
+            <!-- end conventions -->
+            <!-- primefaces -->
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>3.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.primefaces.extensions</groupId>
+                <artifactId>primefaces-extensions</artifactId>
+                <version>0.6.0</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.primefaces</groupId>
+                        <artifactId>primefaces</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- end primefaces -->
+            
+            <!-- hibernate --> 
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <version>1.0.1.Final</version>
+            </dependency>
+        
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>4.1.5-Final</version>
+            </dependency>
+                
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>4.1.5-Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>4.3.0.Final</version>
+            </dependency>
+
+            <!-- end hibernate --> 
+
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.14.0-GA</version>
+            </dependency>
+                
+                
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.5.10</version>
+            </dependency>
+        
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <!-- end Logging -->
+        
+            <!--themes -->
+            <dependency>
+                <groupId>org.primefaces.extensions</groupId>
+                <artifactId>all-themes</artifactId>
+                <version>${primefaces.theme.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- end themes -->
+]]>
+            </programlisting>
+            <para>
+                Note that half of them are JavaEE dependencies and are provided by an application server
+                so they are declared as provided maven scope.
+            </para>
+            <para>
+                Above is an explanation of the use of the main dependencies 
+            </para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <code>org.primefaces:primefaces</code>
+                    </term>
+                    <listitem>Used by conventions UI components which are described at <xref linkend="view-layer"/>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <code>
+                            org.primefaces.extensions:primefaces-extensions
+                        </code>
+                    </term>
+                    <listitem>Used by the layout template so if you won use the template you dont need to declare this dependency 
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <code>org.apache.myfaces.extensions.cdi.bundles:myfaces-extcdi-bundle-jsf20</code>
+                    </term>
+                    <listitem>Apache Myfaces CODI is used by Non EJB based service 
+                        <emphasis>CustomHibernateService</emphasis> 
+                        <xref linkend="custom-service"/>  
+                        for transaction demarcation with 
+                        <code>@Transactional</code> annotation.
+                        <tip>
+                            CODI scopes are very handy and widly used in conventions sample projects, you may take a look here "TODO link to codi scopes"
+                        </tip>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>
+                        <code>org.hibernate:hibernate</code>
+                    </term>
+                    <listitem>Hibernate is used as JPA provider
+                        <important>
+                        Conventions is highly dependent on Hibernate 
+                        <emphasis>4.x API</emphasis>
+                    </important>
+                    </listitem>
+                </varlistentry>
+               </variablelist>
+        </section>
+        <section>
+            <title> 
+                <code>conventions-bom</code>
+            </title>
+            <para>The BOM(Bill of materials) for Conventions framework specifies the versions of the required dependencies so if you are using Maven 3, you can easily import conventions-bom into your POM by declaring the following in your depdendencyManagement section:</para>
+            <programlisting role="XML"><![CDATA[         
+
+        <dependencyManagement> 
+            <dependencies>        
+                <dependency>
+                    <groupId>org.conventionsframework</groupId>
+                    <artifactId>conventions-bom</artifactId>
+                    <version>0.9.7</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                 </dependency>
+            </dependencies>
+        <dependencyManagement>                 
+]]>
+            </programlisting>
+            <para>
+                now you dont have to worry about dependency version, you just need to declare 
+                the groupId and artifactId of each dependency we described in 
+                <xref linkend="mvn-dependencies"/>.
+            </para>
+            <tip>
+                you can declare the version of the dependencies, if you do so you are
+                overriding the declared version in conventions-bom. 
+            </tip>
+        </section>
+        <section>
+            <title>Using maven archetype</title>
+            <para>TODO</para>
+        </section>
+    </section>
    
-   <para>
-      Most of Weld Extensions has very few dependencies:
-   </para>
+    
+    <section>
+        <title>Without maven</title>
+        <para>TODO</para>
+    </section>
+    <section>
+        <title>Scaffolding</title>
+        <para>TODO</para>
+    </section>
+    <para>
+        Most of Weld Extensions has very few dependencies:
+    </para>
    
-   <itemizedlist>
-      <listitem>
-         <code>javax.enterprise:cdi-api</code>
-      </listitem>
-      <listitem>
-         <code>org.slf4j:slf4j-api</code>
-      </listitem>
-      <listitem>
-         <code>org.jboss.logging:jboss-logging-api</code>
-      </listitem>
-      <listitem>
-         <code>javax.el:el-api</code>
-      </listitem>
-      <listitem>
-         <code>javax.inject:javax.inject</code>
-      </listitem>
-      <listitem>
-         <code>javax.transaction:jta</code>
-      </listitem>
-   </itemizedlist>
+    <itemizedlist>
+        <listitem>
+            <code>javax.enterprise:cdi-api</code>
+        </listitem>
+        <listitem>
+            <code>org.slf4j:slf4j-api</code>
+        </listitem>
+        <listitem>
+            <code>org.jboss.logging:jboss-logging-api</code>
+        </listitem>
+        <listitem>
+            <code>javax.el:el-api</code>
+        </listitem>
+        <listitem>
+            <code>javax.inject:javax.inject</code>
+        </listitem>
+        <listitem>
+            <code>javax.transaction:jta</code>
+        </listitem>
+    </itemizedlist>
    
-   <tip>
-      <para>
-         The POM for Weld Extensions specifies the versions required. If you are using Maven 3, you can easily import
-         the <code>dependencyManagement</code> into your POM by declaring the following in your 
-         <code>depdendencyManagement</code> section:
-      </para>
+    <tip>
+        <para>
+            The POM for Weld Extensions specifies the versions required. If you are using Maven 3, you can easily import
+            the 
+            <code>dependencyManagement</code> into your POM by declaring the following in your 
+            <code>depdendencyManagement</code> section:
+        </para>
       
-      <programlisting role="XML"><![CDATA[         <dependency>
+        <programlisting role="XML"><![CDATA[         <dependency>
             <groupId>org.jboss.weld</groupId>
             <artifactId>weld-extensions</artifactId>
             <version>${weld.extensions.version}</version>
             <type>pom</type>
             <scope>import</scope>
-         </dependency>]]></programlisting>
-   </tip>
+         </dependency>]]>
+        </programlisting>
+    </tip>
    
-   <para>
-      Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
-      added as transitive dependencies):
-   </para>
+    <para>
+        Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
+        added as transitive dependencies):
+    </para>
    
-   <variablelist>
-      <varlistentry>
-         <term><code>org.javassist:javassist</code></term>
-         <listitem>Service Handlers, Unwrapping Producer Methods</listitem>
-      </varlistentry>
-      <varlistentry>
-         <term><code>javax.servlet:servlet-api</code></term>
-         <listitem>Accessing resources from the Servlet Context</listitem>
-      </varlistentry>
-   </variablelist>
+    <variablelist>
+        <varlistentry>
+            <term>
+                <code>org.javassist:javassist</code>
+            </term>
+            <listitem>Service Handlers, Unwrapping Producer Methods</listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>
+                <code>javax.servlet:servlet-api</code>
+            </term>
+            <listitem>Accessing resources from the Servlet Context</listitem>
+        </varlistentry>
+    </variablelist>
    
 </chapter>

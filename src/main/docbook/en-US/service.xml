@@ -56,7 +56,7 @@
                     TODO Describe statefulService
                 </para>
             </section>
-            <section>
+            <section id="custom-service">
                 <title>
                     Custom Service
                 </title>
