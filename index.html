@@ -1,103 +1,105 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Conventions Framework Documentation</title><link rel="stylesheet" href="css/conventionsframework.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="book" lang="en-US"><div class="titlepage"><div><p id="title"><a href="http://www.seamframework.org" class="site_href"><strong>SeamFramework.org</strong></a><a href="http://www.seamframework.org/Documentation" class="doc_href"><strong>Community Documentation</strong></a></p><div><h1 class="title"><a id="d0e1"/>Conventions Framework Documentation</h1></div><div><h2 class="subtitle">Documentation early draft</h2></div><div><p class="releaseinfo">Conventions 0.9.7 - September 2012</p></div></div><hr/></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e9">Introduction</a></span></dt><dt><span class="chapter"><a href="#gettingstarted">1. Getting Started</a></span></dt><dt><span class="part"><a href="#part1">I. Architectural Overview</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e92">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e100">2.1. 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Conventions Framework Documentation</title><link rel="stylesheet" href="css/conventionsframework.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="book" lang="en-US"><div class="titlepage"><div><p id="title"><a href="http://www.seamframework.org" class="site_href"><strong>SeamFramework.org</strong></a><a href="http://www.seamframework.org/Documentation" class="doc_href"><strong>Community Documentation</strong></a></p><div><h1 class="title"><a id="d0e1"/>Conventions Framework Documentation</h1></div><div><h2 class="subtitle">Documentation early draft</h2></div><div><p class="releaseinfo">Conventions 0.9.7 - September 2012</p></div></div><hr/></div><div class="toc"><dl><dt><span class="preface"><a href="#d0e9">Introduction</a></span></dt><dt><span class="chapter"><a href="#gettingstarted">1. Getting Started</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e49">1.1. Using maven</a></span></dt><dd><dl><dt><span class="section"><a href="#mvn-dependencies">1.1.1. Declaring maven dependencies</a></span></dt><dt><span class="section"><a href="#d0e110">1.1.2.  
+                conventions-bom
+            </a></span></dt><dt><span class="section"><a href="#d0e126">1.1.3. Using maven archetype</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e131">1.2. Without maven</a></span></dt><dt><span class="section"><a href="#d0e173">1.3. Scaffolding</a></span></dt></dl></dd><dt><span class="part"><a href="#part1">I. Architectural Overview</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e181">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e189">2.1. 
             Bean Types
-        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e103">2.1.1. 
+        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e192">2.1.1. 
                 BaseMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e148">2.1.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e237">2.1.2. 
                 StateMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e153">2.1.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e242">2.1.3. 
                 ModalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e158">2.1.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e247">2.1.4. 
                 ConversationalMBean
             </a></span></dt></dl></dd><dt><span class="section"><a href="#beanEntity">2.2. 
             The Bean Entity
-        </a></span></dt><dt><span class="section"><a href="#d0e193">2.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e282">2.3. 
             The Bean State
-        </a></span></dt></dl></dd><dt><span class="chapter"><a href="#serviceLayer">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e235">3.1. 
+        </a></span></dt></dl></dd><dt><span class="chapter"><a href="#serviceLayer">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e324">3.1. 
                 What's a Service?
-            </a></span></dt><dt><span class="section"><a href="#d0e249">3.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e338">3.2. 
                 Where is the Dao?
-            </a></span></dt><dt><span class="section"><a href="#d0e259">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e264">3.3.1. 
+            </a></span></dt><dt><span class="section"><a href="#d0e348">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e353">3.3.1. 
                     Stateless Service
-                </a></span></dt><dt><span class="section"><a href="#d0e269">3.3.2. 
+                </a></span></dt><dt><span class="section"><a href="#d0e358">3.3.2. 
                     Stateful Service
-                </a></span></dt><dt><span class="section"><a href="#d0e274">3.3.3. 
+                </a></span></dt><dt><span class="section"><a href="#custom-service">3.3.3. 
                     Custom Service
-                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e279">3.4. 
+                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e368">3.4. 
                 Creating your own Service
-            </a></span></dt><dt><span class="section"><a href="#d0e284">3.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e373">3.5. 
         Entity Manager Provider
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e294">3.5.1. 
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e383">3.5.1. 
           The built in providers
         </a></span></dt><dt><span class="section"><a href="#ext-provider">3.5.2. 
             Extending an EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e372">3.5.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e461">3.5.3. 
             Creating your own EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e400">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e407">3.6. 
+        </a></span></dt><dt><span class="section"><a href="#d0e489">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e496">3.6. 
                 Pagination 
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e412">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e432">4.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#view-layer">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e521">4.1. 
                 Add Button
-            </a></span></dt><dt><span class="section"><a href="#d0e437">4.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e526">4.2. 
                 Edit buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e442">4.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e531">4.3. 
                 Save buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e447">4.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e536">4.4. 
                 Remove link
-            </a></span></dt><dt><span class="section"><a href="#d0e452">4.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e541">4.5. 
                 Remove Button
-            </a></span></dt><dt><span class="section"><a href="#d0e457">4.6. 
+            </a></span></dt><dt><span class="section"><a href="#d0e546">4.6. 
                 Reset Button
-            </a></span></dt><dt><span class="section"><a href="#d0e462">4.7. 
+            </a></span></dt><dt><span class="section"><a href="#d0e551">4.7. 
                 Back Button
-            </a></span></dt><dt><span class="section"><a href="#d0e467">4.8. 
+            </a></span></dt><dt><span class="section"><a href="#d0e556">4.8. 
                 Fiter Button
-            </a></span></dt><dt><span class="section"><a href="#d0e472">4.9. 
+            </a></span></dt><dt><span class="section"><a href="#d0e561">4.9. 
                 Combo
-            </a></span></dt><dt><span class="section"><a href="#d0e477">4.10. 
+            </a></span></dt><dt><span class="section"><a href="#d0e566">4.10. 
                 Property key
-            </a></span></dt><dt><span class="section"><a href="#d0e482">4.11. 
+            </a></span></dt><dt><span class="section"><a href="#d0e571">4.11. 
                 Modal
-            </a></span></dt><dt><span class="section"><a href="#d0e487">4.12. 
+            </a></span></dt><dt><span class="section"><a href="#d0e576">4.12. 
                 Modal Button
-            </a></span></dt><dt><span class="section"><a href="#d0e492">4.13. 
+            </a></span></dt><dt><span class="section"><a href="#d0e581">4.13. 
                 Modal Removal
-            </a></span></dt><dt><span class="section"><a href="#d0e497">4.14. 
+            </a></span></dt><dt><span class="section"><a href="#d0e586">4.14. 
                 Security Page
-            </a></span></dt><dt><span class="section"><a href="#d0e502">4.15. 
+            </a></span></dt><dt><span class="section"><a href="#d0e591">4.15. 
                 StateItens
-            </a></span></dt><dt><span class="section"><a href="#d0e507">4.16. 
+            </a></span></dt><dt><span class="section"><a href="#d0e596">4.16. 
                 State Pusher
-            </a></span></dt><dt><span class="section"><a href="#d0e512">4.17. 
+            </a></span></dt><dt><span class="section"><a href="#d0e601">4.17. 
                 Datatable
-            </a></span></dt><dt><span class="section"><a href="#d0e517">4.18. 
+            </a></span></dt><dt><span class="section"><a href="#d0e606">4.18. 
                 Table Footer
-            </a></span></dt><dt><span class="section"><a href="#d0e522">4.19. 
+            </a></span></dt><dt><span class="section"><a href="#d0e611">4.19. 
                 Layout Templete
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e527">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e532">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e537">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e542">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e547">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e552">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e557">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e562">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part2">II. General utilities</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e570">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e578">6.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e616">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e621">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e626">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e631">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e636">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e641">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e646">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e651">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part2">II. General utilities</a></span></dt><dd><dl><dt><span class="chapter"><a href="#d0e659">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e667">6.1. 
                 Configuring the resource bundle
-            </a></span></dt><dt><span class="section"><a href="#d0e583">6.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e672">6.2. 
                The ResourceBundleProvider component
-            </a></span></dt><dt><span class="section"><a href="#d0e588">6.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e677">6.3. 
                 changing the locale
-            </a></span></dt><dt><span class="section"><a href="#d0e593">6.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e682">6.4. 
                 examples
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e598">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e608">7.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e687">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e697">7.1. 
                 Business Exception
-            </a></span></dt><dt><span class="section"><a href="#d0e613">7.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e702">7.2. 
                Creating an error page
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e618">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e632">8.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e707">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e721">8.1. 
                 SecurityMethod
-            </a></span></dt><dt><span class="section"><a href="#d0e637">8.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e726">8.2. 
                SecuritedPage
-            </a></span></dt><dt><span class="section"><a href="#d0e642">8.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e731">8.3. 
                SecuritedArea
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e647">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e655">9.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e736">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e744">9.1. 
                 Injecting properties
-            </a></span></dt><dt><span class="section"><a href="#d0e660">9.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e749">9.2. 
                the propertyKey component
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e665">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e672">10.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e754">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e761">10.1. 
                 Examples
             </a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part3">III. Conventions Scaffolding</a></span></dt></dl></div><div class="preface" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e9"/>Introduction</h2></div></div></div><p>
          <span class="emphasis"><em>Conventions</em></span> is an integrator framework of Java EE technologies with the objective
@@ -108,121 +110,308 @@
       </p><p>
          This guide is divided into a getting started to setup the framework plus three parts, the first one walks through the framework architecture, the second part shows general utility components such as annotated queries, i18n, exception handling etc... finaly the  
          last part is reserved to <span class="emphasis"><em>Conventions Scaffolding</em></span> a code generation tool for <span class="emphasis"><em>Conventions</em></span> based on JBoss Forge. 
-      </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="gettingstarted"/>Chapter 1. Getting Started</h2></div></div></div><p>
-      Getting started with Weld Extensions is easy. If you are using Maven, then you can declare a dependency on Weld
-      Extensions (<code class="code">org.jboss.weld:weld-extensions:${weld.extensions.version}</code>, make sure you have the JBoss 
-      Maven repository enabled). Otherwise, add the jar to your compile time and runtime classpath. 
-   </p><p>
-      Most of Weld Extensions has very few dependencies:
-   </p><div class="itemizedlist"><ul><li><code class="code">javax.enterprise:cdi-api</code></li><li><code class="code">org.slf4j:slf4j-api</code></li><li><code class="code">org.jboss.logging:jboss-logging-api</code></li><li><code class="code">javax.el:el-api</code></li><li><code class="code">javax.inject:javax.inject</code></li><li><code class="code">javax.transaction:jta</code></li></ul></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><p>
-         The POM for Weld Extensions specifies the versions required. If you are using Maven 3, you can easily import
-         the <code class="code">dependencyManagement</code> into your POM by declaring the following in your 
-         <code class="code">depdendencyManagement</code> section:
-      </p><pre xmlns="" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.weld</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">weld-extensions</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">${weld.extensions.version}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">pom</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">import</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
-</pre></div><p>
-      Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
-      added as transitive dependencies):
-   </p><div class="variablelist"><dl><dt><span class="term"><code class="code">org.javassist:javassist</code></span></dt><dd>Service Handlers, Unwrapping Producer Methods</dd><dt><span class="term"><code class="code">javax.servlet:servlet-api</code></span></dt><dd>Accessing resources from the Servlet Context</dd></dl></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part1"/>Part I. Architectural Overview</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e92">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e100">2.1. 
+      </p></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="gettingstarted"/>Chapter 1. Getting Started</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e49">1.1. Using maven</a></span></dt><dd><dl><dt><span class="section"><a href="#mvn-dependencies">1.1.1. Declaring maven dependencies</a></span></dt><dt><span class="section"><a href="#d0e110">1.1.2.  
+                conventions-bom
+            </a></span></dt><dt><span class="section"><a href="#d0e126">1.1.3. Using maven archetype</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e131">1.2. Without maven</a></span></dt><dt><span class="section"><a href="#d0e173">1.3. Scaffolding</a></span></dt></dl></div><p>
+        In this chapter you will learn how to add 
+        <span class="emphasis"><em>Conventions </em></span> and its related dependencies to your project in three ways: 
+    </p><div class="itemizedlist"><ul><li>
+            Using maven 
+        </li><li>
+            Without maven
+        </li><li>
+            Scaffolding
+        </li></ul></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e49"/>1.1. Using maven</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="mvn-dependencies"/>1.1.1. Declaring maven dependencies</h3></div></div></div><p>Here is the full list of Conventions framework maven dependencies</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependencies</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;Java&nbsp;EE&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javaee-web-api</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">6.0</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">provided</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">com.sun.faces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">jsf-api</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">${mojarra.version}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">provided</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">com.sun.faces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">jsf-impl</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">${mojarra.version}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">provided</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.el</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">el-api</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">2.2.1-b04</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">provided</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.enterprise</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">cdi-api</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1.0</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">provided</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.inject</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.inject</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">provided</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.apache.myfaces.extensions.cdi.bundles</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">myfaces-extcdi-bundle-jsf20</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1.0.5</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;end&nbsp;JavaEE&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;conventions&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.conventionsframework</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">conventions-core</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">0.9.7</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;end&nbsp;conventions&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;primefaces&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.primefaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">primefaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">3.4</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.primefaces.extensions</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">primefaces-extensions</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">0.6.0</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">exclusions</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">exclusion</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.primefaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">primefaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">exclusion</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">exclusions</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;end&nbsp;primefaces&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;hibernate&nbsp;--&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.hibernate.javax.persistence</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">hibernate-jpa-2.0-api</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1.0.1.Final</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.hibernate</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">hibernate-entitymanager</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">4.1.5-Final</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.hibernate</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">hibernate-core</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">4.1.5-Final</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.hibernate</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">hibernate-validator</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">4.3.0.Final</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;end&nbsp;hibernate&nbsp;--&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.javassist</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javassist</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">3.14.0-GA</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;Logging&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.slf4j</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">slf4j-log4j12</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1.5.10</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">commons-logging</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">commons-logging</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1.1.1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;end&nbsp;Logging&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--themes&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.primefaces.extensions</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">all-themes</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">${primefaces.theme.version}</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">runtime</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;end&nbsp;themes&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+</pre><p>
+                Note that half of them are JavaEE dependencies and are provided by an application server
+                so they are declared as provided maven scope.
+            </p><p>
+                Above is an explanation of the use of the main dependencies 
+            </p><div class="variablelist"><dl><dt><span class="term">
+                        <code class="code">org.primefaces:primefaces</code>
+                    </span></dt><dd>Used by conventions UI components which are described at 
+                        <a class="xref" href="#view-layer" title="Chapter 4. The View Layer">Chapter 4, <i>The View Layer</i></a></dd><dt><span class="term">
+                        <code class="code">
+                            org.primefaces.extensions:primefaces-extensions
+                        </code>
+                    </span></dt><dd>Used by the layout template so if you won use the template you dont need to declare this dependency 
+                    </dd><dt><span class="term">
+                        <code class="code">org.apache.myfaces.extensions.cdi.bundles:myfaces-extcdi-bundle-jsf20</code>
+                    </span></dt><dd>Apache Myfaces CODI is used by Non EJB based service 
+                        <span class="emphasis"><em>CustomHibernateService</em></span><a class="xref" href="#custom-service" title="3.3.3.  Custom Service">Section 3.3.3, “
+                    Custom Service
+                ”</a>  
+                        for transaction demarcation with 
+                        <code class="code">@Transactional</code> annotation.
+                        <div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2>
+                            CODI scopes are also very handy and widly used in conventions sample projects, you may take a look here "TODO link to codi scopes"
+                        </div></dd><dt><span class="term">
+                        <code class="code">org.hibernate:hibernate</code>
+                    </span></dt><dd>Hibernate is used as JPA provider
+                        <div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important</h2>
+                            Conventions is highly dependent on Hibernate 
+                            <span class="emphasis"><em>4.x API</em></span></div></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e110"/>1.1.2.  
+                <code class="code">conventions-bom</code>
+            </h3></div></div></div><p>The BOM(Bill of materials) for Conventions framework specifies the versions of the required dependencies so if you are using Maven 3, you can easily import conventions-bom into your POM by declaring the following in your depdendencyManagement section:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependencyManagement</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependencies</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.conventionsframework</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">groupId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">conventions-bom</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">artifactId</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">0.9.7</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">version</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">pom</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">import</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">scope</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependency</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">dependencies</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">dependencyManagement</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+</pre><p>
+                now you dont have to worry about dependency version, you just need to declare 
+                the groupId and artifactId of each dependency we described in 
+                <a class="xref" href="#mvn-dependencies" title="1.1.1. Declaring maven dependencies">Section 1.1.1, “Declaring maven dependencies”</a>.
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2>
+                you can declare the version of the dependencies, if you do so you are
+                overriding the declared version in conventions-bom. 
+            </div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e126"/>1.1.3. Using maven archetype</h3></div></div></div><p>TODO</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e131"/>1.2. Without maven</h2></div></div></div><p>If dont use maven you can download a zip with all conventions dependencies, here are the links:</p><div class="variablelist"><dl><dt><span class="term">
+                    <code class="code">Conventions JavaEE 6(+) Server dependencies</code>
+                </span></dt><dd><a class="ulink" href="https://github.com/downloads/conventions/core/conventions-dependencies-0.9.7.zip"> Download here</a> the zip file with all dependencies for Conventions framework
+                    based on a JavaEE 6(+) Application Server such as Glassfish or JBossAs7.x
+                </dd><dt><span class="term">
+                    <code class="code">Conventions Tomcat dependencies with OpenWebBeans</code>
+                </span></dt><dd><a class="ulink" href="https://github.com/downloads/conventions/core/conventions-dependencies-tomcat-owb-0.9.7.zip"> Download here</a> the zip file with all dependencies for Conventions framework
+                    based on tomcat with <span class="emphasis"><em>OpenWebBeans</em></span> as context and depency injection provider.
+                </dd><dt><span class="term">
+                    <code class="code">Conventions Tomcat dependencies with Weld</code>
+                </span></dt><dd><a class="ulink" href="https://github.com/downloads/conventions/core/conventions-dependencies-0.9.7-tomcat-weld.zip"> Download here</a> the zip file with all dependencies for Conventions framework
+                    based on tomcat with <span class="emphasis"><em>Weld</em></span> as context and depency injection provider.
+                </dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e173"/>1.3. Scaffolding</h2></div></div></div><p>TODO</p></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part1"/>Part I. Architectural Overview</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e181">2. The Controller Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e189">2.1. 
             Bean Types
-        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e103">2.1.1. 
+        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e192">2.1.1. 
                 BaseMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e148">2.1.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e237">2.1.2. 
                 StateMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e153">2.1.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e242">2.1.3. 
                 ModalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e158">2.1.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e247">2.1.4. 
                 ConversationalMBean
             </a></span></dt></dl></dd><dt><span class="section"><a href="#beanEntity">2.2. 
             The Bean Entity
-        </a></span></dt><dt><span class="section"><a href="#d0e193">2.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e282">2.3. 
             The Bean State
-        </a></span></dt></dl></dd><dt><span class="chapter"><a href="#serviceLayer">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e235">3.1. 
+        </a></span></dt></dl></dd><dt><span class="chapter"><a href="#serviceLayer">3. The Service Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e324">3.1. 
                 What's a Service?
-            </a></span></dt><dt><span class="section"><a href="#d0e249">3.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e338">3.2. 
                 Where is the Dao?
-            </a></span></dt><dt><span class="section"><a href="#d0e259">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e264">3.3.1. 
+            </a></span></dt><dt><span class="section"><a href="#d0e348">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e353">3.3.1. 
                     Stateless Service
-                </a></span></dt><dt><span class="section"><a href="#d0e269">3.3.2. 
+                </a></span></dt><dt><span class="section"><a href="#d0e358">3.3.2. 
                     Stateful Service
-                </a></span></dt><dt><span class="section"><a href="#d0e274">3.3.3. 
+                </a></span></dt><dt><span class="section"><a href="#custom-service">3.3.3. 
                     Custom Service
-                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e279">3.4. 
+                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e368">3.4. 
                 Creating your own Service
-            </a></span></dt><dt><span class="section"><a href="#d0e284">3.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e373">3.5. 
         Entity Manager Provider
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e294">3.5.1. 
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e383">3.5.1. 
           The built in providers
         </a></span></dt><dt><span class="section"><a href="#ext-provider">3.5.2. 
             Extending an EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e372">3.5.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e461">3.5.3. 
             Creating your own EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e400">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e407">3.6. 
+        </a></span></dt><dt><span class="section"><a href="#d0e489">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e496">3.6. 
                 Pagination 
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e412">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e432">4.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#view-layer">4. The View Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e521">4.1. 
                 Add Button
-            </a></span></dt><dt><span class="section"><a href="#d0e437">4.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e526">4.2. 
                 Edit buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e442">4.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e531">4.3. 
                 Save buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e447">4.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e536">4.4. 
                 Remove link
-            </a></span></dt><dt><span class="section"><a href="#d0e452">4.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e541">4.5. 
                 Remove Button
-            </a></span></dt><dt><span class="section"><a href="#d0e457">4.6. 
+            </a></span></dt><dt><span class="section"><a href="#d0e546">4.6. 
                 Reset Button
-            </a></span></dt><dt><span class="section"><a href="#d0e462">4.7. 
+            </a></span></dt><dt><span class="section"><a href="#d0e551">4.7. 
                 Back Button
-            </a></span></dt><dt><span class="section"><a href="#d0e467">4.8. 
+            </a></span></dt><dt><span class="section"><a href="#d0e556">4.8. 
                 Fiter Button
-            </a></span></dt><dt><span class="section"><a href="#d0e472">4.9. 
+            </a></span></dt><dt><span class="section"><a href="#d0e561">4.9. 
                 Combo
-            </a></span></dt><dt><span class="section"><a href="#d0e477">4.10. 
+            </a></span></dt><dt><span class="section"><a href="#d0e566">4.10. 
                 Property key
-            </a></span></dt><dt><span class="section"><a href="#d0e482">4.11. 
+            </a></span></dt><dt><span class="section"><a href="#d0e571">4.11. 
                 Modal
-            </a></span></dt><dt><span class="section"><a href="#d0e487">4.12. 
+            </a></span></dt><dt><span class="section"><a href="#d0e576">4.12. 
                 Modal Button
-            </a></span></dt><dt><span class="section"><a href="#d0e492">4.13. 
+            </a></span></dt><dt><span class="section"><a href="#d0e581">4.13. 
                 Modal Removal
-            </a></span></dt><dt><span class="section"><a href="#d0e497">4.14. 
+            </a></span></dt><dt><span class="section"><a href="#d0e586">4.14. 
                 Security Page
-            </a></span></dt><dt><span class="section"><a href="#d0e502">4.15. 
+            </a></span></dt><dt><span class="section"><a href="#d0e591">4.15. 
                 StateItens
-            </a></span></dt><dt><span class="section"><a href="#d0e507">4.16. 
+            </a></span></dt><dt><span class="section"><a href="#d0e596">4.16. 
                 State Pusher
-            </a></span></dt><dt><span class="section"><a href="#d0e512">4.17. 
+            </a></span></dt><dt><span class="section"><a href="#d0e601">4.17. 
                 Datatable
-            </a></span></dt><dt><span class="section"><a href="#d0e517">4.18. 
+            </a></span></dt><dt><span class="section"><a href="#d0e606">4.18. 
                 Table Footer
-            </a></span></dt><dt><span class="section"><a href="#d0e522">4.19. 
+            </a></span></dt><dt><span class="section"><a href="#d0e611">4.19. 
                 Layout Templete
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e527">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e532">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e537">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e542">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e547">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e552">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e557">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e562">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e92"/>Chapter 2. The Controller Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e100">2.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e616">5. The Model Layer</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e621">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e626">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e631">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e636">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e641">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e646">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e651">5.7. VersionatedEntityString</a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e181"/>Chapter 2. The Controller Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e189">2.1. 
             Bean Types
-        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e103">2.1.1. 
+        </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e192">2.1.1. 
                 BaseMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e148">2.1.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e237">2.1.2. 
                 StateMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e153">2.1.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e242">2.1.3. 
                 ModalMBean
-            </a></span></dt><dt><span class="section"><a href="#d0e158">2.1.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e247">2.1.4. 
                 ConversationalMBean
             </a></span></dt></dl></dd><dt><span class="section"><a href="#beanEntity">2.2. 
             The Bean Entity
-        </a></span></dt><dt><span class="section"><a href="#d0e193">2.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e282">2.3. 
             The Bean State
         </a></span></dt></dl></div><p>
         <span class="emphasis"><em>Conventions Controllers</em></span> are represented by CDI beans and the framework count
         with four flavors of them, we will see each one in detail.
-    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e100"/>2.1. 
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e189"/>2.1. 
             Bean Types
-        </h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e103"/>2.1.1. 
+        </h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e192"/>2.1.1. 
                 BaseMBean
             </h3></div></div></div><p>
                 As its name says is the base bean for other conventions controllers and it has the following characteristics:
@@ -303,15 +492,15 @@
                 </p></div><p>
                 For more examples of base conventions beans look at 
                 <a class="ulink" href="http://conventions-rpestano.rhcloud.com/conventions/pages/person/personHome.faces"> online showcase examples</a>
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e148"/>2.1.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e237"/>2.1.2. 
                 StateMBean
             </h3></div></div></div><p>
                 TODO Describe StateMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e153"/>2.1.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e242"/>2.1.3. 
                 ModalMBean
             </h3></div></div></div><p>
                 TODO Describe ModalMBean
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e158"/>2.1.4. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e247"/>2.1.4. 
                 ConversationalMBean
             </h3></div></div></div><p>
                 TODO Describe ConversationalMBean
@@ -368,7 +557,7 @@
                     it via reflections but avoid that because in some situations your managed bean will be a CDI proxy
                     (eg. when @SecurityMethod annotation is present) and the reflection will not work.
                 </div><p> 
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e193"/>2.3. 
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e282"/>2.3. 
             The Bean State
         </h2></div></div></div><p>
             A beanState is represented by the 
@@ -426,27 +615,27 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;</span><span class="java_keyword">this</span><span class="java_separator">.</span><span class="java_plain">stateName</span><span class="java_separator">;</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="serviceLayer"/>Chapter 3. The Service Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e235">3.1. 
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="serviceLayer"/>Chapter 3. The Service Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e324">3.1. 
                 What's a Service?
-            </a></span></dt><dt><span class="section"><a href="#d0e249">3.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e338">3.2. 
                 Where is the Dao?
-            </a></span></dt><dt><span class="section"><a href="#d0e259">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e264">3.3.1. 
+            </a></span></dt><dt><span class="section"><a href="#d0e348">3.3. The built in Services</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e353">3.3.1. 
                     Stateless Service
-                </a></span></dt><dt><span class="section"><a href="#d0e269">3.3.2. 
+                </a></span></dt><dt><span class="section"><a href="#d0e358">3.3.2. 
                     Stateful Service
-                </a></span></dt><dt><span class="section"><a href="#d0e274">3.3.3. 
+                </a></span></dt><dt><span class="section"><a href="#custom-service">3.3.3. 
                     Custom Service
-                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e279">3.4. 
+                </a></span></dt></dl></dd><dt><span class="section"><a href="#d0e368">3.4. 
                 Creating your own Service
-            </a></span></dt><dt><span class="section"><a href="#d0e284">3.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e373">3.5. 
         Entity Manager Provider
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e294">3.5.1. 
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d0e383">3.5.1. 
           The built in providers
         </a></span></dt><dt><span class="section"><a href="#ext-provider">3.5.2. 
             Extending an EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e372">3.5.3. 
+        </a></span></dt><dt><span class="section"><a href="#d0e461">3.5.3. 
             Creating your own EntityManagerProvider
-        </a></span></dt><dt><span class="section"><a href="#d0e400">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e407">3.6. 
+        </a></span></dt><dt><span class="section"><a href="#d0e489">3.5.4. setting entity manager "by hand"</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e496">3.6. 
                 Pagination 
             </a></span></dt></dl></div><p>
             This section shows how the framework is integrated with 
@@ -454,35 +643,35 @@
             <span class="emphasis"><em>Hibernate</em></span> and 
             <span class="emphasis"><em>EJB</em></span> to provide database operations through 
             <span class="emphasis"><em>Conventions Services</em></span> which are components that link the framework to the backend infrastructure.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e235"/>3.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e324"/>3.1. 
                 What's a Service?
             </h2></div></div></div><p>
                 In Conventions Framework services are components that have access to 
                 the backend infrastructure, below are some characterists of a service:
-            </p><div class="itemizedlist"><ul><li>has access to an entitymanager via EntityManagerProvider component</li><li>has access to a Hibernate session</li><li>built in and configurable pagination method</li><li>built in cruding operations</li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e249"/>3.2. 
+            </p><div class="itemizedlist"><ul><li>has access to an entitymanager via EntityManagerProvider component</li><li>has access to a Hibernate session</li><li>built in and configurable pagination method</li><li>built in cruding operations</li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e338"/>3.2. 
                 Where is the Dao?
             </h2></div></div></div><p>
                 Conventions framework does not have an explicit Dao layer(although you can create one), the dao has
                 a composition relashionship with the service layer so each service has a dao.
             </p><p>
                 The dao template used in conventions can be found <a class="ulink" href="https://github.com/conventions/core/blob/master/src/main/java/org/conventionsframework/dao/impl/BaseHibernateDaoImpl.java">here</a> 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e259"/>3.3. The built in Services</h2></div></div></div><p>Conventions counts with three extensible built in services templates</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e264"/>3.3.1. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e348"/>3.3. The built in Services</h2></div></div></div><p>Conventions counts with three extensible built in services templates</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e353"/>3.3.1. 
                     Stateless Service
                 </h3></div></div></div><p>
                     TODO Describe statelessService
-                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e269"/>3.3.2. 
+                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e358"/>3.3.2. 
                     Stateful Service
                 </h3></div></div></div><p>
                     TODO Describe statefulService
-                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e274"/>3.3.3. 
+                </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="custom-service"/>3.3.3. 
                     Custom Service
                 </h3></div></div></div><p>
                     TODO Describe customService
-                </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e279"/>3.4. 
+                </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e368"/>3.4. 
                 Creating your own Service
             </h2></div></div></div><p>
                 TODO Describe creating a Service
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e284"/>3.5. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e373"/>3.5. 
         Entity Manager Provider
     </h2></div></div></div><p>
         The EntityManagerProvider is an important component in the framework architecture, it is the 'guy'
@@ -491,7 +680,7 @@
         Conventions comes with three built in entityManagerProviders that are used by the 
         built in <span class="emphasis"><em>Services</em></span> but creating your own provider is very easy 
         and will be demostrated in the next sections.
-    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e294"/>3.5.1. 
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e383"/>3.5.1. 
           The built in providers
         </h3></div></div></div><p>
             <span class="emphasis"><em>StatelessEntityManagerProvider:</em></span> is a 
@@ -567,7 +756,7 @@
                 keep in mind that your services are sharing the same PersistenceContext(when type=EXTENDED)
                 so if you want a PersistenceContext per Service you must create
                 an EntityManager provider for each service.
-            </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e372"/>3.5.3. 
+            </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e461"/>3.5.3. 
             Creating your own EntityManagerProvider
         </h3></div></div></div><p>
             To create your provider you'll need:
@@ -627,7 +816,7 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this.entityManagerProvider;</span>
 <!--  --><br/><span class="java_comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;*/</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e400"/>3.5.4. setting entity manager "by hand"</h3></div></div></div><p> If you dont want to create or extend an entityManagerProvider but still want
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e489"/>3.5.4. setting entity manager "by hand"</h3></div></div></div><p> If you dont want to create or extend an entityManagerProvider but still want
            one PersistenceContext per service you can set the entityManager by hand in each 
            service, see the code  below:
        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
@@ -643,47 +832,47 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">super</span><span class="java_separator">.</span><span class="java_plain">getEntityManagerProvider</span><span class="java_separator">().</span><span class="java_plain">setEntityManager</span><span class="java_separator">(</span><span class="java_plain">entityManager</span><span class="java_separator">);</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
-<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e407"/>3.6. 
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e496"/>3.6. 
                 Pagination 
             </h2></div></div></div><p>
                 TODO Describe how true pagination works(not the paginator utility component) but focus on ConfigFindPagination overrding
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e412"/>Chapter 4. The View Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e432">4.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="view-layer"/>Chapter 4. The View Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e521">4.1. 
                 Add Button
-            </a></span></dt><dt><span class="section"><a href="#d0e437">4.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e526">4.2. 
                 Edit buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e442">4.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e531">4.3. 
                 Save buttom
-            </a></span></dt><dt><span class="section"><a href="#d0e447">4.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e536">4.4. 
                 Remove link
-            </a></span></dt><dt><span class="section"><a href="#d0e452">4.5. 
+            </a></span></dt><dt><span class="section"><a href="#d0e541">4.5. 
                 Remove Button
-            </a></span></dt><dt><span class="section"><a href="#d0e457">4.6. 
+            </a></span></dt><dt><span class="section"><a href="#d0e546">4.6. 
                 Reset Button
-            </a></span></dt><dt><span class="section"><a href="#d0e462">4.7. 
+            </a></span></dt><dt><span class="section"><a href="#d0e551">4.7. 
                 Back Button
-            </a></span></dt><dt><span class="section"><a href="#d0e467">4.8. 
+            </a></span></dt><dt><span class="section"><a href="#d0e556">4.8. 
                 Fiter Button
-            </a></span></dt><dt><span class="section"><a href="#d0e472">4.9. 
+            </a></span></dt><dt><span class="section"><a href="#d0e561">4.9. 
                 Combo
-            </a></span></dt><dt><span class="section"><a href="#d0e477">4.10. 
+            </a></span></dt><dt><span class="section"><a href="#d0e566">4.10. 
                 Property key
-            </a></span></dt><dt><span class="section"><a href="#d0e482">4.11. 
+            </a></span></dt><dt><span class="section"><a href="#d0e571">4.11. 
                 Modal
-            </a></span></dt><dt><span class="section"><a href="#d0e487">4.12. 
+            </a></span></dt><dt><span class="section"><a href="#d0e576">4.12. 
                 Modal Button
-            </a></span></dt><dt><span class="section"><a href="#d0e492">4.13. 
+            </a></span></dt><dt><span class="section"><a href="#d0e581">4.13. 
                 Modal Removal
-            </a></span></dt><dt><span class="section"><a href="#d0e497">4.14. 
+            </a></span></dt><dt><span class="section"><a href="#d0e586">4.14. 
                 Security Page
-            </a></span></dt><dt><span class="section"><a href="#d0e502">4.15. 
+            </a></span></dt><dt><span class="section"><a href="#d0e591">4.15. 
                 StateItens
-            </a></span></dt><dt><span class="section"><a href="#d0e507">4.16. 
+            </a></span></dt><dt><span class="section"><a href="#d0e596">4.16. 
                 State Pusher
-            </a></span></dt><dt><span class="section"><a href="#d0e512">4.17. 
+            </a></span></dt><dt><span class="section"><a href="#d0e601">4.17. 
                 Datatable
-            </a></span></dt><dt><span class="section"><a href="#d0e517">4.18. 
+            </a></span></dt><dt><span class="section"><a href="#d0e606">4.18. 
                 Table Footer
-            </a></span></dt><dt><span class="section"><a href="#d0e522">4.19. 
+            </a></span></dt><dt><span class="section"><a href="#d0e611">4.19. 
                 Layout Templete
             </a></span></dt></dl></div><p>
             In this section we will cover UI components provided by the framework to easy the development driven by 
@@ -700,151 +889,151 @@
                         xmlns:c="http://conventions.org/ui"
                     </code></li></ul></div><p>    
        
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e432"/>4.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e521"/>4.1. 
                 Add Button
             </h2></div></div></div><p>
                 TODO describe The addButton is a primefaces commandButton wrapper... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e437"/>4.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e526"/>4.2. 
                 Edit buttom
             </h2></div></div></div><p>
                 TODO describe  editButton...
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e442"/>4.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e531"/>4.3. 
                 Save buttom
             </h2></div></div></div><p>
                 TODO describe saveButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e447"/>4.4. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e536"/>4.4. 
                 Remove link
             </h2></div></div></div><p>
                 TODO describe removeLink... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e452"/>4.5. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e541"/>4.5. 
                 Remove Button
             </h2></div></div></div><p>
                 TODO describe removeButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e457"/>4.6. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e546"/>4.6. 
                 Reset Button
             </h2></div></div></div><p>
                 TODO describe  resetButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e462"/>4.7. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e551"/>4.7. 
                 Back Button
             </h2></div></div></div><p>
                 TODO describe  backButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e467"/>4.8. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e556"/>4.8. 
                 Fiter Button
             </h2></div></div></div><p>
                 TODO describe filterButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e472"/>4.9. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e561"/>4.9. 
                 Combo
             </h2></div></div></div><p>
                 TODO describe  combo... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e477"/>4.10. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e566"/>4.10. 
                 Property key
             </h2></div></div></div><p>
                 TODO describe propertyKey... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e482"/>4.11. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e571"/>4.11. 
                 Modal
             </h2></div></div></div><p>
                 TODO describe  modal... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e487"/>4.12. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e576"/>4.12. 
                 Modal Button
             </h2></div></div></div><p>
                 TODO describe modalButton... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e492"/>4.13. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e581"/>4.13. 
                 Modal Removal
             </h2></div></div></div><p>
                 TODO describe modalRemoval... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e497"/>4.14. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e586"/>4.14. 
                 Security Page
             </h2></div></div></div><p>
                 TODO describe securityPage... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e502"/>4.15. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e591"/>4.15. 
                 StateItens
             </h2></div></div></div><p>
                 TODO describe stateItens...  
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e507"/>4.16. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e596"/>4.16. 
                 State Pusher
             </h2></div></div></div><p>
                 TODO describe statePusher...  
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e512"/>4.17. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e601"/>4.17. 
                 Datatable
             </h2></div></div></div><p>
                 TODO describe datatable... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e517"/>4.18. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e606"/>4.18. 
                 Table Footer
             </h2></div></div></div><p>
                 TODO describe tableFooter... 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e522"/>4.19. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e611"/>4.19. 
                 Layout Templete
             </h2></div></div></div><p>
                 TODO describe layout component... 
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e527"/>Chapter 5. The Model Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e532">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e537">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e542">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e547">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e552">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e557">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e562">5.7. VersionatedEntityString</a></span></dt></dl></div><p>
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e616"/>Chapter 5. The Model Layer</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e621">5.1. AbstractBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e626">5.2. BaseEntityLong</a></span></dt><dt><span class="section"><a href="#d0e631">5.3. BaseEntityString</a></span></dt><dt><span class="section"><a href="#d0e636">5.4. CustomBaseEntity</a></span></dt><dt><span class="section"><a href="#d0e641">5.5. AbstractVersionatedEntity</a></span></dt><dt><span class="section"><a href="#d0e646">5.6. VersionatedEntityLong</a></span></dt><dt><span class="section"><a href="#d0e651">5.7. VersionatedEntityString</a></span></dt></dl></div><p>
         describe model utility classes
-    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e532"/>5.1. AbstractBaseEntity</h2></div></div></div><p>
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e621"/>5.1. AbstractBaseEntity</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e537"/>5.2. BaseEntityLong</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e626"/>5.2. BaseEntityLong</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e542"/>5.3. BaseEntityString</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e631"/>5.3. BaseEntityString</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e547"/>5.4. CustomBaseEntity</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e636"/>5.4. CustomBaseEntity</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e552"/>5.5. AbstractVersionatedEntity</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e641"/>5.5. AbstractVersionatedEntity</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e557"/>5.6. VersionatedEntityLong</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e646"/>5.6. VersionatedEntityLong</h2></div></div></div><p>
              TODO
-        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e562"/>5.7. VersionatedEntityString</h2></div></div></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e651"/>5.7. VersionatedEntityString</h2></div></div></div><p>
              TODO
-        </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. General utilities</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e570">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e578">6.1. 
+        </p></div></div></div><div class="part" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="part2"/>Part II. General utilities</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#d0e659">6. Internationalization</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e667">6.1. 
                 Configuring the resource bundle
-            </a></span></dt><dt><span class="section"><a href="#d0e583">6.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e672">6.2. 
                The ResourceBundleProvider component
-            </a></span></dt><dt><span class="section"><a href="#d0e588">6.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e677">6.3. 
                 changing the locale
-            </a></span></dt><dt><span class="section"><a href="#d0e593">6.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e682">6.4. 
                 examples
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e598">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e608">7.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e687">7. Exception Handling</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e697">7.1. 
                 Business Exception
-            </a></span></dt><dt><span class="section"><a href="#d0e613">7.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e702">7.2. 
                Creating an error page
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e618">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e632">8.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e707">8. Security</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e721">8.1. 
                 SecurityMethod
-            </a></span></dt><dt><span class="section"><a href="#d0e637">8.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e726">8.2. 
                SecuritedPage
-            </a></span></dt><dt><span class="section"><a href="#d0e642">8.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e731">8.3. 
                SecuritedArea
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e647">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e655">9.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e736">9. Properties injection</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e744">9.1. 
                 Injecting properties
-            </a></span></dt><dt><span class="section"><a href="#d0e660">9.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e749">9.2. 
                the propertyKey component
-            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e665">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e672">10.1. 
+            </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d0e754">10. Annotated Queries</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e761">10.1. 
                 Examples
-            </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e570"/>Chapter 6. Internationalization</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e578">6.1. 
+            </a></span></dt></dl></dd></dl></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e659"/>Chapter 6. Internationalization</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e667">6.1. 
                 Configuring the resource bundle
-            </a></span></dt><dt><span class="section"><a href="#d0e583">6.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e672">6.2. 
                The ResourceBundleProvider component
-            </a></span></dt><dt><span class="section"><a href="#d0e588">6.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e677">6.3. 
                 changing the locale
-            </a></span></dt><dt><span class="section"><a href="#d0e593">6.4. 
+            </a></span></dt><dt><span class="section"><a href="#d0e682">6.4. 
                 examples
             </a></span></dt></dl></div><p>
             In this chapter we will see how <span class="emphasis"><em>Conventions framework</em></span> provides internationalization. 
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e578"/>6.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e667"/>6.1. 
                 Configuring the resource bundle
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e583"/>6.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e672"/>6.2. 
                The ResourceBundleProvider component
             </h2></div></div></div><p>
                 TODO
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e588"/>6.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e677"/>6.3. 
                 changing the locale
             </h2></div></div></div><p>
                 TODO  
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e593"/>6.4. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e682"/>6.4. 
                 examples
             </h2></div></div></div><p>
                 TODO examples accessing resourceBundle in page and bean and passing parameters
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e598"/>Chapter 7. Exception Handling</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e608">7.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e687"/>Chapter 7. Exception Handling</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e697">7.1. 
                 Business Exception
-            </a></span></dt><dt><span class="section"><a href="#d0e613">7.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e702">7.2. 
                Creating an error page
             </a></span></dt></dl></div><p>
             Exception handling is a very important mechanism in enterprise applications that is used for eg. to show 
@@ -861,51 +1050,51 @@
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">application</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">faces-config</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
-</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e608"/>7.1. 
+</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e697"/>7.1. 
                 Business Exception
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e613"/>7.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e702"/>7.2. 
                Creating an error page
             </h2></div></div></div><p>
                 TODO
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e618"/>Chapter 8. Security</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e632">8.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e707"/>Chapter 8. Security</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e721">8.1. 
                 SecurityMethod
-            </a></span></dt><dt><span class="section"><a href="#d0e637">8.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e726">8.2. 
                SecuritedPage
-            </a></span></dt><dt><span class="section"><a href="#d0e642">8.3. 
+            </a></span></dt><dt><span class="section"><a href="#d0e731">8.3. 
                SecuritedArea
             </a></span></dt></dl></div><p>
              The framework provides some security helpers such as <span class="emphasis"><em>SecurityMethod</em></span>for method execution autorizaion, <span class="emphasis"><em>SecuritedPage</em></span>
               for blocking access to unallowed users and <span class="emphasis"><em>SecuritedArea</em></span> to hide blocks of page from unallowed users.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e632"/>8.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e721"/>8.1. 
                 SecurityMethod
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e637"/>8.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e726"/>8.2. 
                SecuritedPage
             </h2></div></div></div><p>
                 TODO
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e642"/>8.3. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e731"/>8.3. 
                SecuritedArea
             </h2></div></div></div><p>
                 TODO
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e647"/>Chapter 9. Properties injection</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e655">9.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e736"/>Chapter 9. Properties injection</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e744">9.1. 
                 Injecting properties
-            </a></span></dt><dt><span class="section"><a href="#d0e660">9.2. 
+            </a></span></dt><dt><span class="section"><a href="#d0e749">9.2. 
                the propertyKey component
             </a></span></dt></dl></div><p>
              Another useful feature the framework provides is the ability to inject <code class="code">.properties</code> files
              or prperties keys via CDI.
-        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e655"/>9.1. 
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e744"/>9.1. 
                 Injecting properties
             </h2></div></div></div><p>
                 TODO 
-            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e660"/>9.2. 
+            </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e749"/>9.2. 
                the propertyKey component
             </h2></div></div></div><p>
                 TODO
-            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e665"/>Chapter 10. Annotated Queries</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e672">10.1. 
+            </p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e754"/>Chapter 10. Annotated Queries</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#d0e761">10.1. 
                 Examples
             </a></span></dt></dl></div><p>
              An utility to allow query execution via annotations.
@@ -921,7 +1110,7 @@
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">interceptors</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">beans</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
 <span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
-</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e672"/>10.1. 
+</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d0e761"/>10.1. 
                 Examples
             </h2></div></div></div><p>
                 TODO 
