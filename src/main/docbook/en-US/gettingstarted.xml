@@ -167,7 +167,8 @@
                     <term>
                         <code>org.primefaces:primefaces</code>
                     </term>
-                    <listitem>Used by conventions UI components which are described at <xref linkend="view-layer"/>
+                    <listitem>Used by conventions UI components which are described at 
+                        <xref linkend="view-layer"/>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -189,7 +190,7 @@
                         for transaction demarcation with 
                         <code>@Transactional</code> annotation.
                         <tip>
-                            CODI scopes are very handy and widly used in conventions sample projects, you may take a look here "TODO link to codi scopes"
+                            CODI scopes are also very handy and widly used in conventions sample projects, you may take a look here "TODO link to codi scopes"
                         </tip>
                     </listitem>
                 </varlistentry>
@@ -199,12 +200,12 @@
                     </term>
                     <listitem>Hibernate is used as JPA provider
                         <important>
-                        Conventions is highly dependent on Hibernate 
-                        <emphasis>4.x API</emphasis>
-                    </important>
+                            Conventions is highly dependent on Hibernate 
+                            <emphasis>4.x API</emphasis>
+                        </important>
                     </listitem>
                 </varlistentry>
-               </variablelist>
+            </variablelist>
         </section>
         <section>
             <title> 
@@ -245,73 +246,40 @@
     
     <section>
         <title>Without maven</title>
-        <para>TODO</para>
+        <para>If dont use maven you can download a zip with all conventions dependencies, here are the links:</para>
+        <variablelist>
+            <varlistentry>
+                <term>
+                    <code>Conventions JavaEE 6(+) Server dependencies</code>
+                </term>
+                <listitem> 
+                    Download here(link) the zip file with all dependencies for Conventions framework
+                    based on a JavaEE 6(+) Application Server such as Glassfish or JBossAs7.x
+                </listitem>
+            </varlistentry>
+             <varlistentry>
+                <term>
+                    <code>Conventions Tomcat dependencies with OpenWebBeans</code>
+                </term>
+                <listitem> 
+                    Download here(link) the zip file with all dependencies for Conventions framework
+                    based on tomcat with <emphasis>OpenWebBeans</emphasis> as context and depency injection provider.
+                </listitem>
+            </varlistentry>
+             <varlistentry>
+                <term>
+                    <code>Conventions Tomcat dependencies with Weld</code>
+                </term>
+                <listitem> 
+                    Download here(link) the zip file with all dependencies for Conventions framework
+                    based on tomcat with <emphasis>Weld</emphasis> as context and depency injection provider.
+                </listitem>
+            </varlistentry>
+        </variablelist>
     </section>
     <section>
         <title>Scaffolding</title>
         <para>TODO</para>
     </section>
-    <para>
-        Most of Weld Extensions has very few dependencies:
-    </para>
-   
-    <itemizedlist>
-        <listitem>
-            <code>javax.enterprise:cdi-api</code>
-        </listitem>
-        <listitem>
-            <code>org.slf4j:slf4j-api</code>
-        </listitem>
-        <listitem>
-            <code>org.jboss.logging:jboss-logging-api</code>
-        </listitem>
-        <listitem>
-            <code>javax.el:el-api</code>
-        </listitem>
-        <listitem>
-            <code>javax.inject:javax.inject</code>
-        </listitem>
-        <listitem>
-            <code>javax.transaction:jta</code>
-        </listitem>
-    </itemizedlist>
-   
-    <tip>
-        <para>
-            The POM for Weld Extensions specifies the versions required. If you are using Maven 3, you can easily import
-            the 
-            <code>dependencyManagement</code> into your POM by declaring the following in your 
-            <code>depdendencyManagement</code> section:
-        </para>
-      
-        <programlisting role="XML"><![CDATA[         <dependency>
-            <groupId>org.jboss.weld</groupId>
-            <artifactId>weld-extensions</artifactId>
-            <version>${weld.extensions.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-         </dependency>]]>
-        </programlisting>
-    </tip>
-   
-    <para>
-        Some features of Weld Extensions require additional dependencies (which are declared optional, so will not be 
-        added as transitive dependencies):
-    </para>
-   
-    <variablelist>
-        <varlistentry>
-            <term>
-                <code>org.javassist:javassist</code>
-            </term>
-            <listitem>Service Handlers, Unwrapping Producer Methods</listitem>
-        </varlistentry>
-        <varlistentry>
-            <term>
-                <code>javax.servlet:servlet-api</code>
-            </term>
-            <listitem>Accessing resources from the Servlet Context</listitem>
-        </varlistentry>
-    </variablelist>
    
 </chapter>

@@ -14,6 +14,10 @@ h1 {
     background-image:none;/* page logo here */
 }
 
+.term{
+    font-weight: bold; 
+}
+
 /* Use sfwk colour for titles */
 h2, h3, h4, h5, h6 {color:#B30808;}
 
