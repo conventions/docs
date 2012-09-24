@@ -3,55 +3,67 @@
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"  [ ]>
 <book lang="en">
     
-   <bookinfo>
-     <releaseinfo>Conventions 0.9.7 - September 2012</releaseinfo>
-     <title>Conventions Framework Documentation</title>   
-   </bookinfo>
-   <subtitle>Documentation early draft</subtitle>
-   <preface>
-      <title>Introduction</title>
-      <para>
-         <emphasis>Conventions</emphasis> is an integrator framework of Java EE technologies with the objective
-         to easy the development of enterprise rich web applications. The framework leverages 
-         other frameworks such as <emphasis>Hibernate</emphasis>, <emphasis>Primefaces</emphasis> and <emphasis>CODI</emphasis> to delivery solutions to 
-         common problems like cruding, exception handling, true pagination, helper UI components, 
-         internationalization, annotated queries etc... 
-      </para>
-      <para>
-         This guide is divided into a getting started to setup the framework plus three parts, the first one walks through the framework architecture, the second part shows general utility components such as annotated queries, i18n, exception handling etc... finaly the  
-         last part is reserved to <emphasis>Conventions Scaffolding</emphasis> a code generation tool for <emphasis>Conventions</emphasis> based on JBoss Forge. 
-      </para>
-   </preface>
+    <bookinfo>
+        <releaseinfo>Conventions 0.9.7 - September 2012</releaseinfo>
+        <title>Conventions Framework Documentation</title>   
+    </bookinfo>
+    <subtitle>Documentation early draft</subtitle>
+    <preface>
+        <title>Introduction</title>
+        <para>
+            <emphasis>Conventions</emphasis> is an integrator framework of Java EE technologies with the objective
+            to easy the development of enterprise web applications. The framework leverages 
+            other frameworks such as 
+            <emphasis>Hibernate</emphasis>, 
+            <emphasis>Primefaces</emphasis> and 
+            <emphasis>CODI</emphasis> to delivery solutions to 
+            common problems like cruding, exception handling, true pagination, UI components, 
+            internationalization, annotated queries, security etc... 
+        </para>
+        <para>
+            This guide is divided into a getting started to setup the framework plus four parts, the first one walks through the framework architecture(<xref linkend="part1"/>), the second part shows general utility components(<xref linkend="part2"/>), 
+            the third part is dedicated to examples(<xref linkend="part3"/>) and finaly the last part is reserved to 
+            <emphasis>Conventions Scaffolding</emphasis> a code generation tool for 
+            <emphasis>Conventions</emphasis> based on JBoss Forge(<xref linkend="part4"/>). 
+        </para>
+    </preface>
    
-   <xi:include href="gettingstarted.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    <xi:include href="gettingstarted.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 
-   <part id="part1">
-      <title>Architectural Overview</title>
+    <part id="part1">
+        <title>Architectural Overview</title>
       
-      <xi:include href="controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     
-      <xi:include href="service.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="service.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     
-      <xi:include href="view.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="view.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     
-      <xi:include href="model.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-   </part>
+        <xi:include href="model.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    </part>
    
    
     <part id="part2">
-      <title>General utilities</title>
-       <xi:include href="i18n.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-       <xi:include href="exceptionhandling.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-       <xi:include href="security.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-       <xi:include href="properties.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-       <xi:include href="query.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-   </part>
+        <title>General utilities</title>
+        <xi:include href="exceptionhandling.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="i18n.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="paginator.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="properties.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="query.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    </part>
    
     <part id="part3">
-      <title>Conventions Scaffolding</title>
-      
-   </part>
+        <title>Examples</title>
+        <xi:include href="examples/emptycrud.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="examples/conversationalcrud.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+        <xi:include href="examples/statelesscrud.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    </part>
+   
+   
+    <part id="part4">
+        <title>Conventions Scaffolding</title>
+    </part>
 
-   <toc/>
+    <toc/>
    
 </book>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<chapter id="empty-crud">
+    <title>The empty crud example</title>
+    <para>
+        In this chapter we will see how 
+        <emphasis>Conventions</emphasis> can crud
+        an entity with an empty controller and 'no service', we will code only the view.
+        ' 
+    </para>
+    <para>
+        To see the code of this chapter in action access the simple crud 
+        <ulink url="http://conventions-rpestano.rhcloud.com/conventions/pages/person/simpleCrud.faces"> showcase example</ulink>.
+    </para>
+    <section>
+        <title>
+            Creating the empty controller
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
+    <section>
+        <title>
+            Creating the view
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
+         
+</chapter>

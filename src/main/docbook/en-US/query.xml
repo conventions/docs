@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
- <chapter>
-        <title>Annotated Queries</title>
-        <para>
-             An utility to allow query execution via annotations.
+<chapter>
+    <title>Annotated Queries</title>
+    <para>
+        An utility to allow query execution via annotations.
             
-             To enable this feature you must add the following lines to your beans.xml file:
-        </para>   
-        <programlisting role="XML"><![CDATA[ 
+        To enable this feature you must add the following lines to your beans.xml file:
+    </para>   
+    <programlisting role="XML"><![CDATA[ 
      <beans xmlns="http://java.sun.com/xml/ns/javaee"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
@@ -16,13 +16,13 @@
                     <class>org.conventionsframework.query.QueryProvider</class>
                 </interceptors>
       </beans>]]>
-            </programlisting>
-        <section>
-            <title>
-                Examples
-            </title>
-            <para>
-                TODO 
-            </para>
-        </section>
-    </chapter>
+    </programlisting>
+    <section>
+        <title>
+            Examples
+        </title>
+        <para>
+            TODO 
+        </para>
+    </section>
+</chapter>

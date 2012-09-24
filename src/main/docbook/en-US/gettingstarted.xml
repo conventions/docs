@@ -37,13 +37,13 @@
             <dependency>
                 <groupId>com.sun.faces</groupId>
                 <artifactId>jsf-api</artifactId>
-                <version>${mojarra.version}</version>
+                <version>2.x</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.sun.faces</groupId>
                 <artifactId>jsf-impl</artifactId>
-                <version>${mojarra.version}</version>
+                <version>2.x</version>
                 <scope>provided</scope>
             </dependency> 
             <dependency>
@@ -177,7 +177,8 @@
                             org.primefaces.extensions:primefaces-extensions
                         </code>
                     </term>
-                    <listitem>Used by the layout template so if you won use the template you dont need to declare this dependency 
+                    <listitem>Used by the layout template(
+                        <xref linkend="layout-template"/>) so if you won use the template you dont need to declare this dependency 
                     </listitem>
                 </varlistentry>
                 <varlistentry>
@@ -185,10 +186,10 @@
                         <code>org.apache.myfaces.extensions.cdi.bundles:myfaces-extcdi-bundle-jsf20</code>
                     </term>
                     <listitem>Apache Myfaces CODI is used by Non EJB based service 
-                        <emphasis>CustomHibernateService</emphasis> 
-                        <xref linkend="custom-service"/>  
+                        <emphasis>CustomHibernateService</emphasis> (
+                        <xref linkend="custom-service"/>)  
                         for transaction demarcation with 
-                        <code>@Transactional</code> annotation.
+                        <code>@Transactional</code> annotation, so if you're not using a CustomService you dont need to declare this dependency.
                         <tip>
                             CODI scopes are also very handy and widly used in conventions sample projects, you may take a look here "TODO link to codi scopes"
                         </tip>
@@ -211,7 +212,7 @@
             <title> 
                 <code>conventions-bom</code>
             </title>
-            <para>The BOM(Bill of materials) for Conventions framework specifies the versions of the required dependencies so if you are using Maven 3, you can easily import conventions-bom into your POM by declaring the following in your depdendencyManagement section:</para>
+            <para>The BOM(Bill of materials) for Conventions framework specifies the versions of each Conventions related dependencies so if you are using Maven 3, you can easily import conventions-bom into your POM by declaring the following in your depdendencyManagement section:</para>
             <programlisting role="XML"><![CDATA[         
 
         <dependencyManagement> 
@@ -230,11 +231,12 @@
             <para>
                 now you dont have to worry about dependency version, you just need to declare 
                 the groupId and artifactId of each dependency we described in 
-                <xref linkend="mvn-dependencies"/>.
+                <xref linkend="mvn-dependencies"/>. The Conventions showcase is using the bom, take a look 
+                <ulink url="https://github.com/conventions/showcase/blob/master/pom.xml">here</ulink> for an example .
             </para>
             <tip>
                 you can declare the version of the dependencies, if you do so you are
-                overriding the declared version in conventions-bom. 
+                overriding the recommended versions declared in conventions-bom. 
             </tip>
         </section>
         <section>
@@ -257,29 +259,31 @@
                     based on a JavaEE 6(+) Application Server such as Glassfish or JBossAs7.x
                 </listitem>
             </varlistentry>
-             <varlistentry>
+            <varlistentry>
                 <term>
                     <code>Conventions Tomcat dependencies with OpenWebBeans</code>
                 </term>
                 <listitem> 
                     <ulink url="https://github.com/downloads/conventions/core/conventions-dependencies-tomcat-owb-0.9.7.zip"> Download here</ulink> the zip file with all dependencies for Conventions framework
-                    based on tomcat with <emphasis>OpenWebBeans</emphasis> as context and depency injection provider.
+                    based on tomcat with 
+                    <emphasis>OpenWebBeans</emphasis> as context and depency injection provider.
                 </listitem>
             </varlistentry>
-             <varlistentry>
+            <varlistentry>
                 <term>
                     <code>Conventions Tomcat dependencies with Weld</code>
                 </term>
                 <listitem> 
                     <ulink url="https://github.com/downloads/conventions/core/conventions-dependencies-0.9.7-tomcat-weld.zip"> Download here</ulink> the zip file with all dependencies for Conventions framework
-                    based on tomcat with <emphasis>Weld</emphasis> as context and depency injection provider.
+                    based on tomcat with 
+                    <emphasis>Weld</emphasis> as context and depency injection provider.
                 </listitem>
             </varlistentry>
         </variablelist>
     </section>
     <section>
         <title>Scaffolding</title>
-        <para>TODO</para>
+        <para>TODO link to section which describes the new-project command.</para>
     </section>
    
 </chapter>

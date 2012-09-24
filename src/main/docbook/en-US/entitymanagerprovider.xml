@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-<section>
+<section id="entimanagerprovider">
     <title>
         Entity Manager Provider
     </title>
@@ -11,31 +11,35 @@
     </para>
     <para>
         Conventions comes with three built in entityManagerProviders that are used by the 
-        built in <emphasis>Services</emphasis> but creating your own provider is very easy 
+        built in 
+        <emphasis>Services</emphasis> but creating your own provider is very easy 
         and will be demostrated in the next sections.
     </para>
     <section>
         <title>
-          The built in providers
+            The built in providers
         </title>
-        <para>
+        <para id="statelessprovider">
             <emphasis>StatelessEntityManagerProvider:</emphasis> is a 
             <emphasis>Stateless</emphasis> EJB that provides the entity manager via 
-            a <emphasis>Transaction PersistenContext</emphasis>, it is used by the StatelessHibernateService.
+            a 
+            <emphasis>Transaction PersistenContext</emphasis>, it is used by the StatelessHibernateService.
         </para>
-        <para>
+        <para id="statefulprovider">
             <emphasis>StatefulEntityManagerProvider:</emphasis> is a 
             <emphasis>Stateful</emphasis> EJB that provides the entity manager via 
-            an <emphasis>Extended PersistenContext</emphasis>, it is used by the StatefulHibernateService.
+            an 
+            <emphasis>Extended PersistenContext</emphasis>, it is used by the StatefulHibernateService.
         </para>
         <tip>
             You rarely will touch in a built in entityManagerProvider code but its important to know what kind 
             of PersistenceContext your service is using and how your entities will be managed so you can solve problems like 
             'lazyInitialization' accordingly.
         </tip>
-        <para>
+        <para id="customprovider">
             <emphasis>CustomEntityManagerProvider:</emphasis> is a dummy provider
-            that you MUST extend to get it working properly, see  <xref linkend="ext-provider"/>.
+            that you MUST extend to get it working properly, see  
+            <xref linkend="ext-provider"/>.
             It is used by CustomHibernateService.
         </para>
         <tip>
@@ -51,19 +55,23 @@
             The built in providers will work as long you have only one
             persistence unit if you have multiple datatasources in your application
             you will need to extend an existing provider to specify which datasource the provider will use, to do that you will need:
-             <itemizedlist>
-                 <listitem>extend an existing provider</listitem>
-                 <listitem>use the CDI <code>@Specializes</code> qualifier</listitem>
-                 <listitem>use<code>@ConventionsEntityManager</code>  qualifier with the right type
+            <itemizedlist>
+                <listitem>extend an existing provider</listitem>
+                <listitem>use the CDI 
+                    <code>@Specializes</code> qualifier
+                </listitem>
+                <listitem>use
+                    <code>@ConventionsEntityManager</code>  qualifier with the right type
                     <para> so if you are extending the StatelessEntityManagerProvider then type=Type.STATELESS</para>
-                 </listitem>
-                 <listitem>implement the EntityManagerProvider interface</listitem>
-                 <listitem>override the <code>getEntityManager()</code> method.
-                 </listitem>
-             </itemizedlist>
-           here is an example:
+                </listitem>
+                <listitem>implement the EntityManagerProvider interface</listitem>
+                <listitem>override the 
+                    <code>getEntityManager()</code> method.
+                </listitem>
+            </itemizedlist>
+            here is an example:
         </para>
-         <programlisting role="JAVA"><![CDATA[  package org.conventionsframework.showcase.provider;
+        <programlisting role="JAVA"><![CDATA[  package org.conventionsframework.showcase.provider;
 
 import org.conventionsframework.showcase.controller.ComboMBean;
 import javax.enterprise.context.RequestScoped;
@@ -94,14 +102,17 @@ public class ShowcaseEntityManagerProvider extends CustomEntityManagerProvider i
     }
 
      
-}]]></programlisting>
+}]]>
+        </programlisting>
         <note>
             <para>
                 the @ConventionsEntityManager qualifier is needed if you are using a built in service
-                so for exemple when you say your provider is <code>type=Type.CUSTOM</code> 
+                so for exemple when you say your provider is 
+                <code>type=Type.CUSTOM</code> 
                 you are specifying the entityManagerProvider for CustomHibernateService, but
                 you can extend a built in provider and use it in your own service if do that 
-                you wont need the <code>@ConventionsEntityManager</code> but an easy way to do that
+                you wont need the 
+                <code>@ConventionsEntityManager</code> but an easy way to do that
                 is creating your own EntityManagerProvider.
             </para>
         </note>
@@ -122,18 +133,20 @@ public class ShowcaseEntityManagerProvider extends CustomEntityManagerProvider i
         <para>
             To create your provider you'll need:
             
-              <itemizedlist>
-                 <listitem>implement the EntityManagerProvider interface</listitem>
-                 <listitem>implement the <code>getEntityManager()</code> method.
-                 </listitem>
-                 <listitem>provide the <code>@Named</code> annotation to differentiate your provider
-                   from existing ones. 
-                 </listitem>
-                 <listitem>inject it in a service you create like in the example below </listitem>
-             </itemizedlist>
-             here is an example:
+            <itemizedlist>
+                <listitem>implement the EntityManagerProvider interface</listitem>
+                <listitem>implement the 
+                    <code>getEntityManager()</code> method.
+                </listitem>
+                <listitem>provide the 
+                    <code>@Named</code> annotation to differentiate your provider
+                    from existing ones. 
+                </listitem>
+                <listitem>inject it in a service you create like in the example below </listitem>
+            </itemizedlist>
+            here is an example:
         </para>
-         <programlisting role="JAVA"><![CDATA[ package org.conventionsframework.showcase.provider;
+        <programlisting role="JAVA"><![CDATA[ package org.conventionsframework.showcase.provider;
 
 import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
@@ -165,10 +178,11 @@ public class MyEntityManagerProvider implements EntityManagerProvider{
         this.entityManager = entityManager;
     }
 
-}]]></programlisting>
+}]]>
+        </programlisting>
         <tip>
             <para>you also can change the EntityManagerProvider of a built in Service, here is how to:</para>
-             <programlisting role="JAVA"><![CDATA[
+            <programlisting role="JAVA"><![CDATA[
 @Named("personService")
 public class PersonServiceImpl extends StatefulHibernateService<Person, Long> implements PersonService {
                  //note that StatefulHibernateService uses StatefulEntityManagerProvider
@@ -186,17 +200,18 @@ public class PersonServiceImpl extends StatefulHibernateService<Person, Long> im
                     return this.entityManagerProvider;
                  } */
                }
-                 ]]></programlisting>
+                 ]]>
+            </programlisting>
         </tip>
     </section>
     
-   <section>
-       <title>setting entity manager "by hand"</title>
-       <para> If you dont want to create or extend an entityManagerProvider but still want
-           one PersistenceContext per service you can set the entityManager by hand in each 
-           service, see the code  below:
-       </para>
-       <programlisting role="JAVA"><![CDATA[
+    <section>
+        <title>setting entity manager "by hand"</title>
+        <para> If you dont want to create or extend an entityManagerProvider but still want
+            one PersistenceContext per service you can set the entityManager by hand in each 
+            service, see the code  below:
+        </para>
+        <programlisting role="JAVA"><![CDATA[
 @Named("personService")
 @Stateful//needed if you want to have a persistenceContext           
 public class PersonServiceImpl extends StatefulHibernateService<Person, Long> implements PersonService {
@@ -209,6 +224,7 @@ public class PersonServiceImpl extends StatefulHibernateService<Person, Long> im
                    super.getEntityManagerProvider().setEntityManager(entityManager);
                  }
                }
-                 ]]></programlisting>
-   </section>                 
+                 ]]>
+        </programlisting>
+    </section>                 
 </section>

@@ -1,91 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-  <chapter id="serviceLayer">
-        <title>The Service Layer</title>
+<chapter id="serviceLayer">
+    <title>The Service Layer</title>
+    <para>
+        This section shows how the framework is integrated with 
+        <emphasis>CDI</emphasis>, 
+        <emphasis>Hibernate</emphasis> and 
+        <emphasis>EJB</emphasis> to provide database operations through 
+        <emphasis>Conventions Services</emphasis> which are components that link the framework to the backend infrastructure.
+    </para>
+    <section>
+        <title>
+            What's a Service?
+        </title>
         <para>
-            This section shows how the framework is integrated with 
-            <emphasis>CDI</emphasis>, 
-            <emphasis>Hibernate</emphasis> and 
-            <emphasis>EJB</emphasis> to provide database operations through 
-            <emphasis>Conventions Services</emphasis> which are components that link the framework to the backend infrastructure.
+            In Conventions Framework services are components that have access to 
+            the backend infrastructure, below are some characterists of a service:
         </para>
-        <section>
+        <itemizedlist>
+            <listitem>has access to a helper dao(
+                <xref linkend="dao"/>)
+            </listitem>
+            <listitem>access to an entitymanager via EntityManagerProvider component(
+                <xref linkend="entimanagerprovider"/> )
+            </listitem>
+            <listitem>its the recommended place to put your business logic to help you on the DRY principle and reuse your services among controllers(and maybe tecnologies)</listitem>
+            <listitem>access to a Hibernate session</listitem>
+            <listitem>built in and configurable true pagination</listitem>
+            <listitem>built in cruding operations</listitem>
+        </itemizedlist>
+    </section>
+    <section id="dao">
+        <title >
+            Where is the Dao?
+        </title>
+        <para>
+            Conventions framework does not have an explicit Dao layer(although you can create one), the dao has
+            a composition relashionship with the service layer so each service has a dao.
+        </para>
+        <para>
+            The dao template used by Conventions services can be found 
+            <ulink url="https://github.com/conventions/core/blob/master/src/main/java/org/conventionsframework/dao/impl/BaseHibernateDaoImpl.java">here</ulink> 
+        </para>
+    </section>
+    <section>
+        <title>The built in Services</title>
+        <para>Conventions counts with three extensible built in services templates
+            that diff from each other only by its entityManagerProvider (
+            <xref linkend="entimanagerprovider"/>).
+        </para>
+        <section >
             <title>
-                What's a Service?
+                Stateless Service
             </title>
             <para>
-                In Conventions Framework services are components that have access to 
-                the backend infrastructure, below are some characterists of a service:
+                Has a StatelessEntityManager provider (
+                <xref linkend="statelessprovider"/>) 
+                so your hibernate session/entityManager will be recreated on every request.
             </para>
-             <itemizedlist>
-                 <listitem>has access to an entitymanager via EntityManagerProvider component</listitem>
-                 <listitem>has access to a Hibernate session</listitem>
-                 <listitem>built in and configurable pagination method</listitem>
-                 <listitem>built in cruding operations</listitem>
-             </itemizedlist>
+            <section id="injectservice">
+                <title>
+                    Injecting the Stateless Service
+                </title>
+                <para>
+                    To use a service you'll need to inject it(usually in a controller) 
+                    so we provided  three ways to inject a StatelessService
+                </para>
+                
+                <variablelist>
+                    <varlistentry>
+                        <term>
+                            <code>By type:</code>
+                        </term>
+                        <listitem> 
+                            <programlisting role="JAVA"><![CDATA[
+                               public class MyBean{   
+                                @Inject @PersistentClass(value=Person.class)
+                                private StatelessHibernateService myService;  
+                               }   
+                    ]]>
+                            </programlisting>
+                            <note>
+                                Every service needs an entity to perform database operations, 
+                                in the above example we specify the entity at the injection point 
+                                via 
+                                <code>@PersistentClass</code> annotation where Person class is a JPA entity.
+                            </note>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <code>Via qualifier:</code>
+                        </term>
+                        <listitem> 
+                            <programlisting role="JAVA"><![CDATA[
+                               public class MyBean{   
+                                @Inject @Service(type= Type.STATELESS,entity=Person.class)
+                                private BaseService myService;  
+                               }   
+                    ]]>
+                            </programlisting>
+                            <note>
+                                <para>when using the Service qualifier we are injecting the BaseService interface 
+                                    so we are being type safe.
+                                </para>
+                                <para>
+                                    Also note that in the above example we specify the entity in the service annotation itself
+                                    so myService is an instance of StatelessService which performs database operations 
+                                    under the Person JPA entity.
+                                </para>
+                            </note>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <code>By name:</code>
+                            <para>
+                                Injection by name is only available with @Service annotation 
+                                via class level annotation in a Conventions bean 
+                                <xref linkend="beantypes"/>
+                            </para>
+                        </term>
+                        <listitem> 
+                            <programlisting role="JAVA"><![CDATA[
+                               @Service(name=Service.STATELESS, entity=Person.class)   
+                               public class MyBean extends BaseMBean{   
+                                
+                                  public void aMethod(){
+                                    getBaseService();//will return an instance of the StatelessService
+                                  }  
+                               }   
+                    ]]>
+                            </programlisting>
+                            <note>
+                                <para>the name of the service must match the value of the @Named(value="name of the service")
+                                    annotation of a service.
+                                </para>
+                                <para>
+                                    The names of the built in services are available in the Service class as constants, eg: Service.STATELESS is the name of the StatelessService.
+                                </para>
+                            </note>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </section>        
         </section>
         <section>
             <title>
-                Where is the Dao?
+                Stateful Service
             </title>
             <para>
-                Conventions framework does not have an explicit Dao layer(although you can create one), the dao has
-                a composition relashionship with the service layer so each service has a dao.
+                Has a StatefulEntityManager provider (
+                <xref linkend="statefulprovider"/>) 
+                so your hibernate session/entityManager will be reuse as long as the bean this service 
+                is injected is alive.
             </para>
             <para>
-                The dao template used in conventions can be found <ulink url="https://github.com/conventions/core/blob/master/src/main/java/org/conventionsframework/dao/impl/BaseHibernateDaoImpl.java">here</ulink> 
+                So for example if the StatefulService is injected in a controller with
+                ViewScope your 
+                <code>PersistenceContext</code>
+                will be keeped alive(your hibernate session will be open) as long the user stays on the same view 
+                no matter how many access to the datatabase he does. 
             </para>
-        </section>
-        <section>
-            <title>The built in Services</title>
-            <para>Conventions counts with three extensible built in services templates</para>
+            
+            <tip>
+                <para>Stateless and Stateful services can be turned in an EJB when you extend them (
+                    <xref linkend="extendservice"/>)
+                    by doing that you're turning the methods below to run within an EJB transaction:
+                </para>
+                <programlisting role="JAVA"><![CDATA[ 
+                            void store(T Entity);
+
+                            void afterStore(T entity);
+
+                            void beforeStore(T entity);
+
+                            void remove(T entity);
+
+                            void beforeRemove(T entity);
+
+                            void afterRemove(T entity);
+                         ]]>
+                </programlisting>
+                 <para>all other methods are marked as
+                <code>TransactionAttributeType.SUPPORTS</code> </para>
+               <para> more details at <xref linkend="ejbservice"/></para>
+            </tip>
             <section>
                 <title>
-                    Stateless Service
+                    Injecting the Stateful Service
                 </title>
                 <para>
-                    TODO Describe statelessService
+                    please refer to 
+                    <xref linkend="injectservice"/> the rules are the same.
                 </para>
             </section>
-            <section>
-                <title>
-                    Stateful Service
-                </title>
-                <para>
-                    TODO Describe statefulService
-                </para>
-            </section>
-            <section id="custom-service">
-                <title>
-                    Custom Service
-                </title>
-                <para>
-                    TODO Describe customService
-                </para>
-            </section>
-        </section>    
-        <section>
+        </section>
+        <section id="custom-service">
             <title>
-                Creating your own Service
+                Custom Service
             </title>
             <para>
-                TODO Describe creating a Service
+                TODO Describe customService
             </para>
         </section>
-          
-        <xi:include href="entitymanagerprovider.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+    </section>    
+    <section id="extendservice">
+        <title>
+            Extending a built in Service
+        </title>
+        <para>
+            The built in services are helper templates that has easy access 
+            to the datatabase with handy helper methods but as we mentionated 
+            before another advantage of a service is to hold your business logic 
+            but you cant do that in a built in service cause we dont know which methods you will need
+            so one way to do that is to extend a built in service or even creating your own service (
+            <xref linkend="createservice"/>).
+        </para>
+        <para>
+            The first step to extend a service is to create an interface which extends BaseService
+        </para>
+        <programlisting role="JAVA"><![CDATA[ 
+                        public interface PersonService extends BaseService<Person, Long>{
+              
+                        }
+                         ]]>
+        </programlisting>
+        <note>
+            Where 
+            <code>Person</code> is the JPA entity that will be managed by the service
+            and 
+            <code>Long</code> is the type of the Person primary key.
+        </note>
+        <para>
+            Now the service implementation will need to extend a built in service and implement the created interface
+        </para>
+        <programlisting role="JAVA"><![CDATA[ 
+                      @Named(value = "personService")
+                      @PersistentClass(Person.class)
+                      public class PersonServiceImpl extends StatefulHibernateService<Person, Long> implements PersonService {
+                
+                        //put your business logic here
+                        }
+                         ]]>
+        </programlisting>
+        <note>
+            The 
+            <code>@PersistentClass(Person.class)</code> sets the JPA entity 
+            that will be managed by the service.
+                
+            Another way to do set the service entity is to implement the getPersistenceClass method in the service
+            <programlisting role="JAVA"><![CDATA[ 
+             @Named(value = "personService")
+             public class PersonServiceImpl extends StatefulHibernateService<Person, Long> implements PersonService {
+                
+                   public Class<Person> getPersistenceClass() {
+                      return Person.class;
+                    } 
+                    //put your business logic here
+                   }
+                ]]>
+            </programlisting>
+            Also if you dont specify the PersistenceClass in neither of the above ways Conventions will try to infer it via reflection.   
+        </note>
+        
+       <section>
+                <title>
+                    Injecting the extended service
+                </title>
+                <para>
+                    You can inject your extended Service in the following ways
+                </para>     
+                  <variablelist>
+                    <varlistentry>
+                        <term>
+                            <code>By type:</code>
+                        </term>
+                        <listitem> 
+                            <programlisting role="JAVA"><![CDATA[
+                               public class MyBean{   
+                                @Inject 
+                                private PersonService myService;  
+                               }   
+                    ]]>
+                            </programlisting>
+                            <note>
+                                now you dont need to specify an entity cause it was specified in your extended service.
+                            </note>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>
+                            <code>By name:</code>
+                            <para>
+                                Injection by name is only available with @Service annotation 
+                                via class level annotation in a Conventions bean 
+                                <xref linkend="beantypes"/>
+                            </para>
+                        </term>
+                        <listitem> 
+                            <programlisting role="JAVA"><![CDATA[
+                               @Service(name="personService")//no need to specify the entity here   
+                               public class MyBean extends BaseMBean{   
+                                
+                                  public void aMethod(){
+                                    getBaseService();//will return an instance of the PersonServiceImpl
+                                  }  
+                               }   
+                    ]]>
+                            </programlisting>
+                            <note>
+                                <para>the name of the service must match the value of the @Named(value="name of the service")
+                                    annotation of a service.
+                                </para>
+                            </note>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </section>   
+             <section id="ejbservice">
+                <title>
+                    Turning your service in an EJB
+                </title>
+                <para>
+                    TODO
+                </para>     
+             </section>           
+    </section>
+    <section id="createservice">
+        <title>
+            Creating your own Service
+        </title>
+        <para>
+           TODO
+        </para>
+    </section>      
+    <xi:include href="entitymanagerprovider.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
             
        
-        <section>
-            <title>
-                Pagination 
-            </title>
-            <para>
-                TODO Describe how true pagination works(not the paginator utility component) but focus on ConfigFindPagination overrding
-            </para>
-        </section>
-    </chapter>
+    <section>
+        <title>
+            Pagination 
+        </title>
+        <para>
+            TODO Describe how true pagination works(not the paginator utility component) but focus on ConfigFindPagination overrding
+        </para>
+    </section>
+</chapter>
 
     
  

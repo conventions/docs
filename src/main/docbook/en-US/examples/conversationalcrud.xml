@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<chapter id="conversation-crud">
+    <title>The conversational crud example</title>
+    <para>
+        In this chapter we will see an example of crud using a bean with conversation scope 
+        with a stateful service with an extended persistenceContext using url based navigation to control pages.
+        ' 
+    </para>
+    <para>
+        To see the code of this chapter in action access the conversation crud 
+        <ulink url="http://conventions-rpestano.rhcloud.com/conventions/pages/person/personConversation.faces"> showcase example</ulink>.
+    </para>
+    <section>
+        <title>
+            Creating the controller
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
+    <section>
+        <title>
+            Creating the service
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
+    <section>
+        <title>
+            Creating the view
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
+         
+</chapter>

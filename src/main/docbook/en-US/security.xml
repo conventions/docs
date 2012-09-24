@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
- <chapter>
-        <title>Security</title>
+<chapter>
+    <title>Security</title>
+    <para>
+        The framework provides some security helpers such as 
+        <emphasis>SecurityMethod</emphasis> for method execution autorizaion, 
+        <emphasis>SecurityPage</emphasis>
+        for blocking page access to unallowed users and 
+        <emphasis>SecurityArea</emphasis> to hide blocks of page from unallowed users.
+    </para>
+    <section>
+        <title>
+            SecurityMethod
+        </title>
         <para>
-             The framework provides some security helpers such as <emphasis>SecurityMethod</emphasis>for method execution autorizaion, <emphasis>SecuritedPage</emphasis>
-              for blocking access to unallowed users and <emphasis>SecuritedArea</emphasis> to hide blocks of page from unallowed users.
+            TODO 
         </para>
-        <section>
-            <title>
-                SecurityMethod
-            </title>
-            <para>
-                TODO 
-            </para>
-        </section>
-        <section>
-            <title>
-               SecuritedPage
-            </title>
-            <para>
-                TODO
-            </para>
-        </section>
+    </section>
+    <section>
+        <title>
+            SecurityPage
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
          
-           <section>
-            <title>
-               SecuritedArea
-            </title>
-            <para>
-                TODO
-            </para>
-        </section>
-    </chapter>
+    <section>
+        <title>
+            SecurityArea
+        </title>
+        <para>
+            TODO
+        </para>
+    </section>
+</chapter>

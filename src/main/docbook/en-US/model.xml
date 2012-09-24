@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-<chapter>
+<chapter id="model-layer">
     <title>The Model Layer</title>
     <para>
         describe model utility classes
@@ -10,43 +10,43 @@
     <section>
         <title>AbstractBaseEntity</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
-     <section>
+    <section>
         <title>BaseEntityLong</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
-     <section>
+    <section>
         <title>BaseEntityString</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
     <section>
         <title>CustomBaseEntity</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
-     <section>
+    <section>
         <title>AbstractVersionatedEntity</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
-     <section>
+    <section>
         <title>VersionatedEntityLong</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
     <section>
         <title>VersionatedEntityString</title>
         <para>
-             TODO
+            TODO
         </para>
     </section>  
 </chapter>

@@ -9,7 +9,7 @@
         <emphasis>Conventions Controllers</emphasis> are represented by CDI beans and the framework count
         with four flavors of them, we will see each one in detail.
     </para>
-    <section>
+    <section id="beantypes">
         <title>
             Bean Types
         </title>
@@ -21,12 +21,24 @@
                 As its name says is the base bean for other conventions controllers and it has the following characteristics:
                 
                 <itemizedlist>
-                    <listitem>access to a service (link to service layer)</listitem>
-                    <listitem>manages an entity(link to model layer)</listitem>
-                    <listitem>provides methods to conventions UI components(link to view layer) such as addButton, editButton, removeButtom, filterButton, clearButton etc...</listitem>
-                    <listitem>access to the paginator component(helper for true pagination)</listitem>
-                    <listitem>access to the resourceBundle</listitem>
-                    <listitem>BeanStates for cruding (link to beanState section)</listitem>
+                    <listitem>manages an entity (
+                        <xref linkend="beanEntity"/>)
+                    </listitem>
+                    <listitem>has an extensible state (
+                        <xref linkend="beanState"/>)
+                    </listitem>
+                    <listitem>access to a service (
+                        <xref linkend="serviceLayer"/>)
+                    </listitem>
+                    <listitem>provides methods to conventions UI components (
+                        <xref linkend="view-layer"/>) 
+                    </listitem>
+                    <listitem>access to the resourceBundle (
+                        <xref linkend="i18n"/>)
+                    </listitem>
+                    <listitem>access to the paginator component (
+                        <xref linkend="paginator"/>)
+                    </listitem>
                 </itemizedlist>    
             </para>
             <para>
@@ -78,7 +90,7 @@
                 
                 }]]>
             </programlisting>
-            <important>
+            <important id="beanService">
                 To perform datatabase operations you need to set the bean service
                 so the code below is required:
                 <programlisting role="JAVA"><![CDATA[
@@ -86,7 +98,8 @@
                 public void setService(PersonService personService) {
                     super.setBaseService(personService);
                 }
-                    ]]></programlisting>
+                    ]]>
+                </programlisting>
                 <para>Or you can use @Service annotation:</para>
                 <programlisting role="JAVA"><![CDATA[  
             import org.conventionsframework.bean.BaseMBean;
@@ -96,18 +109,22 @@
             @Service(name="name a named service")      
             public class SimpleMBean extends BaseMBean<Person> {
                     
-                     }]]></programlisting>
+                     }]]>
+                </programlisting>
                      
             </important>
             <tip>
-               <programlisting role="JAVA"><![CDATA[  
+                <programlisting role="JAVA"><![CDATA[  
                @Override
                public void store() {
                    super.store();
-               }]]></programlisting>
+               }]]>
+                </programlisting>
                 <para>calls the service store method which will perform a hibernate saveOrUpdate
-                on top of the bean entity(<xref linkend="beanEntity"/>). You may override it in your service store method and put some business logic before
-                saving the entity to the datatabase, we will see how to do that on service chapter(<xref linkend="serviceLayer"/>).
+                    on top of the bean entity(
+                    <xref linkend="beanEntity"/>). You may override it in your service store method and put some business logic before
+                    saving the entity to the datatabase, we will see how to do that on service chapter(
+                    <xref linkend="serviceLayer"/>).
                 </para>
             </tip>       
              
@@ -162,7 +179,7 @@
                      setEntity(new EntityClass());
                 }
                 }]]>
-            </programlisting>
+        </programlisting>
         <tip>
             some Conventions composite components will act on top of the entity atribute, 
             like editButton, removeButton and so on...
@@ -170,8 +187,8 @@
         <para>
             the Entity type can be provided by the following ways:
             <itemizedlist>
-                 <listitem>@PersistentClass annotation</listitem>
-             </itemizedlist>
+                <listitem>@PersistentClass annotation</listitem>
+            </itemizedlist>
         </para>
         <programlisting role="JAVA"><![CDATA[  
             @RequestScoped
@@ -182,11 +199,11 @@
                      setEntity(new Person());
                 }
                 }]]>
-            </programlisting>
+        </programlisting>
         <para>
             <itemizedlist>
-                 <listitem>override the create method</listitem>
-             </itemizedlist>
+                <listitem>override the create method</listitem>
+            </itemizedlist>
         </para>   
         <programlisting role="JAVA"><![CDATA[  
             @RequestScoped
@@ -202,17 +219,17 @@
                 }
             
                 }]]>
-            </programlisting>
-            <para>
-                <note>
-                    if you dont provide a way to resolve the entity the framework will try to resolve 
-                    it via reflections but avoid that because in some situations your managed bean will be a CDI proxy
-                    (eg. when @SecurityMethod annotation is present) and the reflection will not work.
-                </note> 
+        </programlisting>
+        <para>
+            <note>
+                if you dont provide a way to resolve the entity the framework will try to resolve 
+                it via reflections but avoid that because in some situations your managed bean will be a CDI proxy
+                (eg. when @SecurityMethod annotation is present) and the reflection will not work.
+            </note> 
         </para> 
            
     </section>  
-    <section>
+    <section id="beanState">
         <title>
             The Bean State
         </title>
