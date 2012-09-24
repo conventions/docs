@@ -19,33 +19,54 @@
         <title>
             The built in providers
         </title>
-        <para id="statelessprovider">
-            <emphasis>StatelessEntityManagerProvider:</emphasis> is a 
-            <emphasis>Stateless</emphasis> EJB that provides the entity manager via 
-            a 
-            <emphasis>Transaction PersistenContext</emphasis>, it is used by the StatelessHibernateService.
-        </para>
-        <para id="statefulprovider">
-            <emphasis>StatefulEntityManagerProvider:</emphasis> is a 
-            <emphasis>Stateful</emphasis> EJB that provides the entity manager via 
-            an 
-            <emphasis>Extended PersistenContext</emphasis>, it is used by the StatefulHibernateService.
-        </para>
-        <tip>
-            You rarely will touch in a built in entityManagerProvider code but its important to know what kind 
-            of PersistenceContext your service is using and how your entities will be managed so you can solve problems like 
-            'lazyInitialization' accordingly.
-        </tip>
-        <para id="customprovider">
-            <emphasis>CustomEntityManagerProvider:</emphasis> is a dummy provider
-            that you MUST extend to get it working properly, see  
-            <xref linkend="ext-provider"/>.
-            It is used by CustomHibernateService.
-        </para>
-        <tip>
-            CustomEntityManagerProvider and CustomHibernateService were designed to work without EJB 
-            and are used in Tomcat sample applications.
-        </tip>
+        <variablelist>
+            <varlistentry id="statelessprovider">
+                <term>
+                    <code>StatelessEntityManagerProvider:</code>
+                </term>
+                <listitem> 
+                    <para > is a 
+                        <emphasis>Stateless</emphasis> EJB that provides the entity manager via 
+                        a 
+                        <emphasis>Transaction PersistenContext</emphasis>, it is used by the StatelessHibernateService.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry id="statefulprovider">
+                <term>
+                    <code>StatefulEntityManagerProvider:</code>
+                </term>
+                <listitem> 
+                    <para > is a 
+                        <emphasis>Stateful</emphasis> EJB that provides the entity manager via 
+                        an 
+                        <emphasis>Extended PersistenContext</emphasis>, it is used by the StatefulHibernateService.
+                    </para>
+                    <tip>
+                        You rarely will touch in a built in entityManagerProvider code but its important to know what kind 
+                        of PersistenceContext your service is using and how your entities will be managed so you can solve problems like 
+                        'lazyInitialization' accordingly.
+                    </tip>
+                </listitem>
+            </varlistentry>
+            <varlistentry id="customprovider">
+                <term>
+                    <code>CustomEntityManagerProvider:</code>
+                </term>
+                <listitem> 
+                    <para> is a is a dummy provider
+                        that you MUST extend to get it working properly, see  
+                        <xref linkend="ext-provider"/>.
+                        It is used by CustomHibernateService.
+                    </para>
+                    <tip>
+                        CustomEntityManagerProvider and CustomHibernateService were designed to work without EJB 
+                        and are used in Tomcat sample applications.
+                    </tip>
+                </listitem>
+            </varlistentry>
+        </variablelist> 
+          
     </section>
     <section id="ext-provider">
         <title>

@@ -153,13 +153,12 @@
             <para>
                 Has a StatefulEntityManager provider (
                 <xref linkend="statefulprovider"/>) 
-                so your hibernate session/entityManager will be reuse as long as the bean this service 
+                so your hibernate session/entityManager will be reused as long as the bean this service 
                 is injected is alive.
             </para>
             <para>
                 So for example if the StatefulService is injected in a controller with
-                ViewScope your 
-                <code>PersistenceContext</code>
+                ViewScope your <code>PersistenceContext</code>
                 will be keeped alive(your hibernate session will be open) as long the user stays on the same view 
                 no matter how many access to the datatabase he does. 
             </para>
