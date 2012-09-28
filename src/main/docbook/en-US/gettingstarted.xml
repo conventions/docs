@@ -242,11 +242,13 @@
         <section>
             <title>Using maven archetype</title>
             <para>The following command will create the Conventions archetype project:</para>
-             <programlisting role="XML"><![CDATA[mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/releases/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=0.9.7 
+             <programlisting role="XML"><![CDATA[
+mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/releases/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=0.9.7 
             ]]>
             </programlisting>
             for snapshot archetype you can use  snapshots catalog:
-             <programlisting role="XML"><![CDATA[mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=1.0.0-SNAPSHOT 
+             <programlisting role="XML"><![CDATA[
+mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=1.0.0-SNAPSHOT 
             ]]>
             </programlisting>
             for tomcat archetype(since version 1.0.0-SNAPSHOT) use artifactId: 
