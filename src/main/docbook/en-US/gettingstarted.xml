@@ -275,7 +275,7 @@ mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repos
             <para>The archetype projects are available at github
                 <ulink url="https://github.com/conventions/archetype-project">JavaEE based archetype</ulink> and
                 <ulink url="https://github.com/conventions/archetype-tomcat-project">Tomcat based archetype</ulink>
-                they are maven based project so clone the in your IDE of choice, clean build and deploy and you're started with 
+                they are maven based project so clone them into your IDE of choice, clean build and deploy and you're started with 
                 <emphasis>Conventions framework</emphasis>.
             </para>
         </section>
