@@ -144,7 +144,11 @@
                 <version>1.1.1</version>
             </dependency>
             <!-- end Logging -->
-        
+            <dependency>
+                  <groupId>org.apache.commons</groupId>
+                  <artifactId>commons-lang3</artifactId>
+                  <version>3.1</version>
+            </dependency>
             <!--themes -->
             <dependency>
                 <groupId>org.primefaces.extensions</groupId>
@@ -204,6 +208,14 @@
                             Conventions is highly dependent on Hibernate 
                             <emphasis>4.x API</emphasis>
                         </important>
+                    </listitem>
+                </varlistentry>
+                 <varlistentry>
+                    <term>
+                        <code>org.apache.commons:commons-lang3</code>
+                    </term>
+                    <listitem> 
+                           Apache commons lang3 is used by exception handler to show friendly error messages so if dont use exception handler you dont need this dependency 
                     </listitem>
                 </varlistentry>
             </variablelist>
