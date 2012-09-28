@@ -241,7 +241,25 @@
         </section>
         <section>
             <title>Using maven archetype</title>
-            <para>TODO</para>
+            <para>The following command will create the Conventions archetype project:</para>
+             <programlisting role="XML"><![CDATA[mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/releases/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=0.9.7 
+            ]]>
+            </programlisting>
+            for snapshot archetype you can use  snapshots catalog:
+             <programlisting role="XML"><![CDATA[mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=1.0.0-SNAPSHOT 
+            ]]>
+            </programlisting>
+            for tomcat archetype(since version 1.0.0-SNAPSHOT) use artifactId: 
+             <code>-DarchetypeArtifactId=conventions-archetype-tomcat</code> 
+        </section>
+         <section>
+            <title>Clone the archetype project</title>
+            <para>The archetype projects are available at github
+                <ulink url="https://github.com/conventions/archetype-project">JavaEE based archetype</ulink> and
+                <ulink url="https://github.com/conventions/archetype-tomcat-project">Tomcat based archetype</ulink>
+                they are maven based project so clone the in your IDE of choice, clean build and deploy and you're started with 
+                <emphasis>Conventions framework</emphasis>.
+            </para>
         </section>
     </section>
    
