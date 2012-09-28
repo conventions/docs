@@ -266,6 +266,9 @@ mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repos
             for tomcat archetype(since version 1.0.0-SNAPSHOT) use artifactId: 
              <code>-DarchetypeArtifactId=conventions-archetype-tomcat</code> 
              <important>The archetype project is dependent on mave3</important>
+             <tip>
+                 <ulink url="http://youtu.be/yMDCNuGlAuQ">conventions archetype video tutorial</ulink>
+             </tip>
         </section>
          <section>
             <title>Clone the archetype project</title>
