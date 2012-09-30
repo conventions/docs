@@ -210,12 +210,12 @@
                         </important>
                     </listitem>
                 </varlistentry>
-                 <varlistentry>
+                <varlistentry>
                     <term>
                         <code>org.apache.commons:commons-lang3</code>
                     </term>
                     <listitem> 
-                           Apache commons lang3 is used by exception handler to show friendly error messages so if dont use exception handler you dont need this dependency 
+                        Apache commons lang3 is used by exception handler to show friendly error messages so if dont use exception handler you dont need this dependency 
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -253,27 +253,59 @@
         </section>
         <section>
             <title>Using maven archetype</title>
-            <para>The following command will create the Conventions archetype project:</para>
-             <programlisting role="XML"><![CDATA[
+            <para>The following commands can be used to generate the Conventions archetype project:</para>
+            <variablelist>
+                <varlistentry>
+                    <term>
+                        <code>JavaEE container based archetype:</code>
+                    </term>
+                    <listitem> 
+                        <programlisting role="XML"><![CDATA[
 mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/releases/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=0.9.7 
             ]]>
-            </programlisting>
-            for snapshot archetype you can use  snapshots catalog:
-             <programlisting role="XML"><![CDATA[
-mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=1.0.0-SNAPSHOT 
+                        </programlisting>
+                    </listitem>
+                </varlistentry>
+                 <varlistentry>
+                    <term>
+                        <code>Tomcat based archetype(since 1.0.0-SNAPSHOT):</code>
+                    </term>
+                    <listitem> 
+                        <programlisting role="XML"><![CDATA[
+mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=1.0.0-SNAPSHOT
             ]]>
-            </programlisting>
-            for tomcat archetype(since version 1.0.0-SNAPSHOT) use artifactId: 
-             <code>-DarchetypeArtifactId=conventions-archetype-tomcat</code> 
-             <note>Tomcat archetype is configured to use postgres datatabase
-              you can change the datatabase configuration in context.xml file locate under Web-Pages/META-INF folder  
-             </note>
-             <important>The archetype project is dependent on maven3</important>
-             <tip>
-                 See <ulink url="http://youtu.be/yMDCNuGlAuQ">conventions archetype video tutorial</ulink>
-             </tip>
+                        </programlisting>
+                         <note>Tomcat archetype is configured to use postgres datatabase
+                    you can change the datatabase configuration in context.xml file locate under Web-Pages/META-INF folder  
+                </note>
+                    </listitem>
+                </varlistentry>
+          </variablelist>
+            <tip> 
+                <para>for snapshot archetypes you can use the following catalog url:</para>
+                <para>
+                    <code>
+                https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml
+                    </code>
+                </para>
+            </tip>
+               
+                <important>The archetype project is dependent on maven3</important>
+                <tip>
+                    <itemizedlist>
+                        <listitem>
+                            See  
+                            <ulink url="http://youtu.be/yMDCNuGlAuQ">Conventions JavaEE server based archetype video tutorial</ulink>
+                        </listitem>
+                        <listitem>
+                            See 
+                            <ulink url="http://youtu.be/YumFZCrfWDk">conventions Tomcat based archetype video tutorial</ulink>
+                        </listitem>
+                    </itemizedlist>
+
+                </tip>
         </section>
-         <section>
+        <section>
             <title>Clone the archetype project</title>
             <para>The archetype projects are available at github
                 <ulink url="https://github.com/conventions/archetype-project">JavaEE based archetype</ulink> and
