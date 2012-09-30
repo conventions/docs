@@ -272,7 +272,7 @@ mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repos
                     </term>
                     <listitem> 
                         <programlisting role="XML"><![CDATA[
-mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype -DarchetypeVersion=1.0.0-SNAPSHOT
+mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repositories/snapshots/archetype-catalog.xml -DarchetypeGroupId=org.conventionsframework -DarchetypeArtifactId=conventions-archetype-tomcat -DarchetypeVersion=1.0.0-SNAPSHOT
             ]]>
                         </programlisting>
                          <note>Tomcat archetype is configured to use postgres datatabase
