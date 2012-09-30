@@ -265,9 +265,12 @@ mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repos
             </programlisting>
             for tomcat archetype(since version 1.0.0-SNAPSHOT) use artifactId: 
              <code>-DarchetypeArtifactId=conventions-archetype-tomcat</code> 
-             <important>The archetype project is dependent on mave3</important>
+             <note>Tomcat archetype is configured to use postgres datatabase
+              you can change the datatabase configuration in context.xml file locate under Web-Pages/META-INF folder  
+             </note>
+             <important>The archetype project is dependent on maven3</important>
              <tip>
-                 <ulink url="http://youtu.be/yMDCNuGlAuQ">conventions archetype video tutorial</ulink>
+                 See <ulink url="http://youtu.be/yMDCNuGlAuQ">conventions archetype video tutorial</ulink>
              </tip>
         </section>
          <section>
