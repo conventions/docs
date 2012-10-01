@@ -159,10 +159,35 @@
             <!-- end themes -->
 ]]>
             </programlisting>
-            <para>
+            
+            <tip>
+                if want to use conventions snapshots, declare the following repository:
+                 <programlisting role="XML"><![CDATA[  
+      <dependencies> 
+         <!-- conventions -->
+         <dependency>
+             <groupId>org.conventionsframework</groupId>
+             <artifactId>conventions-core</artifactId>
+             <version>1.0.0-SNAPSHOT</version>
+         </dependency>
+         <!-- end conventions -->     
+     </dependencies> 
+       <repositories> 
+           <repository>
+              <id>sonatype snapshots</id>
+              <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+              <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+           </repository>
+       </repositories>
+                   ]]>
+                 </programlisting>
+            </tip>
+            <note>
                 Note that half of them are JavaEE dependencies and are provided by an application server
                 so they are declared as provided maven scope.
-            </para>
+            </note>
             <para>
                 Above is an explanation of the use of the main dependencies 
             </para>
