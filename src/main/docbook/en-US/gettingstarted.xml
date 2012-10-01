@@ -185,7 +185,7 @@
                  </programlisting>
             </tip>
             <note>
-                Note that half of them are JavaEE dependencies and are provided by an application server
+                Note that half of dependencies are JavaEE dependencies and are provided by an application server
                 so they are declared as provided maven scope.
             </note>
             <para>
