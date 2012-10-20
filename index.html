@@ -1164,7 +1164,7 @@
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e765"/>3.6.4. setting entity manager "by hand"</h3></div></div></div><p> If you dont want to create or extend an entityManagerProvider but still want
-            to one PersistenceContext per service or have multiple persistence units you can set the entityManager by hand in each 
+            one PersistenceContext per service or have multiple persistence units you can set the entityManager by hand in each 
             service, see the code  below:
         </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
 <!--  --><br/><span class="java_plain">@</span><span class="java_type">Named</span><span class="java_separator">(</span><span class="java_literal">&quot;personService&quot;</span><span class="java_separator">)</span>
@@ -1519,8 +1519,7 @@
             Creating the view
         </a></span></dt></dl></div><p>
         In this chapter we will see an example of crud using a bean with conversation scope 
-        with a stateful service with an extended persistenceContext using url based navigation to control pages.
-        ' 
+        with a stateful service using an extended persistenceContext using url based navigation to control pages.
     </p><p>
         To see the code of this chapter in action access the conversation crud 
         <a class="ulink" href="http://conventions-rpestano.rhcloud.com/conventions/pages/person/personConversation.faces"> showcase example</a>.
