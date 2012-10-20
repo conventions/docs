@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-<chapter>
+<chapter id="exception-handling">
     <title>Exception Handling</title>
     <para>
         Exception handling is a very important mechanism in enterprise applications that is used for eg. to show 

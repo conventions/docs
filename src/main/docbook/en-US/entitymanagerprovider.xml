@@ -128,7 +128,7 @@ public class ShowcaseEntityManagerProvider extends CustomEntityManagerProvider i
         <note>
             <para>
                 the @ConventionsEntityManager qualifier is needed if you are using a built in service
-                so for exemple when you say your provider is 
+                so for exemple when you say that your provider is 
                 <code>type=Type.CUSTOM</code> 
                 you are specifying the entityManagerProvider for CustomHibernateService, but
                 you can extend a built in provider and use it in your own service if do that 
@@ -229,7 +229,7 @@ public class PersonServiceImpl extends StatefulHibernateService<Person, Long> im
     <section>
         <title>setting entity manager "by hand"</title>
         <para> If you dont want to create or extend an entityManagerProvider but still want
-            one PersistenceContext per service you can set the entityManager by hand in each 
+            to one PersistenceContext per service or have multiple persistence units you can set the entityManager by hand in each 
             service, see the code  below:
         </para>
         <programlisting role="JAVA"><![CDATA[

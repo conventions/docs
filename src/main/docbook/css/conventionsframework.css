@@ -75,6 +75,9 @@ div.note a:visited, div.tip a:visited, div.important a:visited, div.caution a:vi
 div.titlepage hr{
     display:none;
 }
+.ulink{
+    text-decoration: underline;
+}
 
 .table-contents th td {border-right:1px solid #D3D2D1;}
 

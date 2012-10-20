@@ -240,7 +240,7 @@
                         <code>org.apache.commons:commons-lang3</code>
                     </term>
                     <listitem> 
-                        Apache commons lang3 is used by exception handler to show friendly error messages so if dont use exception handler you dont need this dependency 
+                        Apache commons lang3 is used by <xref linkend="exception-handling"/> to show friendly error messages so if dont use exception handler you dont need this dependency 
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -376,6 +376,10 @@ mvn archetype:generate -DarchetypeCatalog=https://oss.sonatype.org/content/repos
                 </listitem>
             </varlistentry>
         </variablelist>
+        <tip>
+            Snapshots are published at  
+            <ulink url="https://oss.sonatype.org/content/repositories/snapshots/org/conventionsframework/conventions-core/"> Sonatype snapshots repository</ulink>
+        </tip>
     </section>
     <section>
         <title>Scaffolding</title>
