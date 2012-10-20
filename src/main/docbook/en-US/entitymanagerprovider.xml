@@ -229,7 +229,7 @@ public class PersonServiceImpl extends StatefulHibernateService<Person, Long> im
     <section>
         <title>setting entity manager "by hand"</title>
         <para> If you dont want to create or extend an entityManagerProvider but still want
-            to one PersistenceContext per service or have multiple persistence units you can set the entityManager by hand in each 
+            one PersistenceContext per service or have multiple persistence units you can set the entityManager by hand in each 
             service, see the code  below:
         </para>
         <programlisting role="JAVA"><![CDATA[

@@ -5,8 +5,7 @@
     <title>The conversational crud example</title>
     <para>
         In this chapter we will see an example of crud using a bean with conversation scope 
-        with a stateful service with an extended persistenceContext using url based navigation to control pages.
-        ' 
+        with a stateful service using an extended persistenceContext using url based navigation to control pages.
     </para>
     <para>
         To see the code of this chapter in action access the conversation crud 
