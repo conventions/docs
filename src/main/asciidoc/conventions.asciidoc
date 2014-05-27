@@ -1,0 +1,155 @@
+//
+// Export Commands
+// ===============
+// to HTML5:
+// asciidoc -b html5 -a icons -a theme=default -a data-uri -a toc2 -a pygments -f javaeeworkshop.conf javaeeworkshop.asciidoc
+//
+// to DocBook:
+// asciidoc -b docbook -dbook -f javaeeworkshop.conf javaeeworkshop.asciidoc
+//
+// to PDF (using fop):
+// a2x -fpdf -dbook --fop --icons --icons-dir=$HOME/.asciidoc/themes/default/icons -f javaeeworkshop.conf javaeeworkshop.asciidoc
+//
+:numbered:
+Conventions framework documentation
+===================================
+Rafael M. Pestano <rmpestano@gmail.com>
+v1.2.0-SNAPSHOT, jun, 2014
+
+
+This document will guide you on how to use http://conventions.github.io/home[Conventions Framework] by showing how to setup everything, drive through its architecture, showing examples and tools. Its an evolving guide and all versions will be available at github at: http://conventions.github.io/docs/version.
+
+NOTE: remove the *version* from docs url for current version.
+
+For an idea of technology stack used in this tutorial see <<_resources>> section.
+
+== Conventions Introduction
+
+Conventions is an experimental framework which integrates Java EE technologies with the objective to easy the development of enterprise web applications.
+The framework leverages technologies like JSF, JPA/Hibernate, Primefaces, EJB(optional) all integrated by the so called CDI to delivery solutions to common problems like cruding, exception handling, true pagination, UI components, internationalization, security and other facilities.
+
+This guide is divided into a <<_getting-started>> to setup the framework plus four parts: the first one walks through the <<_architectural-overview>>, the second part shows general <<_utility-components>>, the third part is dedicated to <<_examples>> and finaly the last part is reserved to <<conventions-caffolding>> a code generation tool for Conventions based on JBoss Forge.
+
+== Getting Started
+
+=== Using Maven
+
+==== Declaring maven dependencies
+
+todo
+
+==== Conventions bom
+
+todo
+
+==== Using maven archetype
+
+todo
+
+==== Clone the archetype project
+
+=== Without maven
+
+=== Scaffolding
+
+== Architectural Overview
+
+=== The Controller Layer
+
+==== Bean Types
+
+===== BaseMBean
+
+===== StateMBean
+
+===== ConversationalMBean
+
+==== Bean's Entity
+
+==== Bean's State
+
+=== The Service Layer
+
+==== What's a Service?
+
+==== Where is the Dao?
+
+==== Extending a Service
+
+==== Pagination
+
+==== Security
+
+=== Model Layer
+
+=== Exception Handling
+
+=== View Layer
+
+
+== General utilities
+
+=== Paginator
+
+=== Internationalization
+
+=== Generic Crud
+
+=== Properties injection
+
+=== Return to last page on view expired
+
+=== Annotated Queries
+
+== Examples
+
+=== The empty crud example
+
+==== Creating the empty controller
+
+==== Creating the view
+
+=== The conversational crud example
+
+==== Creating the controller
+
+==== Creating the service
+
+==== Creating the view
+
+=== The stateless crud example
+
+=== The stateful crud example
+
+=== History stack crud
+
+
+== Conventions Scaffolding
+
+
+== Resources
+* Conventions home +
+  http://conventions.github.io/home
+* Conventions git organization +
+  http://github.com/conventions
+* AsciiDoctor quick reference syntax +
+  http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+* Arquillian +
+  http://arquillian.org
+* JavaEE 7 Tutorial +
+  http://docs.oracle.com/javaee/7/tutorial/doc/home.htm
+* Weld reference guide +
+  http://docs.jboss.org/weld/reference/latest/en-US/html_single/
+* JBoss Forge homepage: +
+  http://jboss.org/forge
+* Primefaces homepage: +
+  http://primefaces.org/
+* Hibernate Docs: +
+  http://http://hibernate.org/orm/documentation/
+* Wildfly homepage: +
+  http://wildfly.org/
+* JBoss AS 7 homepage: +
+  http://jboss.org/as7
+
+
+
