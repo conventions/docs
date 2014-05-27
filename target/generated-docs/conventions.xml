@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" lang="en">
+<bookinfo>
+<title>Conventions framework documentation</title>
+<date>jun, 2014</date>
+<author>
+<firstname>Rafael</firstname>
+<othername>M.</othername>
+<surname>Pestano</surname>
+<email>rmpestano@gmail.com</email>
+</author>
+
+<authorinitials>RMP</authorinitials>
+<revhistory>
+<revision>
+<revnumber>1.2.0-SNAPSHOT</revnumber>
+<date>jun, 2014</date>
+<authorinitials>RMP</authorinitials>
+
+</revision>
+</revhistory>
+
+
+
+</bookinfo>
+<preface>
+<title></title>
+<simpara>This document will guide you on how to use <ulink url="http://conventions.github.io/home">Conventions Framework</ulink> by showing how to setup everything, drive through its architecture, showing examples and tools. Its an evolving guide and all versions will be available at github at: <ulink url="http://conventions.github.io/docs/version">http://conventions.github.io/docs/version</ulink>.</simpara>
+<note>
+<simpara>remove the <emphasis role="strong">version</emphasis> from docs url for current version.</simpara>
+</note>
+
+<simpara>For an idea of technology stack used in this tutorial see <xref linkend="_resources"/> section.</simpara>
+</preface>
+
+<chapter id="_conventions_introduction">
+<title>Conventions Introduction</title>
+<simpara>Conventions is an experimental framework which integrates Java EE technologies with the objective to easy the development of enterprise web applications.
+The framework leverages technologies like JSF, JPA/Hibernate, Primefaces, EJB(optional) all integrated by the so called CDI to delivery solutions to common problems like cruding, exception handling, true pagination, UI components, internationalization, annotated queries, security and other facilities.</simpara>
+<simpara>This guide is divided into a <xref linkend="_getting-started"/> to setup the framework plus four parts: the first one walks through the <xref linkend="_architectural-overview"/>, the second part shows general <xref linkend="_utility-components"/>, the third part is dedicated to <xref linkend="_examples"/> and finaly the last part is reserved to <xref linkend="conventions-caffolding"/> a code generation tool for Conventions based on JBoss Forge.</simpara>
+</chapter>
+<chapter id="_getting_started">
+<title>Getting Started</title>
+<section id="_using_maven">
+<title>Using Maven</title>
+<section id="_declaring_maven_dependencies">
+<title>Declaring maven dependencies</title>
+<simpara>todo</simpara>
+</section>
+<section id="_conventions_bom">
+<title>Conventions bom</title>
+<simpara>todo</simpara>
+</section>
+<section id="_using_maven_archetype">
+<title>Using maven archetype</title>
+<simpara>todo</simpara>
+</section>
+<section id="_clone_the_archetype_project">
+<title>Clone the archetype project</title>
+
+</section>
+</section>
+<section id="_without_maven">
+<title>Without maven</title>
+
+</section>
+<section id="_scaffolding">
+<title>Scaffolding</title>
+
+</section>
+</chapter>
+<chapter id="_architectural_overview">
+<title>Architectural Overview</title>
+<section id="_the_controller_layer">
+<title>The Controller Layer</title>
+<section id="_bean_types">
+<title>Bean Types</title>
+<section id="_basembean">
+<title>BaseMBean</title>
+
+</section>
+<section id="_statembean">
+<title>StateMBean</title>
+
+</section>
+<section id="_conversationalmbean">
+<title>ConversationalMBean</title>
+
+</section>
+</section>
+<section id="_bean_s_entity">
+<title>Bean&#8217;s Entity</title>
+
+</section>
+<section id="_bean_s_state">
+<title>Bean&#8217;s State</title>
+
+</section>
+</section>
+<section id="_the_service_layer">
+<title>The Service Layer</title>
+<section id="_what_s_a_service">
+<title>What&#8217;s a Service?</title>
+
+</section>
+<section id="_where_is_the_dao">
+<title>Where is the Dao?</title>
+
+</section>
+<section id="_extending_a_service">
+<title>Extending a Service</title>
+
+</section>
+<section id="_pagination">
+<title>Pagination</title>
+
+</section>
+<section id="_security">
+<title>Security</title>
+
+</section>
+</section>
+<section id="_model_layer">
+<title>Model Layer</title>
+
+</section>
+<section id="_exception_handling">
+<title>Exception Handling</title>
+
+</section>
+<section id="_view_layer">
+<title>View Layer</title>
+
+</section>
+</chapter>
+<chapter id="_general_utilities">
+<title>General utilities</title>
+<section id="_paginator">
+<title>Paginator</title>
+
+</section>
+<section id="_internationalization">
+<title>Internationalization</title>
+
+</section>
+<section id="_generic_crud">
+<title>Generic Crud</title>
+
+</section>
+<section id="_properties_injection">
+<title>Properties injection</title>
+
+</section>
+<section id="_return_to_last_page_on_view_expired">
+<title>Return to last page on view expired</title>
+
+</section>
+<section id="_annotated_queries">
+<title>Annotated Queries</title>
+
+</section>
+</chapter>
+<chapter id="_examples">
+<title>Examples</title>
+<section id="_the_empty_crud_example">
+<title>The empty crud example</title>
+<section id="_creating_the_empty_controller">
+<title>Creating the empty controller</title>
+
+</section>
+<section id="_creating_the_view">
+<title>Creating the view</title>
+
+</section>
+</section>
+<section id="_the_conversational_crud_example">
+<title>The conversational crud example</title>
+<section id="_creating_the_controller">
+<title>Creating the controller</title>
+
+</section>
+<section id="_creating_the_service">
+<title>Creating the service</title>
+
+</section>
+<section id="_creating_the_view_2">
+<title>Creating the view</title>
+
+</section>
+</section>
+<section id="_the_stateless_crud_example">
+<title>The stateless crud example</title>
+
+</section>
+<section id="_the_stateful_crud_example">
+<title>The stateful crud example</title>
+
+</section>
+<section id="_history_stack_crud">
+<title>History stack crud</title>
+
+</section>
+</chapter>
+<chapter id="_conventions_scaffolding">
+<title>Conventions Scaffolding</title>
+
+</chapter>
+<chapter id="_resources">
+<title>Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>Conventions home<?asciidoc-br?>
+<ulink url="http://conventions.github.io/home">http://conventions.github.io/home</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>Conventions git organization<?asciidoc-br?>
+<ulink url="http://github.com/conventions">http://github.com/conventions</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>AsciiDoctor quick reference syntax<?asciidoc-br?>
+<ulink url="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>Arquillian<?asciidoc-br?>
+<ulink url="http://arquillian.org">http://arquillian.org</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>JavaEE 7 Tutorial<?asciidoc-br?>
+<ulink url="http://docs.oracle.com/javaee/7/tutorial/doc/home.htm">http://docs.oracle.com/javaee/7/tutorial/doc/home.htm</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>Weld reference guide<?asciidoc-br?>
+<ulink url="http://docs.jboss.org/weld/reference/latest/en-US/html_single/">http://docs.jboss.org/weld/reference/latest/en-US/html_single/</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>JBoss Forge homepage:<?asciidoc-br?>
+<ulink url="http://jboss.org/forge">http://jboss.org/forge</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>Primefaces homepage:<?asciidoc-br?>
+<ulink url="http://primefaces.org/">http://primefaces.org/</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>Hibernate Docs:<?asciidoc-br?>
+<ulink url="http://http://hibernate.org/orm/documentation/">http://http://hibernate.org/orm/documentation/</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>Wildfly homepage:<?asciidoc-br?>
+<ulink url="http://wildfly.org/">http://wildfly.org/</ulink></simpara>
+</listitem>
+<listitem>
+<simpara>JBoss AS 7 homepage:<?asciidoc-br?>
+<ulink url="http://jboss.org/as7">http://jboss.org/as7</ulink></simpara>
+</listitem>
+</itemizedlist>
+
+</chapter>
+</book>
